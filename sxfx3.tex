@@ -1,0 +1,523 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\setmainfont{Adobe Kaiti Std}
+\thispagestyle{empty}
+\pagestyle{empty}
+\begin{document}
+
+\newcommand{\ntinf}{\lim\limits_{n \to \infty}}
+\newcommand{\ntx}[1]{\lim\limits_{n \to #1}}
+\newcommand{\xtx}[1]{\lim\limits_{x \to #1}}
+\newcommand{\dxtx}[1]{\lim\limits_{\Delta x \to #1}}
+
+第三章 连续函数
+
+P76
+
+$设y=f(x)，x \in U(x_0)。若x在x_0处改变量为\Delta x，则y的改变量\Delta y=f(x_0+\Delta x)-f(x_0)满足$
+
+$\dxtx{0} \Delta y = \dxtx{0}[f(x_0+\Delta x)-f(x_0)]=0，称为f(x)在x_0连续$
+
+p.s.极限证明问题
+
+设$x_1=a,x_2=b,x_{n+1}=\frac{x_n+x_{n-1}}{2}$
+
+证明:$\frac{x_{n+1}-x_n}{x_n-x_{n-1}}<0有单调性$
+
+~
+设$\ntinf \frac{a_1+a_2+...+a_n}{n}=a，证明：\ntinf \frac{a_n}{n}=0$
+
+用Cauchy准则，由条件$\forall \varepsilon >0，\exists N_1 \in N$
+
+$|\frac{a_1+a_2+...+a_n}{n}-\frac{a_1+a_2+...+a_n+a_{n+1}}{n+1}|<\varepsilon，\forall n > N$
+
+$|\frac{a_1+a_2+...a_n+n·a_{n+1}}{n(n+1)}|<\varepsilon \Rightarrow |\frac{a_1+a_2+...a_n}{(n+1)n}-\frac{a_{n+1}}{n+1}|<\varepsilon$
+
+于是有
+
+$\frac{a_1+a_2+...a_n+a_{n+1}}{n(n+1)}-\varepsilon < \frac{a_{n+1}}{n+1} < \frac{a_1+a_2+...a_n+a_{n+1}}{n(n+1)} +\varepsilon$
+
+$由\ntinf \frac{a_1+a_2+...+a_n}{n}=a，故对上述\varepsilon > 0，\exists N_2 \in N$
+
+$a-\varepsilon <\frac{a_1+a_2+...+a_n}{n}<a+\varepsilon, \forall n>N_2 $
+
+故有
+$\frac{a-\varepsilon}{n+1}-\varepsilon<\frac{a_{n+1}}{n+1}<\frac{a+\varepsilon}{n+1}+\varepsilon$
+
+因为
+$\ntinf \frac{1}{n+1}=0,故\exists N_3 \in N,\frac{a-\varepsilon}{n+1}>-\varepsilon，\frac{a＋\varepsilon}{n+1}<\varepsilon$
+
+取$N=max(N_1,N_2,N_3)则有$
+
+$-2\varepsilon<\frac{a_{n+1}}{n+1}<2\varepsilon，\forall n>N$
+
+故$\ntinf \frac{a_n}{n}=0$
+
+
+Cauchy收敛准则
+
+$\xtx{\infty} f(x)存在 \Leftrightarrow \forall \varepsilon >0,\exists A>0,\forall x'>A,\forall x''>A有|f(x')-f(x'')|<\varepsilon$
+
+
+方法2：浙大法
+
+$\frac{a_n}{n}=\frac{a_1+a_2+...+a_n}{n}-\frac{a_1+a_2+...+a_{n-1}}{n-1}·\frac{n-1}{n}$
+
+$同取lim，则有\ntinf \frac{a_n}{n}=a-a·1=0$
+
+$\\$
+
+Ex.2.
+$(2-x_n)x_{n+1}=1$
+
+$x_1 \ne 2, x_1 \ne 1$
+
+$x_1<1 \to x_2<1 \to x_2>x_1$ (*)
+
+$x_1>2 \to x_2<1 \to 同上*$ (**)
+
+$1<x_1<2 \to x_2>x_1 \to x_2>2 \to 同(**)$
+
+$\ \ \ \ \ \ \ \ \ \qquad \qquad \qquad \to x_2<2 \to x_3<2 \to x_n <2 则 \ntinf x_n \le 2$
+
+方法2
+$x_1 \ne 1，有\frac{1}{x_{n+1}-1}=\frac{1}{x_n-1}-1=....=\frac{1}{x_1-1}-n$
+
+$推出x_{n+1}-1=\frac{1}{\frac{1}{x_1-1}-n} \to 0 (n \to \infty)$
+
+
+二，stolze定理及其应用
+
+定理1.
+$设\{b_n\}是严格单调的递减数列，且\ntinf a_n=\ntinf b_n = 0$
+
+则当$\ntinf \frac{a_n-a_{n+1}}{b_n-b{n+1}}存在（有限或无穷）时，\ntinf \frac{a_n}{b_n}也存在，且$
+
+$\ntinf \frac{a_n}{b_n} = \ntinf \frac{a_n-a_{n+1}}{b_n-b{n+1}} $
+
+定理2.
+
+$设\{b_n\}为严格递增的数列，且\ntinf b_n = + \infty$
+
+则当$\ntinf \frac{a_n-a_{n+1}}{b_n-b{n+1}}存在（有限或无穷）时，\ntinf \frac{a_n}{b_n}也存在，且$
+
+$\ntinf \frac{a_n}{b_n} = \ntinf \frac{a_n-a_{n+1}}{b_n-b{n+1}} $
+
+
+用法示例
+
+（1）
+$证明\ntinf a_n=a \to \ntinf \frac{a_1+a_2+....+a_n}{n}=a$
+
+$令 \frac{x_n}{y_n}=\frac{a_1+a_2+....+a_n}{n}$
+
+(2)
+$\ntinf \frac {\sqrt{1}+\sqrt{2}+....+\sqrt{n}}{n \sqrt{n}}  $
+
+$= \ntinf \frac{\sqrt{n+1}}{(n+1)\sqrt{n+1}-n\sqrt{n}}$
+
+$= \ntinf \frac{\sqrt{n+1}[(n+1)\sqrt{n+1}+n\sqrt{n}]}{(n+1)^3-n^3}$
+
+$= \frac{2}{3}$
+
+(3)
+$\ntinf \frac{ln n}{n}= \ntinf \frac{ln(n+1)-lnn}{n+1-n}=\ntinf ln(1+\frac{1}{n})=0$
+
+(4)
+$\ntinf \frac {n^2}{a^n} (a>1)= \ntinf \frac{(n+1)^2-n^2}{a^{n+1}-a^n} =$
+
+$\ntinf \frac {2n+1}{a^n(a-1)} = \frac{1}{a-1} \ntinf \frac{2}{a^{n+1}-a^n}=0$
+
+(5)
+$0<x_n<1, x_{n+1}=x_n(1-x_n)$
+
+求证$\ntinf nx_n=1$
+
+证明：
+
+1.证明$x_n递减有界，\ntinf x_n =0$
+
+2.$\{ \frac{1}{x_n} \} 严格递增,极限 \to + \infty$
+
+3.$nx_n = \frac{n}{\frac{1}{x_n}} = (stolze) \frac{1}{\frac{1}{x_n}-\frac{1}{x_{n-1}}}$
+
+$=\frac{x_nx_{n-1}}{x_{n-1}-x_n}= \frac{x_n}{x_{n-1}}=1-x_{n-1} \to 1$
+
+
+(6)
+$x_1=sinx,x_{n+1}=sinx_n$
+
+$\ntinf \sqrt{\frac{n}{3}}sinx_n=1,即nsin^2x_n=3$
+
+$利用(\xtx{0}\frac{x^2sinx^2}{x^2-sinx^2}=3)$
+
+续连续函数:P76
+注意3项
+
+$x \to x_0,f(x)有极限，区别：x=x_0处未必有定义$
+
+$f(x)在x=x_0处连续$
+
+$|f(x)-A|<\varepsilon$
+
+$|f(x)-f(x_0)|<\varepsilon$
+
+f(x)在a连续等价于
+
+(1)$\xtx{a}f(x)=f(a)$
+
+(2)$\xtx{a+}f(x)=\xtx{a-}f(x)=f(a)$
+
+定义2，设f(x)在$x_0$的某左（右）领域有定义，且
+$\xtx{x_0-}f(x)=f(x_0)（或\xtx{x_0+}f(x)=f(x_0)）称f(x)在x_0处左（右连续）$
+
+定理1
+
+f(x)在点$x_0$处连续充要条件是：f(x)在点$x_0$处左连续又右连续
+
+符号表示为
+
+$(a,b)内，f(x) \in C(a,b)$
+
+$[a,b]内，f(x) \in C[a,b]$
+
+$R上，f(x) \in CR$
+
+
+Ex(1)
+$\xtx{0-}f(x)=+\infty$
+
+$\xtx{0+}f(x)=0$
+
+故f在$x_0$整体不连续
+
+一致函数反函数一般不再一致连续
+
+(2)
+$y=\frac{1}{x}-[\frac{1}{x}]$
+
+(3)
+$
+f(x)=\begin{cases}
+sin\pi x, & x\in Q \\
+0, & x\notin Q
+\end{cases}
+$
+
+f(x)在Z连续，在非Z不连续
+
+$f(x)在x_0连续 \ne f(x)在x_0附近连续$
+
+二，间断点的分类，P83
+
+$f(x)=\frac{cos\frac{\pi}{2}x}{x^2(x-1)}$
+x=0为二类点
+$x=1,f(x)=-\frac{\pi}{2}$
+
+单调函数只可能有第一类间断点
+
+定理1.
+
+$设u=g(x)在x_0处连续，u_0=g(x_0),又有y=f(u)在u_0处连续，则复合函数f(g(x))在x_0处连续$
+
+$由y=f(u_0)在u_0处连续，\forall \varepsilon >0,\exists \eta >0$
+
+$|f(u)-f(u_0)|<\varepsilon, \forall u(|u-u_0|<\eta)$
+
+$又u_0=g(x_0)及u=g(x)在x_0处连续$
+
+$对上述\eta>0,\exists \delta>0$
+
+$|u-u_0|=|g(x)-g(x_0)|<\eta,\forall x(|x-x_0|<\varepsilon)$
+
+此时有
+$|f(g(x))-f(g(x_0))|<\varepsilon,\forall x(|x-x_0|<\varepsilon)$
+
+
+四，函数一致连续，P86（必须在区间上，公用的$\delta$）
+
+$f(x)=x,x \in R, \forall x_0 \in R, \forall \varepsilon>0, \exists \delta=\varepsilon$
+
+$|f(x)-f(x_0)|=|x-x_0|<\varepsilon,\forall x(|x-x_0|<\delta)$
+
+
+$f(x)=x^2,x \in R, \forall x_0 \in R$
+
+$|f(x)-f(x_0)|=|x-x_0|·|x+x_0|见P78$
+
+数列型反例
+$x_1=n,x_2=n+\frac{1}{n}$
+
+一致连续等价叙述
+
+$\{x_n\}\{y_n\} \in I, \ntinf (x_n)-(y_n)=0，有\ntinf f(x_n)-f(y_n)=0$
+
+sinx与x在R上一致连续，但sinx·x在R上非一致连续
+
+反例
+$x_1=2n\pi+\frac{\delta}{3},x_2=2n\pi-\frac{\delta}{3}$
+
+注：f(x)在I上不一致连续，是指$\exists \varepsilon_0 >0, \forall \delta >0$
+
+$|f(x_1)-f(x_2)| \ge \varepsilon_0,当x_1,x_2 \in I,且|x_1-x_2|<\delta$
+
+或即
+$\exists \varepsilon_0 >0和 |x_n^{(1)}|,|x_n^{(2)}| \subset I,(\ntinf x_n^{(1)}-x_n^{(2)}=0)$
+
+$|f(x_n^{(1)})-f(x_n^{(2)})| \ge \varepsilon_0$
+
+先找到不一致连续之处，很陡时，$x_n \to 它$
+
+Ex:
+$(1)f(x)=sin\frac{1}{x},x \in(0,1)$
+
+$x_n^{(1)}=\frac{1}{2n\pi},x_n^{(2)}=\frac{1}{2n\pi+\frac{\pi}{2}}$
+
+$(2)f(x)=lnx, x \in (0,+\infty)$
+
+$x_n^{(1)}=e^{-n},x_n^{(2)}=e^{-n-1}$
+
+$\\$
+
+五，闭区间上连续函数性质
+
+定理3（最值定理P85）推论：有界
+
+例6（P90）设
+$f(x) \in C[a,+\infty),\xtx{+\infty}f(x)存在，证明f(x)在[a,+\infty)上有界$
+
+$证明：设\xtx{\infty}f(x)=l,令\varepsilon_0=1,必存在A>a,当x>A时$
+
+$|f(x)-l|<1 \to |f(x)<1+|l|$
+
+$又f(x) \in C[a,A],从而有界,记|f(x)|\le M,\forall x \in [a,A]$
+
+$|f(x)| \le max(M,1+|l|)$
+
+定理4（零点存在，P85）
+
+$x^3+4x^2-3x-1=0$
+
+$+(0)=-1,f(1)=1,f(-1)=5$
+
+$\xtx{-\infty}f(x) \to -\infty,由局部有界性可知，存在充分大大A>0$
+
+$使f(-A)<0,故有第3根$
+
+介值定理
+
+$Ex:f(x) \in C[a,b],且x_1,x_2,..x_n \in [a,b]$
+
+$存在\zeta \in [a,b],有f(\zeta)=\frac{f(x_1)+f(x_2)+...f(x_n)}{n}$
+
+康托定理P115
+
+在(a,b)内连续的函数f(x)在(a,b)内一致连续的充要条件是
+
+$\xtx{a^{+0}}f(x)和\xtx{b^{-0}}f(x)均存在$
+
+1.必要性
+
+用柯西收敛准则
+
+有定义可知
+$\forall \varepsilon >0,\exists \delta >0,(0<\delta<b-a)$
+
+$|f(x')-f(x'')|<\varepsilon,\forall x',x'' \in (a,b),且|x'-x''|<\delta$
+
+$考虑(a,a+\delta)内任意两点x',x'',也即有$
+
+$a<x'<a+\delta$
+
+$a<x''<a+\delta$
+
+此时，也有
+$|x'-x''|<\delta,从而|f(x')-f(x'')|<\varepsilon$
+
+由cauchy准则可知
+$\xtx{a^{+0}}f(x)存在$
+
+充分性。
+作辅助函数
+$
+F(x)=\begin{cases}
+l_1,& x=a \\
+f(x), & a<x<b \\
+l_2, & x=b
+\end{cases}
+$
+
+故F(x)在[a,b]连续，即一致连续
+
+此命题用于判断函数是否一致连续
+
+例10，P117（*）
+
+证明：
+方法1：
+$因f(x) \in C[a,M],f(x)在[a,M]上一致连续$
+
+$对上述\varepsilon > 0,\exists \delta>0,当x',x'' \in [a,M]，且|x'-x''|<\delta 时$
+
+$有|f(x')-f(x'')|<\frac{\varepsilon}{2}$
+
+当$x' \in [a,M],x'' \in [M,+\infty)且|x'-x''|<\delta ,$
+
+$因为|x'-M|\le|x'-x''|<\delta,而x'' \ge M$
+
+应有
+$|f(x')-f(x'')|\le|f(x')-f(M)|+|f(x'')-f(M)|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$
+
+方法2：
+因
+$\xtx{+\infty}f(x)存在，由柯西准则可知$
+
+$\forall \varepsilon>0,\exists M>a:当x',x'' \ge M时，有|f(x')-f(x'')|<\frac{\varepsilon}{2}$
+
+$f(x) \in C[a,M+1],从而f(x)在[a,M+1]上一致连续$
+
+$对上述\varepsilon > 0,\exists \delta (0<\delta<1)$
+
+使对$\forall x',x'' \in [a,M+1],当|x'-x''|<\delta 时$
+
+$有|f(x')-f(x'')|<\frac{\varepsilon}{2}$
+
+习题课
+（1）构造函数f(x)
+
+1.在R上处处不连续：D(x)
+
+2.仅在0处连续
+
+$
+f(x)=\begin{cases}
+x, & 有理数 \\
+-x, & 无理数
+\end{cases}
+$
+
+3.在[0,1]上任一无理点连续，任一有理点不连续：黎曼函数
+
+4.在[-1,1]上不连续，但可取到最大值，最小值，一切中间值
+
+5.在[-1,1]上处处不连续，但可取到最大值，最小值，一切中间值
+
+对2函数改造
+
+$\includegraphics{sxfx3_p1.jpg}$
+
+$设f(x)在u_0处连续，u=g(x)(u+0=g(x_0)在x \to x_0时$
+
+$极限存在，是否必有f(g(x))在x=x_0处连续？$
+
+考虑
+$
+f(u)=\begin{cases}
+usin\frac{1}{u}, & u \ne 0 \\
+0, & u=0
+\end{cases}
+g(x)=\begin{cases}
+1, & x \ne 0 \\
+0, & x=0
+\end{cases}
+$
+
+$在x_0=0处不连续$
+
+
+$例，设f(x)在R上满足lipshity条件$
+
+$\forall x,y \in R,有|f(x)-f(y)| \le L·|x-y| (0<L<1)$
+
+证明f(x)在R上有唯一不动点，也即有
+$f(x_0)=x_0$
+
+$构造数列x_{n+1}=f(x_n)$
+
+$|x_{n+1}-x_n| \le L^{n-2}|x_2-x_1|$
+
+$用Cauchy可证x_n收敛，记\xtx{\infty}x_n=x_0$
+
+$x_0=\ntinf x_{n+1}= \ntinf f(x_n)=f(\ntinf x_n)=f(x_0)$
+
+唯一性
+
+$|x_0'-x_0|=|f(x_0')-f(x_0)| \le L·|x_0'-x_0|$ 
+
+例：设
+$f(x) \in C(a,b)且 \xtx{a+}f(x)=\xtx{b-}f(x)= -\infty$
+
+证明：f(x)在(a,b)内必可取到最大值
+
+$取[a+\delta,b-\delta]内最值f(c),\exists \delta>0 (a+\delta<\frac{a+b}{2})$
+
+$f(x)<f(\frac{a+b}{2}),\forall x (a<x<a+\delta _1)$
+
+例：
+$f(x) \in C(R)为周期T的周期函数，证明f(x)在R上一致连续(非定理)$
+
+$因f(x)\in C(R),故f(x)在[-T,T]上一致连续，\forall \varepsilon >0,$
+
+$\exists \delta >0,(0<\delta <T) |f(y')-f(y'')|<\varepsilon,\forall y',y'' \in [-T,T]$
+
+$|y'-y''|<\delta,\forall x',x'' \in R,|x'-x''|<R$
+
+由f的周期性可知
+$\exists y',y'' \in [-T,T]以及n \in Z$
+
+$使得x'=nT+y',x''=nT+y'',且|y'-y''|<\delta$
+
+$于是|f(x')-f(x'')|=|f(nT+y')-f(nT+y'')|=|f(y')-f(y'')|<\varepsilon$
+
+$f(x)在R上不一致连续 \to f(x)不是周期函数$
+
+$\newline$
+
+$例：(sinx)^3+sin(x^3)$
+
+$x_n^1=\sqrt[3]{2n\pi+\frac{\pi}{2}},x_n^2=\sqrt[3]{2n\pi-\frac{\pi}{2}}$
+
+$\newline$
+
+$f(x)满足lipshity条件，则\frac{f(x)}{x}一致连续$
+
+$证明：|\frac{f(x)}{x}-\frac{f(y)}{y}| \le \frac{1}{x}|f(x)-f(y)|+|f(y)|·|\frac{1}{x}-\frac{1}{y}|$
+
+$\le \frac{|f(x)-f(y)|}{a}+\frac{|x-y|}{xy}(|f(a)|+k|y-a|)$
+
+$\le \frac{1}{a}(2k+|f(a)|)·|x-y|$
+
+$\newline$
+
+$例:f(x) \in  C(0,+\infty), \forall x \ge 0,有\ntinf f(x+n)=0,证明\ntinf f(x)=0$
+
+$证:由一致连续条件，\forall \varepsilon >0,\exists \delta >0: |f(x)-f(y)|<\frac{\varepsilon}{2}$
+
+$\forall x,y \in (0,+\infty), |x-y|<\delta$
+
+$由|f(x)| \le |f(x)-f(x_k+n)|+|f(x_k+n)|$
+
+现将[0,1]区间m等分，分点为$0=x_0<x_1<x_2<...x_m=1$
+
+$且\Delta = x_k-x_{k-1}<\delta (k=1～m)$
+
+$现对\forall x \in [0,1], \exists x_k 使得 |x-x_k| \le \delta $
+
+$对\forall x \in (1,+\infty),\exists n \in N,及其x_k \in [0,1]$
+
+$使|x-(x_k+n)| \le \delta$
+
+$由条件\ntinf f(x+n)=0,对上述\varepsilon >0,\exists N \in \bm N$
+
+$|f(x_k+n)|<\frac{\varepsilon}{2}, n > N$
+
+于是$当x>N+1时，\exists n > N 及其某一r_k$
+
+$使得|x-(x_k+n)| \le \delta$
+
+$f(x) \le \frac{\varepsilon}{2}+\frac{\varepsilon}{2}= \varepsilon$
+\end{document}
+
