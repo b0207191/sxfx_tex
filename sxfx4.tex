@@ -3,6 +3,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{bm}
+\usepackage{tikz}
+
 \setmainfont{Adobe Kaiti Std}
 \thispagestyle{empty}
 \pagestyle{empty}
@@ -76,8 +78,21 @@ $称f(x)在x_0可微，A\Delta x为f(x)在x_0处微分，记为dy|_{x=x_0},df|_{
 
 几何意义，在$(x_0,y_0)$处切线纵坐标改变量
 
-$\includegraphics{sxfx4_p1.jpg}$
+\begin{tikzpicture}
+\draw (1,1) -- (5,1);
+\draw (1,0) -- (5,4);
+\draw (4,0) -- (4,5);
+\draw (0,0) parabola (5,6.25);
+\node [below] at (2,1) {$x_0,y_0$};
+\node [left] at (3.7,2) {dy};
+\draw (4,1) parabola bend (3.7,2) (4,3);
+\node [right] at (4.3,2.5) {$\Delta y$};
+\draw (4,1) parabola bend (4.3,2.5) (4,4);
 
+\end{tikzpicture}
+
+$\\$
+$\nl$
 高阶导数，高阶微分，P162
 
 $dx^k=(dx)^k,d^kx表示对x的k次微分$
@@ -129,7 +144,26 @@ $\newline$
 
 根据l方向建立坐标系（介值定理）
 
-$\includegraphics{sxfx4_p2.jpg}$
+\begin{tikzpicture}
+\fill[gray] (0.5,0.5) -- (2,0.714) -- (2,2);
+\draw[->] (0,0) -- (5,0);
+\draw[->] (0,0) -- (0,5);
+\node [right] at (5,0) {x};
+\node [above] at (0,5) {y};
+\draw (0.5,0.5) -- (4,1);
+\draw (0.5,0.5) -- (3,3);
+\draw (3,3) -- (4,1);
+\draw (0.5,2) -- (0.5,4);
+\node [right] at (0.5,3) {$l$};
+\node [right] at (4,1) {C};
+\node [above] at (3,3) {B};
+\node [below] at (0.5,0.5) {A};
+\draw (3.5,-0.5) -- (3.5,4.5);
+\node [right] at (3.5,-0.5) {x''};
+\draw (2,-0.5) -- (2,4.5);
+\node [right] at (2,-0.5) {x'};
+\node [left] at (2,1) {S(x)};
+\end{tikzpicture}
 
 $A,B,C,(x_1,x_2,x_3)$
 
@@ -147,7 +181,14 @@ $\nl$
 
 证明：唯一性（易证）。
 
-$\includegraphics{sxfx4_p3.jpg}$
+\begin{tikzpicture}
+\draw (0,0) circle (1);
+\draw (1.5,0) circle (1);
+\draw (1.5,0) -- (1.5,1);
+\draw (0.75,0) -- (0.75,0.66);
+\node [right] at (1.5,0.5) {R};
+\node [left] at (0.75,0.2) {r};
+\end{tikzpicture}
 
 有R，则有r<R,矛盾。
 
@@ -157,7 +198,31 @@ $\includegraphics{sxfx4_p3.jpg}$
 
 假设连续，则可取最大值，最小值2次
 
-$\includegraphics{sxfx4_p4.jpg}$
+\begin{tikzpicture}
+\draw (1,0) -- (8.5,0);
+\draw (2,-1) -- (2,5);
+\draw (4,0) -- (4,4);
+\draw (7,0) -- (7,4);
+\node [below] at (4,0) {A};
+\node [below] at (7,0) {B};
+\draw (6.5,0) -- (6.5,3.7);
+\node [below] at (6.5,0) {$x_3$};
+
+\draw (5,0) -- (5,3);
+\draw (3.3,3) -- (5,3);
+\draw (3.3,3) -- (3.3,0);
+\node [below] at (5,0) {$x_2$};
+\node [below] at (3.3,0) {$x_1$};
+
+\draw (3,2) parabola bend (4,4) (5,3);
+\draw (5,3) parabola bend (5.5,2.5) (6,3);
+\draw (6,3) parabola bend (7,4) (8,3);
+
+\draw (3,2) -- (3,0);
+\node [below] at (3,0) {a};
+\draw (8,3) -- (8,0);
+\node [below] at (8,0) {b};
+\end{tikzpicture}
 
 $设f(x_3)>f(x_1),f(x_3)>f(x_2)$
 

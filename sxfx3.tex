@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{bm}
+\usepackage{tikz}
 \setmainfont{Adobe Kaiti Std}
 \thispagestyle{empty}
 \pagestyle{empty}
@@ -407,7 +408,16 @@ $
 
 对2函数改造
 
-$\includegraphics{sxfx3_p1.jpg}$
+\begin{tikzpicture}
+\draw[->] (-1.2,0) -- (1.2,0);
+\draw[->] (0,-1.2) -- (0,1.2);
+\draw[style=dashed] (-1,-1) -- (1,1);
+\draw[style=dashed] (-1,0) -- (0,1);
+\draw[style=dashed] (0,-1) -- (1,0);
+\node [right] at (1.2,0) {x};
+\node [above] at (0,1.2) {y};
+\end{tikzpicture}
+
 
 $设f(x)在u_0处连续，u=g(x)(u+0=g(x_0)在x \to x_0时$
 
