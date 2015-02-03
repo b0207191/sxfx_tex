@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{bm}
+\usepackage{tikz}
 \setmainfont{Adobe Kaiti Std}
 \thispagestyle{empty}
 \pagestyle{empty}
@@ -221,5 +222,91 @@ $f(0)=f(x)-xf'(x)+\frac{1}{2}f''(\zeta_1)x^2,0<\zeta_1<x$
 $f(2)=f(x)+xf'(2-x)+\frac{1}{2}f''(\zeta_1)(2-x)^2,x<\zeta_2<2$
 
 $f(2)-f(0)=2f'(x)+\frac{1}{2}f''(\zeta_2)(2-x)^2-\frac{1}{2}f''(\zeta_1)x^2$
+
+$故2|f'(x)| \le |f(2)|+|f(0)|+\frac{1}{2}x^2|f''(\zeta_1)|+\frac{1}{2}(2-x)^2|f''(\zeta_2)|$
+
+$\le 2+\frac{1}{2}[x^2+(2-x)^2]\le4,x \in [0,2]$
+
+$例：\xtx{0}\frac{sin(sinx)-x}{sin^3x}=\frac{(x-\frac{1}{6}x^3+o(x^3))-\frac{1}{6}(x-\frac{1}{6}x^3+o(x^3))^3+o(sin^3x)-x}{x^3}$
+
+$=\frac{x-\frac{1}{3}x^3+o(x^3)-x}{x^3}=-\frac{1}{3}$
+
+二、极值和最值
+
+极值第一充分条件P197
+
+极值第二充分条件P198
+
+例$f(x)在x=0某领域连续，f(0)=0,\xtx{0}\frac{f(x)}{1-cosx}=2,判定f(x)在x=0处$
+
+$可导性极值。解出f'(0)=0,故可导。由\xtx{0}\frac{f(x)}{1-cosx}及保号性$
+
+$可知当x \to 0时，f(x)>0,故f(0) \le f(x)$
+
+例$f'(0)=0,f(x)二阶可导，\xtx{0}\frac{f''(x)}{|x|}=1,故f''(x)>0,\forall x \in U_0(0)$
+
+$f'(0)=0故f'(x)在0左侧为负，右侧为正(因为f'(x)递增)$
+
+$故f(0)为极小值$
+
+法2:$f(x)=f(0)+f'(0)x+\frac{1}{2}f''(\zeta)x^2=f(0)+\frac{1}{2}f''(\zeta)x^2$
+
+$=f(0)+\frac{1}{2} \frac{f''(\zeta)}{|\zeta|} |\zeta| x^2 \ge f(0),故f(0)为极小值$
+
+$例：f(x)=(x-2)^2x^{\frac{2}{3}},极值点极值，驻点，x_1=2,x_2=\frac{1}{2}$
+
+$x_3=0为不可导点，列表P206（包括导数不存在）$
+
+$例：f(x)=(1+x+\frac{1}{2!}x^2+...\frac{1}{n!}x^n)e^{-x} (n \in N)$
+
+$f'(x)=-\frac{x^n}{n!}e^{-x},唯一驻点x=0. n=2k无极值，n=2k-1 极大值$
+
+$命题，设f(x) \in C(a,b) (有限或无穷)且f(x)在(a,b)内仅有一个极值点x_0,若x_0为极大或极小点，则必为f(x)在(a,b)内最大值或最小值$
+
+例
+
+隐函数求导
+
+\begin{tikzpicture}
+\draw (-3,0) -- (3,0);
+\draw (0,-2) -- (0,2);
+\draw (0,1.5) -- (2.7,0);
+\fill[gray] (0,1.5) -- (2.7,0) -- (0,0) -- cycle;
+\draw (0,0) ellipse (2 and 1);
+\node [right] at (1.5,1) {$(x_0,y_0)$};
+\end{tikzpicture}
+
+$\Delta S = \frac{1}{2} \frac{a^2b^2}{xy}, y=\frac{1}{b} \sqrt{1-\frac{x^2}{a^2}}$
+
+$极值点(\frac{a}{\sqrt{2}},\frac{b}{\sqrt{2}})$
+
+$\\$
+
+T型河道，求船最大能够过的长度
+
+\begin{tikzpicture}
+\draw (0,3) -- (1,3);
+\draw (1,0) -- (1,3);
+\draw (4,0) -- (4,3);
+\draw (5,3) -- (4,3);
+\draw (0,5) -- (5,5);
+\draw[<->] (1,1) -- (4,1);
+\node at (2.5,1) {a};
+\draw[<->] (0.5,3) -- (0.5,5);
+\node at (0.5,4) {b};
+\draw (3.5,2) -- (4.5,4);
+\node [left] at (4,2) {$\theta$};
+\draw (3.75,2.5) arc (240:270:0.5);
+
+\end{tikzpicture}
+
+
+$l=\frac{a}{sin \theta}+\frac{b}{cos \theta}=a·csc \theta+b·sec \theta$
+
+$l'=a·-ctgx·cscx+b·tgx·secx=a·-\frac{cos\theta}{sin \theta} \frac{1}{sin \theta}+b·\frac{sin \theta}{cos \theta} \frac{1}{cos \theta}$
+
+$tg^3 \theta = \frac{a}{b}$
+
+$\xtx{0} \frac{1}{x^4}[ln(1+sin^{12}x)-6(\sqrt[3]{2-cosx}-1)]$
 \end{document}
 

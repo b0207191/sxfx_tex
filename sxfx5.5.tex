@@ -1,0 +1,124 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{tikz}
+\setmainfont{Adobe Kaiti Std}
+\thispagestyle{empty}
+\pagestyle{empty}
+\begin{document}
+
+\input{macro.tex}
+
+
+习题课
+
+两个重要极限证法？
+
+$\frac{sinx}{x},(1+x)^{\frac{1}{x}},用Hospital法则？$
+
+$因为(sinx)'=cosx，利用了\xtx{0}\frac{sinx}{x}=1,导致循环论证$
+
+$f(x)在[a,+\infty)可导，\xtinf f(x)存在，则必有\xtinf f'(x)=0$
+
+导数有界，则一致连续
+
+$设f(x)在(0,a]上可导，且\xtx{0+}\sqrt{x} f'(x)存在,证明f(x)在(0,a]上一致连续$
+
+$\nl$
+
+$f(xy)=f(x)+f(y),f'(1)存在,判断f'(x)存在性$
+
+因为$f(1)=2f(1)，故f(1)=0$
+
+$设f'(x)=\frac{f(x+\Delta x)-f(x)}{\Delta x}_{\Delta x \to 0}=\frac{1}{x}\frac{f(1+\frac{\Delta x}{x})-f(1)}{\frac{\Delta x}{x}}_{\Delta x \to 0}=\frac{f'(1)}{x}_{\Delta x \to 0}$
+
+$故f'(x)=\frac{f'(1)}{x}$
+
+$\nl$
+
+$y=sin(A·arcsinx),y'=cos(A·arcsinx)A·\frac{1}{\sqrt{1-x^2}}$
+
+$故(1-x^2)y''-xy'+A^2y=0,故y^{(2k)}(0)=0$
+
+\[ y^{(2k+1)}=(-1)^kA \prod_{i=1}^k (A^2-(2i-1)^2) \]
+
+$\nl$
+
+$f''(x)>0,f(0)<0,求证：\frac{f(x)}{x}在(0,+\infty)递增$
+
+$设x_2 > x_1 > 0，则\frac{f(x_2)}{x_2}-\frac{f(x_1)}{x_1}=[\frac{f(\zeta)}{\zeta}]'(x_2-x_1)$
+
+$=\frac{f'(\zeta)\zeta-f(\zeta)}{\zeta^2}(x_2-x_1)$
+
+$因为x_2-x_1>0,\zeta^2>0$
+
+$又因为f(x)<f(x)-f(0)=f'(\zeta)x<f'(x)x$
+
+$故f'(\zeta)\zeta - f(\zeta) > 0$
+
+$\nl$
+
+证明不等式的方法
+
+利用导数定义，中值定理
+
+Taloy定理，单调性
+
+极值最值，凸函数
+
+$f(x) \in D[0,1],f(0)=f(1)=0,minf(x)=-1,求证：maxf''(x) \ge 8$
+
+$设f(x_0)=-1,则f'(x_0)=0$
+
+$则f(0)=f(x_0)+\frac{f''(\zeta_1)}{2}x_0^2, \to 2=f''(\zeta_1)x_0^2$
+
+$f(1)=f(x_0)+\frac{f''(\zeta_1)}{2}(1-x_0)^2, \to 2=f''(\zeta_2)(1-x_0)^2$
+
+$显然f''(\zeta_1)与f''(\zeta_2) \ge 0$
+
+$若f''(\zeta_1) \ge f''(\zeta_2),则x_0^2 \le (1-x_0)^2,则x_0 \le \frac{1}{2}$
+
+$故有f''(\zeta_1) \ge 8$ 
+
+$\nl$
+$设f(x+t)=f(x)+f'(x+\theta t)·t (0<\theta<1)$
+
+$f''(x)连续恒不为0，证明\ttx{0} \theta = \frac{1}{2}$
+
+因为$f(x+t)=f(x)+f'(x)t+\frac{1}{2}f''(x+\theta^*t)t^2$
+
+又因为$f(x+t)=f(x)+f'(x+\theta t)·t$
+
+相减消t，$\ttx{0}\frac{f'(\theta t +x)-f'(x)}{\theta t}\theta=\frac{1}{2}f''(x)$
+
+$\nl$
+
+$设t>0,f(x)有n+2阶连续导数，且f^{(n+2)}(x) \ne 0,\forall x$
+
+$设f(x+t)=f(x)+f'(x)t+\frac{f^{(n+1)}(x)}{n!}t^n+\frac{f^{(n+1)}(x+\theta t)}{(n+1)!}t^{n+1},0<\theta<1$
+
+$\nl$
+
+$例：\xtinf f(x)=A,\xtinf f'''(x)=0,证明：\xtinf f'(x)=\xtinf f''(x)=0$
+
+$f(x+1)=f(x)+f'(x)+\frac{1}{2}f''(x)+\frac{1}{6}f'''(\zeta_1),x<\zeta_1<x+1$
+
+$故f'(x)+\frac{1}{2}f''(x)=0$
+
+$f(x-1)=f(x)-f'(x)+\frac{1}{2}f''(x)-\frac{1}{6}f'''(\zeta_2),x-1<\zeta_2<x$
+
+$故f'(x)-\frac{1}{2}f''(x)=0$
+
+$\nl$
+
+$设f(x)在=0某领域内二阶可导，且\xtx{0}(\frac{sin3x}{x^3}+\frac{f(x)}{x^2})=0$
+
+$求f'(0),f''(0)$
+
+$\frac{sin3x}{x^3}+\frac{f(x)}{x^2}=o(1) \to sin3x+xf(x)=o(x^3),(x \to 0)$
+
+$f(x)=-3+\frac{27}{3!}x^2+o(x^2),(x \to 0)$
+\end{document}
+
