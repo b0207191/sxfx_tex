@@ -9,10 +9,7 @@
 \pagestyle{empty}
 \begin{document}
 
-\newcommand{\ntinf}{\lim\limits_{n \to \infty}}
-\newcommand{\ntx}[1]{\lim\limits_{n \to #1}}
-\newcommand{\xtx}[1]{\lim\limits_{x \to #1}}
-\newcommand{\dxtx}[1]{\lim\limits_{\Delta x \to #1}}
+\input{macro.tex}
 
 第三章 连续函数
 
@@ -23,6 +20,8 @@ $设y=f(x)，x \in U(x_0)。若x在x_0处改变量为\Delta x，则y的改变量
 $\dxtx{0} \Delta y = \dxtx{0}[f(x_0+\Delta x)-f(x_0)]=0，称为f(x)在x_0连续$
 
 p.s.极限证明问题
+
+$\nl$
 
 设$x_1=a,x_2=b,x_{n+1}=\frac{x_n+x_{n-1}}{2}$
 
@@ -89,7 +88,7 @@ $x_1 \ne 1，有\frac{1}{x_{n+1}-1}=\frac{1}{x_n-1}-1=....=\frac{1}{x_1-1}-n$
 
 $推出x_{n+1}-1=\frac{1}{\frac{1}{x_1-1}-n} \to 0 (n \to \infty)$
 
-
+$\nl$
 二，stolze定理及其应用
 
 定理1.
@@ -99,6 +98,7 @@ $设\{b_n\}是严格单调的递减数列，且\ntinf a_n=\ntinf b_n = 0$
 
 $\ntinf \frac{a_n}{b_n} = \ntinf \frac{a_n-a_{n+1}}{b_n-b{n+1}} $
 
+$\nl$
 定理2.
 
 $设\{b_n\}为严格递增的数列，且\ntinf b_n = + \infty$
@@ -107,7 +107,7 @@ $设\{b_n\}为严格递增的数列，且\ntinf b_n = + \infty$
 
 $\ntinf \frac{a_n}{b_n} = \ntinf \frac{a_n-a_{n+1}}{b_n-b{n+1}} $
 
-
+$\nl$
 用法示例
 
 （1）
@@ -155,6 +155,7 @@ $\ntinf \sqrt{\frac{n}{3}}sinx_n=1,即nsin^2x_n=3$
 
 $利用(\xtx{0}\frac{x^2sinx^2}{x^2-sinx^2}=3)$
 
+$\nl$
 续连续函数:P76
 注意3项
 
@@ -172,6 +173,8 @@ f(x)在a连续等价于
 
 (2)$\xtx{a+}f(x)=\xtx{a-}f(x)=f(a)$
 
+$\nl$
+
 定义2，设f(x)在$x_0$的某左（右）领域有定义，且
 $\xtx{x_0-}f(x)=f(x_0)（或\xtx{x_0+}f(x)=f(x_0)）称f(x)在x_0处左（右连续）$
 
@@ -187,7 +190,7 @@ $[a,b]内，f(x) \in C[a,b]$
 
 $R上，f(x) \in CR$
 
-
+$\nl$
 Ex(1)
 $\xtx{0-}f(x)=+\infty$
 
@@ -212,6 +215,8 @@ f(x)在Z连续，在非Z不连续
 
 $f(x)在x_0连续 \ne f(x)在x_0附近连续$
 
+
+$\nl$
 二，间断点的分类，P83
 
 $f(x)=\frac{cos\frac{\pi}{2}x}{x^2(x-1)}$
@@ -220,6 +225,7 @@ $x=1,f(x)=-\frac{\pi}{2}$
 
 单调函数只可能有第一类间断点
 
+$\nl$
 定理1.
 
 $设u=g(x)在x_0处连续，u_0=g(x_0),又有y=f(u)在u_0处连续，则复合函数f(g(x))在x_0处连续$
@@ -529,5 +535,363 @@ $|f(x_k+n)|<\frac{\varepsilon}{2}, n > N$
 $使得|x-(x_k+n)| \le \delta$
 
 $f(x) \le \frac{\varepsilon}{2}+\frac{\varepsilon}{2}= \varepsilon$
-\end{document}
 
+$\nl$
+
+$3.1实数基本定理$
+
+$一，致密性定理 P103$
+
+$二，区间套定理，P101，套一个数出来$
+
+$三，有限覆盖P106$
+
+$\nl$
+
+$例：设f(x)在(a,b)上定义，对\forall x' \in (a,b) \xtx{x'}f(x)存在，证明f(x)在(a,b)上有界$
+
+$证明：对\forall x' \in (a,b), \xtx{x'}f(x)=A',对\epsilon'=1$
+
+$\exists \delta'=\delta(x',\epsilon')>0,|f(x)-A'|<1,\forall x \in U_0(x',\delta')$
+
+$|f(x)| \le |A'|+1,\forall x \in U(x',\delta'),记M'=max(|A'|+1,f(x'))$
+
+$对U(x',\delta')有|f(x)| \le M',利用有限覆盖定理$
+
+$对开区间集{U(x',\delta'),x' \in (a,b)}...有限集G^*,P107之方法$
+
+$1.确界 \to 2.单调有界 \to 3.区间套(柯西-康托) \to 4.有限覆盖 $
+
+$2.单调有界 \to 5.致密性 \to 6.柯西收敛 $
+
+$1 \to 3.记sup{a_n}=\zeta,故a_n \le \zeta,a_n \le b_m,\forall n,m$
+
+$因上确界为最小上界，故\zeta \le b_m,\forall m,n \forall \epsilon>0, \exists N, G_n>\zeta-\epsilon$
+
+$由a_n递增性可知a_n>\zeta-\epsilon,当n>N后，0 \le \zeta-a_n < \epsilon,\forall n>N$
+
+$故|a_n-\zeta|<\epsilon,\forall n >N,即\ntinf a_n = \zeta,同理证出 \ntinf b_n=\zeta'$
+
+$再证\zeta = \zeta'$
+
+$\nl$
+
+$例：3 \to 2.证明：设数列上界b_1,取a_1=x_1,则{x_n} \subset  [a_1,b_1]$
+
+$将[a_1,b_1]平分，至少有一个区间有无穷多项,记为[a_2,b_2]....$
+
+$故由区间套条件满足且[a_n,b_n]含有无穷多项x_n$
+
+$故有lima_n=limb_n=\zeta,因lim(a_n-b_n)=0$
+
+$\forall \epsilon >0,\exists N_0 \in N:|b_{N_0}-a_N|<\epsilon,且[a_{N_0},b_{N_0}]含无穷多项$
+
+$故当n充分大时，以后所有项均在a_{N_0},b_{N_0}内，若不然，则仅有有限在区间内$
+
+$则|x_n-\epsilon| \le |b_{N_0}-a_{N_0}| < \epsilon$
+
+$\nl$
+
+$3.3.上极限，下极限$
+
+$定义，设{x_n}有界，记A \le x_n \le B$
+
+$对每一个给定的n \in N,考虑非空数集\{x_k\}k \ge n$
+
+$记\alpha_n=\inf_{k \ge n}\{x_k\},\beta_n=\sup_{k \ge n}\{x_k\}$
+
+$故有(i)A \le \alpha_n \le \beta_m \le B, \forall n,m$
+
+$(ii)\alpha_n \le \alpha_{n+1} \le \beta_{n+1} \le \beta_n$
+
+$\ntinf \alpha_n为下极限,记为\varliminf\limits_{n \to \infty}x_n. \ntinf \beta_n为上极限,记为\varlimsup\limits_{n \to \infty}x_n$
+
+$1.有界数列必有上下极限且唯一$
+
+$2.若数列无上界，则规定上极限为+\infty,若数列无下界，则规定上极限为-\infty$
+
+基本性质$设x_n,y_n有界$
+
+$(1)\varliminf\limits_{n \to \infty}x_n \le \varlimsup\limits_{n \to \infty}x_n$
+
+$(2)如果x_n \le y_n,则\varliminf\limits_{n \to \infty}x_n \le \varliminf\limits_{n \to \infty}y_n$
+
+$\varlimsup\limits_{n \to \infty}x_n \le \varlimsup\limits_{n \to \infty}y_n$
+
+$(3)\varliminf\limits_{n \to \infty}x_n + \varliminf\limits_{n \to \infty}y_n \le \varliminf\limits_{n \to \infty}(x_n+y_n) \le \varlimsup\limits_{n \to \infty}(x_n+y_n) \le \varlimsup\limits_{n \to \infty}x_n + \varlimsup\limits_{n \to \infty}y_n$
+
+$(4)若x_n,y_n>0,\forall n \in N,则\varliminf\limits_{n \to \infty}x_n \varliminf\limits_{n \to \infty}y_n \le \varliminf\limits_{n \to \infty}(x_n y_n) \le \varlimsup\limits_{n \to \infty}(x_n y_n) \le \varlimsup\limits_{n \to \infty}x_n \varlimsup\limits_{n \to \infty}y_n$
+
+$利用确界不等式证明以上$
+
+$\nl$
+
+$定理1，等价命题，除以上定义外，另有，仅对于上极限，下极限类似$
+
+$(1)\exists \{x_{nk}\} \subset \{x_n\}为收敛之列，且\lim_{k \to \infty}x_{nk}'=\beta$
+
+$对\forall {x_{nk'}}若{x_{nk'}}收敛，则\lim_{k \to \infty}x_{nk'}=\beta' \le \beta$
+
+$(2)\forall \epsilon > 0,\{x_n\}中大于\beta + \epsilon 的项至多有限个$
+
+$大于\beta - \epsilon 的项必有无穷多个。即：\forall \epsilon >0,(\beta - \epsilon,\beta+\epsilon)$
+
+$包含\infty 个x_n,但开区间右边(左边)至多有有限个x_n$
+
+$定理2. \ntinf a_n=a \Leftrightarrow \varlimsup\limits_{n \to \infty}a_n=\varliminf\limits_{n \to \infty}a_n=a$
+
+$\nl$
+
+例：Cauchy准则的上下极限处理（充分性）
+
+$\forall \epsilon > 0, \exists N:x_{N+1} - \epsilon < x_n < x_{N+1} + \epsilon ,\forall n>N$
+
+$令n \to \infty,对\{x_n\}取上下极限$
+
+$\exists N:x_{N+1} - \epsilon \le \varliminf\limits_{n \to \infty}x_n \le \varlimsup\limits_{n \to \infty}x_n \le x_{N+1} + \epsilon$
+
+$故 0 < \beta - \alpha \le 2\epsilon$
+
+$故\beta = \alpha$
+
+$\nl$
+
+$例：设x_n>0,证明：\varlimsup\limits_{n \to \infty}n(\frac{1+x_{n+1}}{x_n}-1)  \ge 1$
+
+$反证法：若\varlimsup\limits_{n \to \infty}n(\frac{1+x_{n+1}}{x_n}-1)  < 1$
+
+$\exists N \in \mathbf{N}使得当n>N时有 n(\frac{1+x_{n+1}}{x_n}-1)<1$
+
+$即\frac{x_n}{n} > \frac{1}{n+1}+\frac{x_{n+1}}{n+1},(n \ge N)$
+
+$故\frac{x_n}{n} > \frac{1}{n+1}+\frac{x_{N+1}}{N+1} > \frac{x_{N+2}}{N+2}+\frac{1}{n+1}+\frac{1}{n+2}$
+
+$>\frac{1}{N+1}+\frac{1}{N+2}+\frac{1}{N+3}+...+\frac{1}{N+P}+\frac{x_{N+P}}{N+P}$
+
+$\frac{x_N}{N} > \frac{1}{N+1}+\frac{1}{N+2}+\frac{1}{N+3}+...+\frac{1}{N+P}+\frac{x_{N+P}}{N+P}$
+
+$令P \to \infty 则常数 > +\infty 矛盾$
+
+$\nl$
+
+$例：设\{x_n\}满足0 \le x_{m+n} \le x_m+x_n,\forall m,n \in N$
+
+$证明\{\frac{x_n}{n}\}收敛$
+
+$0 \le x_n \le x_{n-1}+x_1 \le ... \le nx_1,即0 \le \frac{x_n}{n} \le x_1$
+
+$故\{\frac{x_n}{n}\}有界$
+
+$因为有界数列必有上下极限，故设$
+
+$\varlimsup\limits_{n \to \infty}\frac{x_n}{n}=\beta,\varliminf\limits_{n \to \infty}\frac{x_n}{n}=\alpha$
+
+$只需证\beta \le \alpha 即可$
+
+$任意固定m,对\forall n(充分大)有n=q_nm+r_n(0 \le r_n < n),其中q_n,r_n 均为\mathbf{Z}$
+
+$故x_n=x_{q_nm+r_n} \le q_n x_m + x_{r_n}$
+
+$\frac{x_n}{n} \le \frac{q_n x_m}{n} + \frac{x_{r_n}}{n}=\frac{q_n x_m + x_{r_n}}{q_nm+r_n}$
+
+$\le \frac{x_{r_n}}{q_n x_m}+\frac{x_{r_n}}{q_n m} = \frac{x_m}{m}+\frac{x_{r_n}}{q_n m}$
+
+$故\frac{x_n}{n} \le \frac{x_m}{m}+\frac{x_{r_n}}{q_n m} \le \frac{x_m}{m}+\frac{x_1{r_n}}{q_n m}$
+
+$\le \frac{x_m}{m}+\frac{x_1}{q_n}$
+
+$令n \to \infty 则q_n也 \to \infty,上式两边同取上极限，有$
+
+$\beta = \varlimsup\limits_{n \to \infty}\frac{x_n}{n} \le \varlimsup\limits_{n \to \infty}(\frac{x_m}{m}+\frac{x_1}{q_n}) \le \varlimsup\limits_{n \to \infty}\frac{x_m}{m}+\varlimsup\limits_{n \to \infty}\frac{x_1}{q_n}=\frac{x_m}{m}+0$ 
+
+$再m \to \infty,取下极限 \beta \le \varliminf\limits_{n \to \infty}\frac{x_m}{m} = \alpha$
+
+$\nl$
+
+$实数基本定理$
+
+$一.确界原理基本应用$
+
+$例：设f(x)在[a,b]上单调递增，f(a) \ge a,f(b) \le b,证明：f(x)在[a,b]上有不动点（不连续）$
+
+$记E=\{x|f(x) \ge x,x \in [a,b]\},故E非空且有上界$
+
+$记x_0= supE,\forall x \in 有x \le x_0$
+
+$故f(x) \le f(x_0),故x \le f(x) \le f(x_0)$
+
+$故f(x_0)为E上界，x_0 \le f(x_0)(上确界不大于任一上界)$
+
+$因f(x)递增，a \le x_0 \le f(x_0) \le f(b) \le b$
+
+$故f(x_0) \le f(f(x_0))$
+
+$故f(x_0) \in E,f(x_0) \le x_0,即f(x_0)=x_0$
+
+$(1) \to (4)$
+
+$记E=\{x|[a,x]为G有限覆盖，a < x \le b\}$
+
+$设a \in (\alpha,\beta) \in G,故\exists x > a:(a,x) \subset (\alpha, \beta)$
+
+$记\beta = supE \le b$
+
+$1`可证\beta \in E,2`\beta =b$
+
+$\nl$
+
+$二、致密性定理$
+
+$(5) \to (2)$
+$证明：\exists \{x_{n_k}\} \subset \{x_n\}, \ktx{\infty} x_{n_k}=a$
+
+$\forall \epsilon >0,\exists K,a-\epsilon < x_{n_k} < a+\epsilon, \forall k \ge K$
+
+$\forall n > n_k \ge K ,x_n \ge x_{n_k} > a-\epsilon$
+
+$由\ktx{+\infty}n_k=+\infty,故\exists x_{n_{k'}}>n$
+
+$a-\epsilon < x_{n_k} \le x_n \le x_{n_{k'}} < a+\epsilon$
+
+$\nl$
+
+$f(x)在[a,b]上只有第一类间断点，证明其有界$
+
+$设无界，\forall M_n, \exists |f(x_n)|>M_n,取M_n=n$
+
+$因\{x_n\}有界，故\{x_n\}有收敛子列，\ktx{\infty}x_{n_k}=x_0 \in [a,b]$
+
+$\ktx{\infty}f(x_{n_k})=\infty,故\xtx{x_0}f(x)不存在$
+
+$\nl$
+
+$例：设f(x) \in C[a,b]且有唯一最值点，x_0 \in [a,b],若有\{x_n\} \subset [a,b]$
+
+$使得\ntinf f(x_n)=f(x_0),证明\ntinf x_n = x_0$
+
+$反证法，若\ntinf x_n \ne x_0,则\exists \epsilon_0 >0,以及\{x_{n_k}\} \subset (a,b)$
+
+$|x_{n_k}-x_0| \ge \epsilon_0,\forall n \in N,现\{x_{n_k}\}有界，故存在收敛子列$
+
+$不妨记其为自身，记\ntinf x_{n_k}=x_1 \ne x_0$
+
+$f(x_1)=\ntinf f(x_{n_k})=\ntinf f(x_n)=x_0$
+
+$\nl$
+
+$例：一致连续 \Leftrightarrow \{x_n\}Cauchy,\{f(x_n)\}也Cauchy$
+
+$\nl$
+
+$三、有限覆盖定理之应用$
+
+$(4) \to (5)$
+
+$设E为直线上点集，\forall \epsilon >0,U_0(x_0,\epsilon)中含有G中无限个点，称为聚点$
+
+$(4) \to (3)$
+
+$证明：对\forall  x' \in [a,b],至少存在[a_k,b_k], x' \notin [a_k,b_k]$
+
+$即对x',\exists U(x')与[a_k,b_k]交集为空$
+
+$G=\{U(x',\delta_{x'})\}设G中有限个U(x)覆盖住[a,b]$
+
+$故U(x_i,\delta_i) \cap [a_{k_i},b_{k_i}]=\emptyset,i=1～n,k_i=2～n$
+
+$令max(k_1,k_2,...k_n)=k_0$
+
+$则\bigcap_{i=1}^{n}[a_{k_i},b_{k_i}]=[a_{k_0},b_{k_0}]$
+
+$故(x_i,\delta_i) \cap [a_{k_0},b_{k_0}] = \emptyset,i=1～n$
+
+$故[a_{k_0},b_{k_0}] \subseteq [a,b]$
+
+$\nl$
+
+$四、区间套定理$
+
+$(3) \to (6)$
+
+$证明：先证\{x_n\}有界,记为a \le x_n \le b,\forall n \in N$
+
+$用cd将[a,b]三等分，则左右两侧区间至少有一个含\{x_n\}中有限项，否则$
+
+$\exists N,\exists m,n > N,|x_n-x_m|>|d-c|>\epsilon,与Cauchy列定义矛盾$
+
+$设[a,c]中含有有限项，则取[c,b]为[a_1,b_1],以此类推，故[a_k,b_k]具有性质(1)...(2)区间长度为\frac{2}{3}$
+
+$(3)\exists N_k \in N,x_n \in [a_k,b_k],\forall n>N_k$
+
+$故\forall \epsilon >0,\exists K,[a_k,b_k] \subset [\zeta,\epsilon ^K],令(3)中N=N_k则$
+
+$n>N时，有x_n \in [a_k,b_k]_c \cup U(\zeta,\epsilon) \Rightarrow |x_k-\zeta|<\epsilon,\forall n>N$
+
+$\nl$
+
+$实数基本定理应用$
+
+$例：[a,b]上实数不可排列$
+
+$反证：若可列,记为\{x_n\},[a,b]=\bigcup_{i=1}^{\infty}\{x_i\}$
+
+$将[a,b]三等分，至少有一个区间不含x_1,记为[\alpha_1,\beta_1]$
+
+$将其三等分，不含x_2区间记为[\alpha_2,\beta_2]....则[a_k,b_k]不含有x_1,x_2,...x_k$
+
+$\ktx{\infty}[a_k,b_k]=\zeta,\zeta \in [a,b],\zeta \ne x_n,\forall n$
+
+$\nl$
+
+$例：f(x) \in C[a,b],f(x)在[a,b]上处处极值，则为常数$
+
+$介值定理。若f(x)不恒为常数，则\exists a_1,b_1 \in [a,b],a_1 < b_1$
+
+$不妨设f(a_1)<f(b_1),则\exists [a_2,b_2]:f(a_1)<f(a_2)<f(b_2)<f(b_1)$
+
+$b_2-a_2< \frac{1}{2} (b_1-a_1)$
+
+$f(a_n)严格递增，f(b_n)严格递减$
+
+$\ntinf{a_n} = \ntinf{b_n} =\zeta , 故\zeta 不为局部极值点$
+
+$\nl$
+
+$思考:设f(x)定义于[a,b],\forall x' \in [a,b],\xtx{x'}f(x)存在.证明\forall \epsilon >0$
+
+$[a,b]上能使该点函数值与该点极限值之差的绝对值大于 \epsilon 的点有限$
+
+$|\xtx{x'}f(x)-f(x')|>\epsilon$
+
+$\nl$
+
+$半连续函数$
+
+$设f(x)在[a,b]上定义，\forall \epsilon >0,\exists \delta >0$
+
+$f(x)<f(x_0)+q,\forall x(|x-x_0|<\delta)$
+
+$称之为在x_0上半连续(f(x)>f(x_0)-\epsilon,下半连续$
+
+$
+例：
+f(x) = 
+\begin{cases} 1, & 0 \le x \le 1 \\ 0, & -1 \le x < 0 
+\end{cases}
+$
+
+$例：f(x)在[a,b]上位上半连续，则有$
+
+$(1)有上界，(2)有最大值(3)未必有下界。证明，用\epsilon N语言$
+
+$(3)反例
+f(x) = 
+\begin{cases} -\frac{1}{1-x}, & x \ne 1 \\ 0, & x = 1 
+\end{cases}
+$
+
+$\nl$
+
+$问题：（1）设f(x)在[a,b]上半连续，则f(x)必在[a,b]内某一子区间上有界（区间套）$
+
+\end{document}
