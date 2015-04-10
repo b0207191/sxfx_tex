@@ -1,0 +1,150 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{tikz}
+\setmainfont{Adobe Kaiti Std}
+\thispagestyle{empty}
+\pagestyle{empty}
+\begin{document}
+
+\input{macro.tex}
+
+
+第6章 不定积分
+
+$一、原函数$
+
+$证明
+f(x) = \begin{cases} 0, & x \ne 1 \\ 1, & x=0 \end{cases}
+在R无原函数，但可积
+$
+
+$反证法:设F'(x)=f(x)，则F(x) \in C(R)$
+
+$故
+F(x) = \begin{cases} C_1, & x>0  \\ C_2, & x<0 \end{cases}
+且C_1=C_2,故F(0)=C_1，矛盾
+$
+
+导函数无首类间断点（导数介值定理）
+
+定理1
+
+$f(x) \in C(x)则必有原函数F(x) 充分条件$
+
+$\int_{}^{} (2x+1)^{100}\, dx = \frac{1}{2} \frac{(2x+1)^{101}}{101}+c$
+
+$法则1：\sum 法$
+
+$法则2：凑法,例：$
+
+$\int \frac{1}{a^2+x^2}\,dx=\frac{1}{a} arctg\frac{x}{a}+c$
+
+$\int \frac{dx}{x^2+2x+3}\,dx=\frac{1}{\sqrt 2}arctg \frac{x+1}{\sqrt 2}+c$
+
+$\int \frac{x}{x^2+2x+3}\,dx =\frac{1}{2} \int \frac{2x+2}{x^2+2x+3}\,dx-\int \frac{1}{x^2+2x+3}\,dx$
+
+$=\frac{1}{2}ln(x^2+2x+3)-...$
+
+$法则3，‘换元’法$
+
+$例：\int \frac{e^x(1+e^x)}{\sqrt{1-e^{2x}}}令e^x=sint$
+
+$倒变换x=\frac{1}{t}$
+
+若分母次数高于分子时，利用综合除法
+
+$遇形如1+x^2的情况可以令x=tgt等，若在分母中可令其=t^2$
+
+$法则4：‘分部’法，反对幂指三，越在后越先积$
+
+$反例：\int \frac{xe^x}{(1+x)^2}\,dx = \int xe^x d(\frac{-1}{1+x})=\frac{-x}{1+x}e^x+\int \frac{1}{1+x}d(xe^x)$
+
+$递推公式Z_n=\int sec^nxdx=\int sec^{n-2}d(tgx)$
+
+$=sec^{n-2}tgx-(n-2)\int sec^{n-2}xtg^2xdx$
+
+$=sec^{n-2}tgx-(n-2)(Z_n-Z_{n-2})$
+
+$\nl$
+
+$I_n=\int \frac{dx}{x^n \sqrt{1+x^2}}$
+
+$=\int \frac{(1+x^2)-x^2}{x^n \sqrt{1+x^2}}dx$
+
+$=\int \frac{\sqrt{1+x^2}}{x^n}dx-\int \frac{1}{x^{n-2} \sqrt{1+x^2}}dx$
+
+$=\frac{1}{1-n} \sqrt{x^2+1}d(x^{1-n})-I_{n-2}$
+
+$=\frac{1}{1-n}x^{1-n}\sqrt{x^2+1}-\frac{1}{1-n}\int x^{1-n}\frac{x}{\sqrt{1+x^2}}dx-I_{n-2}$
+
+$=\frac{1}{1-n}x^{1-n}\sqrt{x^2+1}-\frac{1}{1-n}I_{n-2}-I_2$
+
+$=\frac{1}{1-n}x^{1-n}\sqrt{x^2+1}-\frac{2-n}{1-n}I_{n-2}$
+
+$\nl$
+
+$I_n=\int \frac{dx}{(x^2+a^2)^m}=\frac{x}{(x^2+a^2)^m}+2mH_m-2ma^2H_{m+1}$
+
+$I_n=\int \frac{dx}{(x^2+px+q)^m}=\int \frac{d(x+\frac{p}{2})}{((x+\frac{p}{2})^2+..)^m}$
+
+$I_m=\int \frac {Ax+B}{(x^2+px+q)^m}dx=\frac{A}{2}\int \frac{2x+pdx}{...}+\int \frac{B-\frac{Ap}{2}}{...}$
+
+$\int \frac{a_1sinx+b_1cosx}{asinx+bcosx}dx=Ax-Bln|asinx+bcosx|+C$
+
+$A=\frac{aa_1+bb_1}{a^2+b^2},B=\frac{a_1b-b_1a}{a^2+b^2}$
+
+积分计算中常用到sgnx,但最好用讨论消去，灵活观察，选择合适
+
+$Eular变换$
+
+$(1)a>0,令\sqrt {ax^2+bx+c}=\pm \sqrt a x+t(或\sqrt a x \pm t)$
+
+$bx+x=\pm 2 \sqrt a tx+t^2 \to x=\frac{t^2-c}{b \pm 2\sqrt a t}$
+
+$\nl$
+$设G=\{(\alpha_x,\beta_x)|x \in (a,b)\}为(a,b)的开覆盖$
+
+$证明：\exists l>0,使得对\forall x \in [a,b] \cup (x,l)均被G中某区间覆盖$
+
+$(2)若c>0,可令\sqrt{ax^2+bx+c}=xt\pm \sqrt c$
+
+$有ax+b=xt^2 \pm 2\sqrt c t \to x=\frac{b \pm 2 \sqrt c t}{t^2-a}$
+
+$(3)若\sqrt{ax^2+bx+c}有实根，即原式=\sqrt{a(x-\alpha)(x-\beta)}$
+
+$令\sqrt{ax^2+bx+c}=t(x-\alpha)或t(x-\beta)$
+
+$a(x-\beta)=t^2(x-\alpha)即x=\frac{\alpha t^2-\alpha \beta}{t^2-\alpha}$
+
+$\nl$
+
+$\int \frac{dx}{x\sqrt {4-x^2}}一题多解$
+
+$(1)x=2sint$
+
+$(2)x^2=t$
+
+$(3)\sqrt{4-x^2}=t$
+
+$(4)x=\frac{1}{t}$
+
+$(5)\sqrt{\frac{2+x}{2-x}}=t$
+
+$(6)x^2=\frac{1}{t}$
+
+$(7)令\sqrt{4-x^2}=tx \to ...=\frac{1}{2}\int \frac{dt}{\sqrt{1+t^2}}$
+
+$(8)\sqrt{4-x^2}=tx+2 \to ....=\frac{1}{2} \int \frac{1}{t}dt$
+
+$(9)令\sqrt{4-x^2}=t(2-x) \to ...=\frac{1}{2}\int \frac{dt}{t^2}$
+
+
+
+
+
+
+\end{document}
+

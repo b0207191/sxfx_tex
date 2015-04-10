@@ -1,0 +1,69 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{tikz}
+\setmainfont{Adobe Kaiti Std}
+\thispagestyle{empty}
+\pagestyle{empty}
+\begin{document}
+
+\input{macro.tex}
+
+
+第9章 广义积分
+
+$\jf{0}{+\infty}\frac{xe^{-x}}{(1+e^{-x})^2}dx=-\frac{x}{1+e^x}|_0^{+\infty}+\jf{0}{+\infty}\frac{dx}{1+e^x}$
+
+$令1+e^x=t,则dx=\frac{1}{t-1}dt,t\in[2,+\infty)$
+
+$故\jf{1}{+\infty}\frac{1}{1+e^x}dx=ln\frac{t-1}{t}|_2^{+\infty}=ln2$
+
+$定理1(Cauchy准则)无穷积分\jf{a}{+\infty}f(x)dx收敛充要条件是\forall \epsilon >0$
+
+$\exists A_0>a:|\jf{A_1}{A_2}f(x)dx|< \epsilon,\forall A_1,A_2 \ge A_0$
+
+$定理2(Heine归结原理)无穷积分\jf{a}{+\infty}f(x)dx收敛充要条件为$
+
+$对\forall \{A_n\} \subset (a,+\infty)且\ntinf A_n=+\infty 极限\ntinf \jf{a}{A_n}f(x)dx存在且相等$
+
+$无穷积分判敛\jf{0}{+\infty}sin^{\frac{1}{3}}xdx分析：用cauchy准则对\forall A>0$
+
+$\exists A_1=2n\pi,A_2=(2n+1)\pi >A, 而|\jf{A_1}{A_2}sin^{\frac{1}{3}}xdx|=\jf{2n\pi}{2(n+1)\pi}sin^{\frac{1}{3}}xdx$
+
+$=(令x=(2n\pi+t))\jf{0}{\pi}sin^{\frac{1}{3}}tdt \triangleq C>0,从而发散$
+
+$\nl$
+
+$例：讨论\jf{0}{+\infty}\frac{sin^2x}{x}dx敛散性$
+
+$原式=\sum\limits_{n=1}^{\infty}\jf{n\pi}{(n+1)\pi}\frac{sin^2x}{x}dx,令x=n\pi+t$
+
+$=\sum\limits_{n=0}^{\infty}\jf{0}{\pi}\frac{sin^2t}{t+n\pi}dt \ge \sum\limits_{n=0}^{\infty}\jf{0}{\pi}\frac{sin^2t}{\pi+n\pi}dt = (\frac{1}{\pi}\jf{0}{\pi}sin^2tdt)\sum\limits_{n=0}^{\infty}\frac{1}{n+1}=\frac{1}{2}\sum\limits_{n=1}^{\infty}\frac{1}{n}=+\infty,故发散$
+
+$因为\frac{|sinx|}{x} \ge \frac{sin^2x}{x} 故\frac{|sinx|}{x}发散$
+
+$\nl$
+
+$例：\jf{1}{+\infty}e^{sinx}\frac{sin2x}{x^\lambda}dx(\lambda > 0)$
+
+$可计算|\jf{1}{A}e^{sinxsin2xdx}| \le 2(\forall A>1)$
+
+$而f(x)=\frac{1}{x^\lambda}单调递减(\lambda > 0) 且\to 0$
+
+$当\lambda > 1时,有|e^{sinx}\frac{sin2x}{x^\lambda}| \le \frac{e}{x^\lambda},\forall x>0$
+
+$而\jf{1}{+\infty}\frac{e}{x^\lambda}dx收敛（P-判别法）由此比较可知原式绝对收敛$
+
+$当0 < \lambda \le 1时，又有e^{sinx}\frac{|sin2x|}{x^\lambda} \ge \frac{e^{-1|sin2x|}}{x^\lambda} \ge  \frac{e^{-1}sin^22x}{e^\lambda}$
+
+$=e^{-1}(\frac{1}{2x^\lambda}-\frac{cos4x}{2x^2}) \triangleq I_1(x)-I_2(x)$
+
+$\nl$
+
+$若f(x)>0,g(x)>0,且\xtx{a+}\frac{f(x)}{g(x)}=l,l \ne 0,同收敛， l=0,g
+收敛 \to f收敛，l=\infty,g发散 \to f发散$
+
+\end{document}
+
