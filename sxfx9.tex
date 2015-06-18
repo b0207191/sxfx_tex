@@ -65,5 +65,183 @@ $\nl$
 $若f(x)>0,g(x)>0,且\xtx{a+}\frac{f(x)}{g(x)}=l,l \ne 0,同收敛， l=0,g
 收敛 \to f收敛，l=\infty,g发散 \to f发散$
 
+$P判别法(瑕积分)，若f(x) \ge 0,且\xtx{a+}(x-a)^Pf(x)=l,(1)当0 \le l < +\infty 且$
+
+$P<1时，\jf{a}{b}f(x)dx收敛，(2)0 < l \le +\infty P \ge 1, \jf{a}{b}f(x)dx发散$
+
+$\nl$
+
+$例：\jf{0}{1}\frac{lnx}{\sqrt{x}}dx,x=0为瑕点，令P=\frac{3}{4}<1,有\xtx{0+}\frac{lnx}{\sqrt{x}}=0$
+
+$\jf{0}{1}\frac{dx}{\sqrt{x(1-x)}},x=1,x=0为瑕点，故原式=\jf{0}{\frac{1}{2}}\frac{dx}{\sqrt{x(1-x)}}+\jf{\frac{1}{2}}{1}\frac{dx}{\sqrt{x(1-x)}}$
+
+$分别取P=\frac{1}{2},两函数均收敛$
+
+$\jf{0}{1}\frac{x^n}{\sqrt{1-x^4}}dx(n \in Z),当n \ge 0时，x=1为瑕点$
+
+$令P=-n,有\xtx{0+}\frac{1}{\sqrt{1-x^4}}=1,故当-n < 1即n > -1时$
+
+$\jf{0}{\frac{1}{2}}\frac{x^n}{\sqrt{1-x^4}}dx收敛. \forall n \in Z,取P=\frac{1}{2} < 1有$
+
+$\xtx{1}\frac{\sqrt{1-x}x^n}{\sqrt{1-x^4}}=\frac{1}{2},故\forall n \in Z,均有\jf{\frac{1}{2}}{1}\frac{x^n}{\sqrt{1-x^4}}dx收敛$
+
+$\nl$
+
+$例：\jf{0}{+\infty}\frac{x^{\alpha}}{1+x}dx(\alpha \in R),\alpha \ge 0时，令P=1有$
+
+$\xtx{+\infty}x\frac{x^{\alpha}}{1+x}=
+\begin{cases} 1, \alpha = 0 \\ +\infty, \alpha > 0 \end{cases}
+$
+
+$当\alpha <0时，x=0为瑕点，记为\jf{0}{1}\frac{x^{\alpha}}{1+x}dx+\jf{1}{+\infty}\frac{x^{\alpha}}{1+x}dx，I_1+I_2$
+
+$对I_1(P-判别法) \alpha > -1时收敛，\alpha \le -1 时发散$
+
+$I_2(P法) \alpha > -1时慢收敛，\alpha \le -1 时发散, -1 < \alpha < 0时(当且仅当)收敛$
+
+$\nl$
+
+$Eulor积分,I=\jf{0}{\frac{\pi}{2}}lnsinxdx$
+
+$I=xlnsinx|_0^{\frac{\pi}{2}}-\jf{0}{\frac{\pi}{2}}\frac{x}{tgx}dx,故收敛$
+
+$I=2\jf{0}{\frac{\pi}{4}}lnsin2tdt=\frac{\pi}{2}ln2+2\jf{0}{\frac{\pi}{4}}lnsintdt+2\jf{0}{\frac{\pi}{4}}lncostdt$
+
+$令t=\frac{\pi}{2}-u,又有\jf{0}{\frac{\pi}{4}}lncostdt=\jf{\frac{\pi}{4}}{\frac{\pi}{2}}lnsintdt$
+
+$故有I=\frac{\pi}{2}ln2+2I$
+
+$\nl$
+
+$例：\jf{0}{\pi}xlnsinxdx，令x=\pi-t$
+
+$\jf{0}{1}\frac{lnx}{\sqrt{1-x^2}}dx，令x=sinx$
+
+$\jf{0}{1}\frac{arcsinx}{x}dx，令x=\pi-t$
+
+$\nl$
+
+$Frullani积分，I=\jf{0}{+\infty}\frac{f(ax)-f(bx)}{x}dx,(a,b>0)$
+
+$1,f(x)\in C(0,+\infty),\xtinf f(x)存在，则I收敛于[f(0)-\xtinf f(x)]ln\frac{b}{a}$
+
+$2,连续\xtinf f(x)不存在，但\jf{A}{+\infty}\frac{f(x)}{x}收敛(\exists A>0)，则I收敛于f(0)ln\frac{b}{a}$
+
+$只证1，令ax=t,bx=t有\jf{a\alpha}{a\beta}\frac{f(t)}{t}dt-\jf{b\alpha}{b\beta}\frac{f(t)}{t}dt$
+
+$=\jf{a\alpha}{b\alpha}\frac{f(t)}{t}dt+\jf{b\alpha}{a\beta}\frac{f(t)}{t}dt-\jf{b\alpha}{b\beta}\frac{f(t)}{t}dt$
+
+$=\jf{a\alpha}{b\alpha}\frac{f(t)}{t}dt+(-\jf{a\beta}{b\beta}\frac{f(t)}{t}dt)$
+
+$=f(\zeta)\jf{a\alpha}{b\alpha}\frac{1}{t}dt-f(\zeta')\jf{a\beta}{b\beta}\frac{f(t)}{t}dt$
+
+$=f(0)ln\frac{b}{a}-ln\frac{b}{a}\xtinf f(x)$
+
+$例：\jf{0}{+\infty}\frac{e^{-ax}-e^{-bx}}{x}dx (情况1)，\jf{0}{+\infty}\frac{arctg{(ax)}-arctg{(bx)}}{x}dx$
+
+$\jf{0}{+\infty}\frac{cos{ax}-cos{bx}}{x}dx(情况2)$
+
+$积分估计$
+
+$(1)1-\frac{1}{n+1}< \jf{0}{+\infty}e^{-x^n}dx<1+\frac{1}{ne},n \in N$
+
+$\forall x \in R,有e^x \ge 1+x,故当 x \in (0,1)有1-x \le e^{-x} \le 1推出$
+
+$1-x^n \le e^{-x^n} \le 1对上式积分有 1-\frac{1}{n+1} \le \jf{0}{1}e^{-x^n}dx \le 1,而$
+
+$0 < \jf{1}{+\infty}e^{-x^n}dx < \frac{1}{n}\jf{1}{+\infty}nx^{n-1}e^{-x^n}dx=\frac{1}{n}\jf{1}{+\infty}e^{-x^n}dx^n=\frac{1}{ne}$
+
+$两式相加，既有$
+
+$\nl$
+
+$(2)\jf{x}{+\infty}\frac{cost}{\sqrt t}dt+\frac{sinx}{\sqrt x}=o(\frac{1}{x \sqrt x}),x \to +\infty$
+
+$两次分步积分，得\jf{x}{+\infty}\frac{cost}{\sqrt t}dt=-\frac{sinx}{\sqrt x}+\frac{cosx}{2x\sqrt x}-\frac{3}{4}\jf{x}{+\infty}\frac{cost}{t^2\sqrt t}dt$
+
+$可计算\forall A > x,\exists M >0$
+
+$|\frac{\jf{x}{A}\frac{cost}{t^2\sqrt t}dt}{\frac{1}{x\sqrt x}}| = |\frac{cos\zeta\jf{x}{A}\frac{1}{t^2\sqrt t}dt}{\frac{1}{x\sqrt x}}| = ....$
+
+$\nl$
+
+$(3)\jf{1.9}{2}\frac{e^{-x}}{\sqrt[4]{2+x-x^2}}dx < 0.03$
+
+$用Schwaz不等式(\jf{1.9}{2}\frac{e^{-x}}{\sqrt[4]{2+x-x^2}}dx)^2 \le (\jf{1.9}{2}\frac{e^{-x}}{\sqrt{1+x}}dx)(\jf{1.9}{2}\frac{dx}{\sqrt{2-x}})$
+
+$\le (\frac{1}{\sqrt{2.9}}\jf{1.9}{2}e^{-x}dx)(2-\sqrt{2-x})|_2^{1.9}= 0.000753$
+
+$开根号，即<0.027441 $
+
+$另：原式=\jf{1.9}{2}\frac{e^{-x}}{\sqrt[4]{1+x}}\frac{1}{\sqrt[4]{2-x}}dx < \frac{e^{-1.9}}{\sqrt[4]{2.9}}\jf{1.9}{2}\frac{1}{\sqrt[4]{2-x}}dx < 0.03$
+
+$习题课$
+
+$\jf{1}{+\infty}\frac{sinx}{\sqrt x}dx收敛,\jf{1}{+\infty}\frac{sin^2x}{x}dx发散$
+
+$\jf{a}{+\infty}f(x)dx绝对收敛，g(x)有界，\jf{a}{+\infty}f(x)g(x)dx收敛$
+
+$\jf{a}{+\infty}f(x)dx收敛，\xtinf g(x)=1，是否\jf{a}{+\infty}f(x)g(x)dx收敛?$
+
+$反例：f=\frac{sinx}{\sqrt x},g=(1+f)$
+
+$若\exists p>1,使得f(x)=o(\frac{1}{x^p})(x \to +\infty),则\jf{a}{+\infty}|f(x)|dx收敛$
+
+$对瑕积分，P<1时收敛，P>1时发散$
+
+$若f(x)～\frac{c}{x^p}(c \ne 0,x \to +\infty)则当p>1时，\jf{a}{+\infty}f(x)dx收敛，当p \le 1时，\jf{a}{+\infty}f(x)dx发散$
+
+$例:\frac{1}{\sqrt x (1+x^2)} ～ \frac{1}{x^{\frac{5}{2}}},x \to +\infty,故\jf{0}{+\infty}f(x)dx收敛$
+
+$\jf{0}{+\infty}[ln(1+\frac{1}{x})-\frac{1}{1+x}]dx$
+
+$x \to +\infty, ln(1+\frac{1}{x})=\frac{1}{x}-\frac{1}{2x^2}+o(\frac{1}{x^2})$
+
+$\frac{1}{1+x}=\frac{1}{x}\frac{1}{1+\frac{1}{x}}= \frac{1}{x}[1-\frac{1}{x}+o(\frac{1}{x})]$
+
+$ln(1+\frac{1}{x})-\frac{1}{1+x}=\frac{1}{2x^2}+o(\frac{1}{x^2})～\frac{1}{2x^2},P=2,故发散$
+
+$令x=\frac{1}{t},\jf{0}{1}ln(1+\frac{1}{x})dx=\jf{1}{+\infty}\frac{ln(1+t)}{t^2}dt$
+
+$\nl$
+
+$设f(x)在任意有限区间上可积，\xtinf f(x)=C证明：$
+
+$\xtx{0+}\lambda \jf{0}{+\infty}e^{-\lambda x}f(x)dx=C$
+
+$分析：C=\lambda \jf{0}{+\infty}Ce^{-\lambda x}dx,故只须证明|\lambda \jf{0}{+\infty}e^{-\lambda x}(f(x)-C)dx|$
+
+$\forall \epsilon > 0, \exists A>0,|f(x)-C|< \frac{\epsilon}{2},\forall x \ge A,故\jf{0}{A}|f(x)-C|dx \triangleq M$
+
+$|\lambda \jf{0}{+\infty}e^{-\lambda x}f(x)dx-C| \le \lambda |\jf{0}{A}e^{-\lambda}|f(x)-C|dx|+\lambda \jf{A}{+\infty}e^{-\lambda x}|f(x)-C|dx$
+
+$\le \lambda M+\frac{\epsilon}{2} \jf{A}{+\infty}e^{-\lambda x}d(\lambda x) < \lambda M+ \frac{\epsilon ll}{2}$
+
+$取\delta (0 < \delta < \frac{\epsilon}{2M}),则当0<\lambda<\delta 时，有\lambda M+\frac{\epsilon}{2} < \epsilon，即有$
+
+$例:设g(x)在[0,+\infty)上非负，\ntinf \jf{0}{n}g(x)dx=\alpha,f(x) \in c[0,1]$
+
+$证明: \ttx{o^+}\jf{0}{1}t^{-1}g(t^{-1}x)f(x)dx=\alpha f(0)$
+
+$依题有|f(x)| \le M,\forall x \in [0,1],由f(x)在x=0的连续，\forall \epsilon >0, \exists \delta >0:$
+
+$|f(x)-f(0)|<\epsilon, \forall x \in \cup (0,\delta)$
+
+$对上述\epsilon >0,\delta >0, \exists t_0 > 0,当\forall t(0<t<t_0)由Cauchy准则有$
+
+$0=\jf{\frac{\delta}{t}}{\frac{1}{t}}g(u)du < \epsilon$
+
+$注意到\ttx{0^+}\jf{0}{1}t^{-1}g(t^{-1}x)dx=$
+
+$\ttx{0^+}\jf{0}{\frac{1}{t}}g(u)du=\alpha,此时有|\jf{0}{1}t^{-1}g(tx)|f(x)-f(0)|dx| \le$
+
+$\jf{0}{\delta}t^{-1}g(t^{-1}x)|f(x)-f(0)|dx+\jf{\delta}{1}t^{-1}g(t^{-1}x)|f(x)-f(0)|dx$
+
+$< \epsilon \jf{0}{\frac{\epsilon}{t}}g(u)du+2M|\jf{\frac{\epsilon}{t}}{\frac{1}{t}}g(u)du| < \epsilon(\alpha+2M)$
+
+$故原式=f(0)\ttx{0}\jf{0}{1}t^{-1}g(t^{-1}x)dx=f(0)\ttx{0}\jf{0}{\frac{1}{t}}g(u)du=\alpha f(0)$
+
+$证明方向：\epsilon \to \delta \to t_0(0 < t < t_0)$
+
 \end{document}
 
