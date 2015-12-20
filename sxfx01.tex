@@ -1,0 +1,256 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{pstricks-add}
+\setmainfont{Microsoft YaHei}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\input{macro.tex}
+
+
+\begin{center} 第一章 函数概论  \end{center}
+$\nl$
+$\S$1. 函数概念
+
+$\nl$
+一.变量函数
+
+
+所有不超过正实数x的质数个数 N=$\Pi$(x) ~~  $\Pi(3000)=430$
+
+$\nl$
+定义1 设X $\subset$ R  ~~ Y $\subset$ R 为两数集，若存在X到Y的映射f
+
+f:X $\to$Y ~~ x$\to$y=f(x)
+
+称f为定义在X上的（一元单值）函数
+
+$注1^\circ  f定义域为X的值域$
+
+\begin{center}$ f(X)=\{y|y=f(x),x\in X\}\subset Y   $ \end{center}
+
+$2^\circ$ 函数相等$\iff$有相同定义域X且f(x)=g(x)  x$\in$X
+
+但映射方法也许不同，比如f=x,  g=$\sqrt{x^2}$ ~(x$\ge$0)
+
+$\nl$
+二.特殊函数
+
+1.符号函数  
+
+$
+ y=sgn x= \begin{cases} 
+-1, & x < 0 \\
+0, & x = 0 \\
+1, &  x > 0 
+\end{cases}
+$
+
+$\nl$
+2. 方括号函数 
+
+y= [x] = n (n$\le$x<n+1)
+
+性质：[x]$\le$x<[x]+1
+
+[x+n]=[x]+n
+
+$\nl$
+3.Dirichlet函数 
+
+$
+D(x)=\begin{cases}
+1, & x\in Q \\
+0, & x\notin Q
+\end{cases}
+D(x) \in R
+$
+
+$\nl$
+4.定义在[0,1] ~ Riemann函数 
+
+$
+R(x)=\begin{cases}
+1/q, & x=p/q (p,q互质，p<q) \\
+1, & x=0,1 \\
+0, & x为[0,1]上无理数
+\end{cases}
+$
+
+$\nl$
+三.复合函数
+
+定义2 设函数y=f(x) x$\in$X,y$\in$Y  
+z=g(y)  y$\in Y'$ 
+
+若Y$\subset Y'则可在X上定义z为x的复合函数$
+
+z=g(f(x))  x$\in$X (注$Y \bigcap Y' \ne  \emptyset $  记为 $\bar{Y}$) 
+
+$\bar{X}= \{ x|f(x)\in\bar{Y} \} \subset X $
+
+$f(f(x))=(f \cdot f)(x)$
+
+例：
+$
+f(x)=\begin{cases}
+1+x, & x < 0 \\
+0, & x \ge 0
+\end{cases}
+$
+
+$
+f(f(x))=\begin{cases}
+2+x, & x < -1 \\
+1, & x \ge -1
+\end{cases}
+$
+
+$
+f^n(x)=\begin{cases}
+n+x, & x < 1-n \\
+0, & x \ge 1-n
+\end{cases}
+$
+
+$\nl$
+四.反函数
+
+定义3，若f:X$\rightarrow$Y=f(X) x|$\rightarrow$y=f(x)
+
+是X到f(x)的一一映射时，则称f的逆映射$f^{-1}$
+
+$f^{-1}:f(x)\rightarrow X ~~  y\rightarrow X=f^{-1}(y)$
+
+为y=f(x)的反函数 ~~ 记为$x=f^{-1}(y)  ~~ y \in f(X)$
+
+$f^{-1}\cdot f=I : X \rightarrow X$  ~~
+$f \cdot f^{-1}=I : Y \rightarrow Y$  
+
+$(f^{-1})^{-1}=f$
+
+反函数存在关键：一一映射
+
+$\nl$
+五.初等函数
+p20-25 反对幂指三（分部积分顺序）
+
+$\\$
+$\nl$
+$\S 1.2具有某些特征的函数$
+$\nl$
+一.有界函数，无界函数（须在区间内讨论）
+
+定义1 函数f(x)~~x$\in$X有界，是指
+$\exists M>0 ~~~ f(x)|\le M ~~ \forall x \in X$
+
+若$\exists m \in R $ ~~ f(x)$\le$m ~~ $\forall x \in X$ 有上界
+
+若$\exists m \in R $ ~~ f(x)$\ge$m ~~ $\forall x \in X$ 有下界
+
+$\nl$
+二.单调函数
+
+定义2 设函数f(x) ~ x$\in$X ~ 若$\forall x_1 ~ x_2 \in X (x_1<x_2)$
+
+$f(x_1) \le f(x_2)  (或f(x_1) \ge f(x_2))$
+称f(x)在X上递增（或递减）
+
+
+定理1. 设y=f(x) ~ x$\in$X 若f(x)在X上严格单调，
+
+则f的反函数$f^{-1}$存在且x=$f^{-1}$(y)也是严格单调的
+
+凡严格单调，具有反函数
+
+奇函数，偶函数
+
+$\nl$
+三.周期函数
+
+
+定义3，设$f(x)~x\in X 若\exists \omega \ne 0 对 \forall x \in X$
+
+$x\pm \omega \in X 且 f(x\pm \omega) = f(x)$
+
+称f(x)为以$\omega$为周期的周期函数 Z(x)
+
+例4 ~ 证明 f(x)=cos$\sqrt x$不是 Z(x)
+
+反证法,若$\exists \omega >0, cos\sqrt{(x+\omega )} = cos\sqrt x$ 和差化积
+
+则$sin(\frac{\sqrt{x+\omega}}{2}+\frac{\sqrt{x}}{2})sin(\frac{\sqrt{x+\omega}}{2}-\frac{\sqrt{x}}{2})=0$ ~~~ $\forall x \in R$
+
+令x=0,有sin$\frac{\sqrt{\omega}}{2}=0,故\omega = 4k^2\pi^2,令x=4\pi^2$
+
+有$sin(\sqrt{k^2+1}+1)\pi=0,即\sqrt{k^2+1}+1＝m,m\in N,即k^2+1＝(m-1)^2$
+
+故k=0
+
+$\nl$
+习题课1
+
+$f(x),x\in(a,b) 若f(x)在\forall (\alpha,\beta]\subset(a,b)有界，不一定f(x)在(a,b)上有界，例f(x)=1/x，f(x)=tgx$
+
+$f(x)=0 周期函数，奇函数，单调函数$
+
+$f,g均为X上单调增函数$
+
+$f+g必为X上增函数？成立$
+
+$f×g必为X上增函数？不一定，f(x)=g(x)=x$
+
+$f\cdot g必为X上增函数? 成立$
+
+$f,g为X上有界 f/g不一定有界,f=1,g=x,X=[-1,1]$
+
+$若f(g)=g(f)是否有f=g，反例：f=x g=x^3$
+
+
+$\\$
+
+构造f(x),$x\in[0,1]$，f(x)在[0,1]上处处有极限，但在[0,1]任意点任意邻域内均无界
+$
+f(x)=\begin{cases}
+q, & 当x=\frac{p}{q}时，q若有限，则p也有限 \\
+0, & 其余
+\end{cases}
+$
+
+$\nl$
+
+不等式
+
+$1 \cdot (1+\frac{1}{n})^n \le [\frac{1+n(1+\frac{1}{n})}{n+1}]^{n+1} (AG不等式)$
+
+$=(1+\frac{1}{n+1})^{n+1}$
+
+
+证明：
+$\frac{1}{2\sqrt{n}} < \frac{(2n-1)!!}{(2n)!!} < \frac{1}{\sqrt{2n+1}} 数学归纳法证$
+
+
+$\nl$
+
+非Z(x)的证明方法
+
+1）f(x)=0的零点非周期
+
+2）反证法
+
+
+例 f(x)=sin($x^2$)
+
+1)$x_{n+1}-x_n$无限减小
+
+$2)令x=0,利用和差化积得\omega^2=k\pi,后令x＝\sqrt2 \omega,有sin(1+\sqrt 2)^2k\pi=0$推出矛盾
+
+\end{document}
+

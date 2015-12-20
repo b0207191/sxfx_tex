@@ -5,7 +5,7 @@
 \usepackage{amssymb}
 \usepackage{bm}
 \usepackage{tikz}
-\setmainfont{Adobe Kaiti Std}
+\setmainfont{Microsoft YaHei}
 \pagestyle{fancy}
 
 \begin{document}
@@ -13,7 +13,8 @@
 \input{macro.tex}
 
 
-第一讲 极限与连续
+\begin{center} 第一讲 极限与连续  \end{center}
+
 
 $例：设\{x_n\}由方程x_n^3+2x_n+\frac{1}{n}=0,n \in N的实根确定，证明\{nx_n\}收敛，并求出极限值$
 
@@ -55,7 +56,7 @@ $分析：若\overline {lim} x_n = \underline {lim}x_n,无须证明。设M=\over
 
 $记\frac{M-m}{l} \triangleq \delta >0,用分点-\infty,m+\delta,m+2\delta,...M-2\delta,M-\delta,+\infty$
 
-$将R分为l个区间，取充分大N，使得\forall n>N时，有|\alpha_n|<\delta,再取$
+$将\bold{R}分为l个区间，取充分大N，使得\forall n>N时，有|\alpha_n|<\delta,再取$
 
 $n_2>n_1>N:x_{n_1} \in (M-\delta,+\infty)x_{n_2} \in (-\infty,m+\delta),则可证在区间$
 
@@ -95,7 +96,7 @@ $\forall x \in [a,a+\delta)，故f(x)不变号在[a,a+\delta)否则有零点，�
 
 $\nl$
 
-$设f(x)在[0,+\infty)上一致连续，证明对\forall \alpha >0,有\lim \frac{f(x)}{x^{1+\alpha}}=0$
+$设f(x)在[0,+\infty)上一致连续，证明对\forall \alpha >0,有\xtinf \frac{f(x)}{x^{1+\alpha}}=0$
 
 $分析：证\exists A,B>0,使得|f(x)|\le A|x|+B$
 
@@ -103,9 +104,15 @@ $\nl$
 
 $例：设f(x)g(x)均为[1,+\infty)上非负一致连续，且xf(x)也一致连续$
 
-$(1)f(x),\frac{g(x)}{x}在[1,+\infty)上有界(2)f,g在(1,+\infty)啥一致连续$
+$证明：(1)f(x),\frac{g(x)}{x}在[1,+\infty)上有界(2)f,g在(1,+\infty)啥一致连续$
 
-$只证(2):\forall \epsilon >0,\exists \delta>0,x|f(x)-f(y)| \le \epsilon,\forall x,y \in(1,+\infty)$
+$(1)记|g(1)|\triangleq  c,\epsilon = 1,\exists \delta>0: |g(1)-g(1+\frac{\delta}{2})|<1$
+
+$|g(1+\frac{\delta}{2})-g(1+2\frac{\delta}{2})|<1$
+
+$故|g(1+k\frac{\delta}{2})-g(1)|<k,\frac{g(1+k\frac{\delta}{2})}{1+k\frac{\delta}{2}}<\frac{c+k}{k\frac{\delta}{2}},从而\frac{g(x)}{x}有界$
+
+$证(2):\forall \epsilon >0,\exists \delta>0,x|f(x)-f(y)| \le \epsilon,\forall x,y \in(1,+\infty)$
 
 $由(1)\exists M>0,f(x) \le M,故\exists \delta >0(0<\delta<\frac{\epsilon}{2M},|x-y|<\delta)$
 
@@ -149,13 +156,14 @@ $|f(x^*)-f(x_0)|=|x^*-x_0|,由题设x^*=x,f(x_0)=x_0$
 
 $\nl$
 
-一致收敛及其应用
+\begin{center} 一致收敛及其应用  \end{center}
+
 
 $一、概念与定理小结$
 
-$(1)f_n(x) \rightrightarrows (D) f(x)(或S_n(x) \rightrightarrows (D) S(x))$
+$(1)f_n(x) \overset{\underset{\mathrm{D}}{}}{\rightrightarrows} f(x)(或S_n(x)\overset{\underset{\mathrm{D}}{}}{\rightrightarrows}  S(x))$
 
-$1'按定义，\forall \epsilon >0,\exists N \in N:\forall n>N,\forall x \in D:|f_n(x)-f(x)|<\epsilon$
+$1'按定义，\forall \epsilon >0,\exists N \in \bold{N}:\forall n>N,\forall x \in D:|f_n(x)-f(x)|<\epsilon$
 
 $2' Cauchy准则，\forall \epsilon >0,\exists N \in \bold N:\forall n>N;\forall p \in \bold N,\forall x \in D,|f_{n+p}(x)-f_n(x)|<\epsilon$
 
@@ -171,11 +179,15 @@ $例：证明：\{x^ne^{-n^2x}\}在[0,+\infty)区间一致收敛,\{\frac{nx}{n^2
 
 $求sup|f_n(x)=f(x)|时应详细说明极值，驻点旁增减性相异。$
 
+$\nl$
+
 $(2)判别法，①M-判别法,|n_n(x)| \le a_n,\sum a_n 收敛，\sum|n_n(x)|收敛$
 
 $②Dirichlet Abel ③Dini ④Lzberniz法,设U_n(x) \rightrightarrows (D) 0, 0 \le U_{n+1}(x) \le U_n(x)$
 
 $\forall n \in N(\forall x \in D),则交错级数\sum (-1)^nU_n(x)在D上一致收敛$
+
+$\nl$
 
 $(3)解析性 ①连续性②可积性③可微性$
 
@@ -202,6 +214,8 @@ $
 
 $⑤f_n(x) \in C[a,b],f_n(x) \rightrightarrows (D) f(x),故\{x_n\} \subset [a,b],\ntinf x_n=x,是否必有\ntinf f_n(x_n)=f(x),拆项证明$
 
+$\nl$
+
 $设U_n(x) \in C[a,b],\forall n \in N, \sum U_n(x)在[a,b)内一致收敛，证明$
 
 $(1)\sum U_n(a)\sum U_n(b)收敛，\forall \epsilon >0,\exists N \in \bold N:\forall n>N,\forall p \in N, \forall x \in (a,b)$
@@ -212,9 +226,11 @@ $故有|U_{n+1}(a)+...U_{n+p}(a)|<\epsilon,\forall n,\forall p,...$
 
 $(2)\sum U_n(x)在[a,b]上一致连续$
 
-第二讲 实数连续性定理
 
-$例：设E为满足下列条件的非空实数集$
+\begin{center} 第二讲 实数连续性定理  \end{center}
+
+
+$例：设E为满足下列条件的非空实数集(正数集？)$
 
 $(i)\sup E=\mu <1 (ii)\forall x,y \in E,若x<y,则\frac{x}{y} \in E,证明：\mu \in E$
 
@@ -258,7 +274,9 @@ $\nl$
 
 $设\{x_n\}为非负递增，且对\forall m,n \in N,有x_{mn} \ge mx_n，若$
 
-$sup\{\frac{x_n}{n}\}=c常数,证明\ntinf \frac{x_n}{n}=c,若c=0,则\ntinf \frac{x_n}{n}=0,若c>0$
+$sup\{\frac{x_n}{n}\}=c常数,证明\ntinf \frac{x_n}{n}=c$
+
+$若c=0,则\ntinf \frac{x_n}{n}=0,若c>0$
 
 $对\forall \epsilon >0,\exists n_0 \in N:c-\epsilon < \frac{x_{n_0}}{n_0} \le c,由条件x_{mn}\le mx_n对$
 
@@ -386,6 +404,8 @@ $由a_n单调递减a_nsin\frac{1}{2} \ge a_{2n}sin\frac{1}{2},.....a_{2n}sin1 \g
 
 $故有0<2na_{2n}sin\frac{1}{2}<2\epsilon,再证\ntinf (2n+1)a_{2n+1}=0$
 
+$\nl$
+
 $证明：\nsuminf \frac{1}{n}[e^x-(1+\frac{x}{n})^n]在[a,b](a\ge0)上一致收敛，而在（0，+\infty)上不一致收敛$
 
 $设f(x)=e^x-(1+\frac{x}{n})^n,f(a)>0,f'(x)=e^x-(1+\frac{x}{n})^{n-1}>e^x-(1+\frac{x}{n})^n>0$
@@ -416,7 +436,7 @@ $\forall \epsilon > 0,\exists \delta:|f(x)-f_n(x)|+|f_n(x)-a_n|+|a_n-a|<\frac{\e
 
 $\nl$
 
-$幂级数$
+\begin{center}  幂级数 \end{center} 
 
 $缺项级数,可令a_{2n}=0,a_{2n-1}=....求\overline \ntinf \sqrt[n]{|a_n|}=...$
 
@@ -432,7 +452,7 @@ $\nsuminf n^2x^{n-1}$
 
 $\nl$
 
-第三讲  导数与中值定理
+\begin{center} 第三讲  导数与中值定理 \end{center} 
 
 $设f(x)在(a,b)内可导，\xtx{a+}f(x)=+\infty ,问是否必有\xtx{a+}|f'(x)|=+\infty$
 
@@ -453,6 +473,8 @@ $f'(x_1)>M_1=1,取\delta_2=\frac{\delta_1}{2},考虑(a,a+\delta_2),\exists x_2 \
 $f'(x_2)>M_2=2,取\delta_n=\frac{\delta_1}{2^n},(n \in N)可知\exists x_n \in (a,+\delta_n)$
 
 $：f'(x_n)>M_n=n,且0<|x_n-a|<\frac{1}{2}\delta_1 \to 0(n \to \infty)$
+
+$\nl$
 
 $例：称f(x)在I上一致可微，是指\forall \epsilon>0,\exists \delta>0,当t,x \in I,且$
 
@@ -736,7 +758,8 @@ $又因为\nsum{0}{\infty}a_nx^n 发散，故r \le 1$
 
 $\nl$
 
-第四讲  积分
+\begin{center} 第四讲  积分  \end{center}
+
 
 $例1：设f'(x) \in C[a,b],且\jf{a}{b}f(x)dx=0,证明\jf{a}{b}f^2(x)dx \le \frac{(b-a)^2}{2}\jf{a}{b}f'(x)^2dx$
 
@@ -820,7 +843,7 @@ $则2|f(x_0)|=|f(x_0)-f(\zeta)|+|f(\zeta+T)-f(x_0)| \le LT$
 
 $\nl$
 
-$设f(x)g(x) \in C[a,b],若\exists M,K \ge 0 使|f(x)|\le M+K\jf{a}{x}|f(t)||g(t)|dt，\forall x \in [a,b]$
+$例6：设f(x)g(x) \in C[a,b],若\exists M,K \ge 0 使|f(x)|\le M+K\jf{a}{x}|f(t)||g(t)|dt，\forall x \in [a,b]$
 
 $证明：|f(x)|\le Me^{k\jf{a}{x}|g(t)|dt}$
 

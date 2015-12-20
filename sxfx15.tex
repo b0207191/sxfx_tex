@@ -1,0 +1,443 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{tikz}
+\setmainfont{Microsoft YaHei}
+\pagestyle{fancy}
+
+\begin{document}
+
+\input{macro.tex}
+
+
+第15章 隐函数
+
+$15.1(P206)$
+
+$F(xy,y+z,xz)=0,(F_2+xF_3 \ne 0)求\frac{\partial z}{\partial x},\frac{\partial ^2z}{\partial x \partial y}$
+
+$\frac{\partial z}{\partial x}:yF_1+F_2 \frac{\partial z}{\partial x} + (z+\frac{\partial z}{\partial x} x)F_3=0 \to .....$
+
+$\frac{\partial ^2z}{\partial x \partial y}=F_1+x\{yF_1+f_2 \frac{\partial z}{\partial x} +(z+\frac{\partial z}{\partial x} x)F_{31}\}$
+
+$+\frac{\partial ^2z}{\partial x \partial y} F_2+(1+\frac{\partial z}{\partial y})\{yF_{12}+\frac{\partial z}{\partial x}F_{22}+(z+\frac{\partial z}{\partial x})F_{32}\}$
+
+$+(\frac{\partial z}{\partial y}+x \frac{\partial ^2z}{\partial x \partial y})F_3+x\frac{\partial z}{\partial y}\{yF_{13}+\frac{\partial z}{\partial x}F_{23}+(z+\frac{\partial z}{\partial x})F_{33}\}=0$
+
+$将\frac{\partial z}{\partial x}，\frac{\partial z}{\partial y}代入，\frac{\partial ^2z}{\partial x \partial y}=...$
+
+$例：x^2+y+sinxy=0(1)证明：在(0,0)领域内可唯一确定连续函数y=y(x),y(0)=0$
+
+$(2)讨论y=y(x)在x=0附近可导性$
+
+$(3)讨论y=y(x)在x=0附近单调性$
+
+$(4)在(0,0)领域是否唯一确定x=x(y)$
+
+$设F(x,y,u,v)=0,G(x,y,u,v)=0为定义在V \subset R^4的两个函数$
+
+$若存在平面域D，使对\forall (x,y) \in D,有唯一(u,v) \subset J×K 使$
+
+$满足F(x,y,u,v)=0,G=(x,y,u,v)=0称在D上定义了$
+
+$u,v为x,y的隐函数组，记为u=f(x,y),v=g(x,y)定理1$
+
+$(隐函数存在定理)设F(x,y,u,v)G(x,y,u,v)满足$
+
+$(1)F(x_0,y_0,u_0,v_0)=0,G(x_0,y_0,u_0,v_0)=0$
+
+$(2)在点(x_0,y_0,u_0,v_0)为中心某领域内F,G连续，且对各变元有连续偏导数$
+
+$(3)在点(x_0,y_0,u_0,v_0)处Jacobi行列式\frac{\partial (F,G)}{\partial (u,v)}= \begin{vmatrix} F_u & F_v \\ G_u & G_v \end{vmatrix} \ne 0$
+
+$则有1.在点(x_0,y_0,u_0,v_0)某领域，由F=0,G=0可得出隐函数被u=f(x,y)u=g(x,y)$
+
+$2.隐函数组（2）在V(x_0,y_0)P' 内连续$
+
+$3.隐函数组（2）有连续偏导数U_x,U_y,V_x,V_y$
+
+$证明：不妨由1，设F_u \ne 0,则有u=\varnothing(x,y,z)代入G有\psi(x,y,v)=0$
+
+$在(x_0,y_0,u_0),\psi_2=a_n \varnothing_v+G_v=\begin{vmatrix} F_u & F_v \\ G_u & G_v \end{vmatrix} /  F_n \ne 0 故v=g(x,y)$
+
+$\frac{\partial u}{\partial x}=-\frac{\begin{vmatrix} F_x & F_y \\ G_x & G_y \end{vmatrix}}{\begin{vmatrix} F_u & F_v \\ G_u & G_v \end{vmatrix}} = - \frac{\frac{\partial(F,G)}{\partial(x,u)}}{\frac{\partial(F,G)}{\partial(u,v)}}$
+
+$\frac{\partial v}{\partial x}= - \frac{\frac{\partial(F,G)}{\partial(u,x)}}{\frac{\partial(F,G)}{\partial(u,v)}}$
+
+$定理2.（反函数组存在定理）设u=u(x,y)v=v(x,y)连续并对$
+
+$各变元在(x_0,y_0)某领域内连续，且u_0=u(x_0,y_0)v_0=v(x_0,y_0)$
+
+$以及\frac{\partial(u,v)}{\partial(x,y)}|_{(x_0,y_0)} \ne 0,则在点(u_0,v_0)某领域内存在有连续偏导$
+
+$的反函数组x=x(u,v),y=y(u,v)且有$
+
+$\frac{\partial x}{\partial u} = \frac{\frac{\partial v}{\partial y}}{\frac{\partial(u,v)}{\partial(x,y)}}; \frac{\partial x}{\partial v}=-\frac{\frac{\partial u}{\partial y}}{\frac{\partial(u,v)}{\partial(x,y)}}$
+
+$\frac{\partial y}{\partial u} = -\frac{\frac{\partial v}{\partial x}}{\frac{\partial(u,v)}{\partial(x,y)}}; \frac{\partial u}{\partial v}=\frac{\frac{\partial u}{\partial x}}{\frac{\partial(u,v)}{\partial(x,y)}}$
+
+$\nl$
+
+$例：设\begin{cases} x+y+z+u+v=1 \\ x^2+y^2+z^2+u^2+v^2=2 \end{cases}求u_x,v_x,u_{x^2},v_{x^2}$
+
+$分析：改写为F(x,y,z,u,v)=x+y+z+u+v-1=0$
+
+$G=x^2+y^2+z^2+u^2+v^2-2=0$
+
+$\frac{\partial(F,G)}{\partial(u,v)}=\begin{vmatrix} 1 & 1 \\ 2u & 2v \end{vmatrix}=2(v-u)$
+
+$当u-v \ne 0时，可确定u=u(x,y,z),v=v(x,y,z)$
+
+$(1)对x求偏导，1+\frac{\partial u}{\partial x}+\frac{\partial v}{\partial x}=0$
+
+$2x+2u \frac{\partial u}{\partial x}+ \frac{\partial v}{\partial x} 2v =0$
+
+$解得\frac{\partial v}{\partial x}=\frac{u-x}{v-u};\frac{\partial u}{\partial x}=\frac{x-v}{v-u}$
+
+$再对x偏导，\frac{\partial ^2u}{\partial x^2}+\frac{\partial ^2v}{\partial x^2}=0$
+
+$1+(\frac{\partial u}{\partial x})^2+u \frac{\partial ^2u}{\partial ^2x}+(\frac{\partial v}{\partial x})^2+u \frac{\partial ^2v}{\partial ^2x}=0$
+
+$解出关于\frac{\partial u}{\partial x}的关系式，无须代入$
+
+$\nl$
+
+$例：x=cos \phi cos \psi, y=cos \varphi cos \psi, z=sin \varphi,求z_{x^2}$
+
+$对x偏导，1=-sin \varphi cos \psi \frac{\partial \phi}{\partial x}-cos \varphi sin \psi \frac{\partial \psi}{\partial x}$
+
+$0=-sin \varphi sin \psi \frac{\partial \phi}{\partial x}+cos \varphi cos \psi \frac{\partial \psi}{\partial x}$
+
+$得出\frac{\partial \varphi}{\partial x}=-\frac{cos \psi}{sin \varphi} ,\frac{\partial \psi}{\partial x}=-\frac{sin \psi}{cos \varphi}$
+
+$\frac{\partial z}{\partial x}=cos \varphi \frac{\partial \varphi}{\partial x} = -ctg\varphi cos \psi$
+
+$\frac{\partial ^2z}{\partial x^2}=\frac{\partial}{\partial \varphi}(\frac{\partial z}{\partial x})\frac{\partial \varphi}{\partial x}+\frac{\partial}{\partial \psi}(\frac{\partial z}{\partial x})\frac{\partial \psi}{\partial x}$
+
+$另解：（x^2+y^2+z^2=1 \to ....）$
+
+$\nl$
+
+$例：设u+v=x+y,\frac{sinu}{sinv}=\frac{x}{y},求du,dv,d^2u,d^2v$
+
+$微分，du+dv=dx+dy(*),sinudy+cosu y du =dx sinv+cosv xdv(**)$
+
+$解出dv,du;再对(*)微分，d^2u+d^2v=0(dx,dy作为常数)$
+
+$(**)微分，ycosud^2u+2cosudydu-ysiudu^2$
+
+$=xcosvd^2v+2cosvdxdv-xsinvdv^2$
+
+$\nl$
+$\nl$
+
+$函数行列式及其应用$
+
+$Jacobi矩阵(P211)(P216) \frac{dy}{dt}=\frac{dy}{dx} \frac{dx}{dt}$
+
+$球坐标交换的Jacobi行列式$
+
+$x=rsin\varphi cos \theta,y=rsin\varphi sin\theta ,z=rcos\varphi$
+
+$\frac{\partial (x,y,z)}{\partial (r,\varphi,\theta)}=r^2 sin \varphi$
+
+$命题：设有定义在D \subset R^n上的函数组，且对每个f_k(1 \sim m)对各变元有连续偏导$
+
+$其Jacobi矩阵为D(x)=\begin{vmatrix} \frac{\partial f_1}{\partial x_1} & ... & \frac{\partial f_1}{\partial x_n} \\ ... & ... & .... \\ \frac{\partial f_m}{\partial x_1} & ... & \frac{\partial f_m}{\partial x_n} \end{vmatrix}_{m*n}(m \le n)$
+
+$则矩阵r（J）<m,函数相关(P222)$
+
+$当m=n r(J)=n,函数线性无关$
+
+$\nl$
+
+$例：设x,y \ge 0,证明 \frac{x^n+y^n}{2} \ge (\frac{x+y}{2})^n$
+
+$设x+y=a,则L=\frac{1}{2}(x^n+y^n)+\lambda (x+y-a)$
+
+$由L_x=0,L_y=0,x+y=a解出x=y=\frac{a}{2}与边界（0,a）(a,0)比较$
+
+$条件极值的充分条件，H矩阵判定法$
+
+$H=\bigl( \begin{smallmatrix} L_{x^2}&L_{xy}&L_{xz}\\ L_{yx}&L_{y^2}&L_{yz} \\ L_{zx}&L_{zy}&L_{z^2} \end{smallmatrix} \bigr) $
+
+$正定极小，负定极大，不定$
+
+$二阶微分判别法（极值性）$
+
+$求f=x+y+z+t在xyzt=c^4下极值（见P201）$
+
+$解：L=f+\lambda(xyzt-c^4)得x=y=z=t=c,\lambda = -\frac{1}{c^3}$
+
+$dL=-\frac{1}{c^3}(yztdx+xztdy+xytdz+xyzdt)$
+
+$d^2L|_{P_0}=-\frac{2}{c}(dxdy+dydz+dxdz+dt(dx+dy+dz))$
+
+$对xyzt=c^4求微分$
+
+$dx+dy+dz+dt=0 \to dt=-(dx+dy+dz)$
+
+$解方程组$
+
+$\begin{cases} 2x+2\lambda x+2u=0 \\ 2y+2\lambda y-u =0 \\ 2z-2\lambda z -u=0 \\ x^2+y^2-z^2=1 \\ 2x-y-z=1 \end{cases}$
+
+$\lambda = \pm 1 代入解方程，当\lambda \ne \pm 1时，前三式行列式系数不为0$
+
+$解出x=\frac{-u}{1+\lambda},y=\frac{u}{2(1+\lambda)},z=\frac{u}{2(1-\lambda)}代入后两式$
+
+$3\lambda ^2 -9 \lambda + 8 =0$
+
+$\nl$
+
+$例：x^2+y+sin(xy)=0$
+
+$证明在(0,0)某邻域内唯一连续函数y=y(x)使y(0)=0(F_y(0,0)=1)$
+
+$y(x)在x=0附近可导（F_x为连续函数）$
+
+$y(x)在x=0附近单调性y'=- \frac{2x+ycos(xy)}{1+xcos(xy)}$
+
+$y'(0)=0故有\xtinf \frac{y}{x}=0,y=o(x)$
+
+$\xtx{0}=\frac{-\frac{2x+ycosxy}{1+xcosxy}}{-2x}=\xtx{0}\frac{1+o(1)\frac{cosxy}{2}}{1+xcosxy}=1$
+
+$故不能确定x=x(y)$
+
+$\nl$
+
+$p.s. 平面既是开区域也是闭区域（唯一特例）$
+
+$偏导存在 \nleftarrow 方向导数存在，z=\sqrt{x^2+y^2}$
+
+$偏导存在 \nrightarrow 方向导数存在，f=\begin{cases} \frac{xy}{\sqrt{x^2+y^2}}sin\frac{1}{x^2+y^2}, & x^2+y^2 \ne 0 \\ 0, & x^2+y^2=0 \end{cases}$
+
+$若f(y,x)=-f(x,y),f''_{yx}=-f''_{xy}$
+
+$若f(x,y)=A(x)B(y)则麦克劳林公式展开可用M(x,y)=M(x)M(y)略去高阶无穷小$
+
+$\\$
+
+$\nl$
+
+含参数积分
+
+$(P242)I=\jf{0}{+\infty} \frac{sinx}{x}dx,引进e^{-\alpha x}I(\alpha)=\jf{0}{+\infty}e^{-\alpha x}\frac{sinx}{x}dx(\alpha \ge 0)$
+
+$计算\aatx{o^+}I(\alpha),I'(\alpha)=-\jf{0}{+\infty}e^{-\alpha x}sinxdx$
+
+$故I(\alpha)=-arctg \alpha +C=\frac{e^{-\alpha x}(\alpha sinx+cosx)}{1+\alpha^2}|_0^{+\infty}=-\frac{1}{1+\alpha^2}$
+
+$|I(\alpha)| \le \jf{0}{+\infty}e^{-\alpha x}dx=\frac{1}{\alpha}，故\aatx{\infty}I(\alpha)=0$
+
+$故C=\frac{\pi}{2},故I=I(0)=\frac{\pi}{2}$
+
+$\jf{0}{\frac{\pi}{2}}lnsintdt=-\frac{\pi}{2}ln2$
+
+$积分式：\frac{arctgx}{x}=\jf{0}{1}\frac{dy}{1+x^2y^2};\frac{e^{-ax}-e^{-bx}}{x}=\jf{a}{b}e^{-xy}dy$
+
+$\frac{x^b-x^a}{lnx}=\jf{a}{b}x^ydy;\frac{ln(1+ab)}{a}=\jf{0}{b}\frac{dx}{1+ax}$
+
+$\nl$
+
+$称\jf{\alpha}{+\infty}f(x,y)dy关于x在I上不一致收敛，是指\exists \epsilon_0 >0以及一递$
+
+$增无界数列\{A_n\}(A_n \ge \alpha)及\{x_n\}\subset I:|\jf{A_n}{+\infty}f(x_n,y)dy| \ge \epsilon_0$
+
+$证明：\jf{0}{+\infty}ye^{-xy}dx在(y_0,+\infty)一致收敛在(0,+\infty)不一致收敛$
+
+$1,|\jf{A_0}{+\infty}ye^{-xy}dx|=|(-e^{xy})|_{x=A_0}^{x=+\infty}|=e^{-yA_0} \le e^{-y_0A_0}$
+
+$故\forall \epsilon > 0 (0<\epsilon <1)取A_0= A_0(\epsilon)=\frac{ln \frac{1}{\epsilon}}{y_0},则对\forall y \in (y,+\infty)$
+
+$|\jf{A}{+\infty}ye^{-xy}dx|<e^{-yA}<e^{k\epsilon}=\epsilon,\forall A>A_0$
+
+$2,A_k=k,y_k=\frac{1}{k}\in (0,+\infty)则有\jf{k}{+\infty}\frac{e^{-\frac{x}{k}}}{k}dx=\frac{1}{e},\forall k \in N$
+
+$取\epsilon_0 > \frac{1}{e},则有....或者说，当y充分小时，I>\epsilon_0=...$
+
+$Cauchy准则,\jf{\alpha}{+\infty}f(x,y)dx一致收敛 \Leftrightarrow \forall \epsilon>0,\exists A \ge \alpha, \forall A',A'' \ge A 有$
+
+$|\jf{A'}{A''}fdy|<\epsilon ,\forall x \in I$
+
+$Abel推论,设\jf{\alpha}{+\infty}fdy关于x一致收敛,h(y)在(\alpha,+\infty)上单调有界，则\jf{\alpha}{+\infty}fhdy一致收敛$
+
+$设\jf{\alpha}{+\infty}f(y)dy收敛,g(x,y)对y单调，且对x一致有界，则\jf{\alpha}{+\infty}f(y)g(x,y)dy一致收敛$
+
+$\nl$
+
+$例：\jf{0}{+\infty}\frac{sinx^2}{1+x^n}dx,解：0<\frac{1}{1+x^n} \le 1单调递减，且\jf{0}{+\infty}sin(x^2)dx一致收敛$
+
+$例：已知\jf{-\infty}{+\infty}e^{-x^2}dx=\sqrt{\pi},判别\jf{-\infty}{+\infty}e^{-(x-y)^2}dx在a<y<b和y\in R$
+
+$\jf{A}{+\infty}e^{-(x-y)^2}dx=\jf{A-y}{+\infty}e^{-x^2}dx < \jf{A-b}{+\infty}e^{-x^2}dx$
+
+$故\forall \epsilon > 0,\exists A, \forall y<b,有...类似 \forall y>a有....取公共区间$
+
+$再求y\in R,\forall A>0,充分大\infty,有y充分大 \jf{A}{+\infty}e^{-(x-y)^2}dx=\jf{A-y}{+\infty}e^{-x^2}dx \to \sqrt \pi$
+
+$\nl$
+
+$例：\jf{0}{+\infty} \frac{cos(xy^2)}{x^ \alpha}dx,y \ge y_0 > 0,(0< \alpha <1)的一致收敛性$
+
+$\forall A>1 有|\jf{1}{A}cos(xy^2)dx|=\frac{1}{y^2}|sinAy^2-siny^2| \le \frac{2}{y^2} \le \frac{2}{y_0^2}$
+
+$又因为\frac{1}{x^ \alpha}对x单调，一致趋0，由狄尼克莱I_2=\jf{1}{+\infty}...一致收敛$
+
+$由|\frac{cos(xy^2)}{x^ \alpha}|\le \frac{1}{x ^ \alpha},\forall x \forall y ...而\jf{0}{1}\frac{1}{x^ \alpha}dx一致收敛$
+
+$f(x,y) \in C[a,b] \times [c,+\infty),\jf{c}{+\infty}f(x,y)dy在(a,b)收敛，在a发散$
+
+$则\jf{c}{\infty}f(x,y)dy在(a,b)不一致收敛$
+
+$\nl$
+
+$f(x,y)在D非负连续，若\jf{\alpha}{+\infty}fdy,\jf{\alpha}{+\infty}fdx 分别为xy连续函数，且$
+
+$\jf{a}{+\infty}dx\jf{\alpha}{+\infty}fdy或\jf{\alpha}{+\infty}dy\jf{a}{+\infty}fdx至少有一项存在，则积分可换序$
+
+$\jf{0}{+\infty}\frac{e^{-xa}-e^{-xb}}{x}dx(a,b>0),1.f(x,y)=e^{-xy} \in c,2. \jf{0}{+\infty}e^{-yx}一致收敛$
+
+$故有原式=\jf{a}{b}dy(\jf{0}{+\infty}e^{-xy}dx)=\jf{a}{b}\frac{1}{y}dy$
+
+$计算I=\jf{0}{+\infty}e^{-x^2}dx$
+
+$令x=ut(u>0),I=u\jf{0}{+\infty}e^{-u^2t^2}dt,同乘e^{-u^2}再对u积分$
+
+$I^2=I\jf{0}{+\infty}e^{-u^2}du=\jf{0}{+\infty}e^{-u^2}udu\jf{0}{+\infty}e^{-u^2t^2}dt(先t后u)$
+
+$验证(i)ue^{-u^2(1+t^2)}对tu非负连续（u>0）$
+
+$(ii)\jf{0}{+\infty}ue^{-u^2(1+t^2)}dt=e^{-u^2}\jf{0}{+\infty}e^{-(ut)^2}dut=e^{-u^2}I在u\ge0时连续$
+
+$\jf{0}{+\infty}ue^{-u^2(1+t^2)}du=\frac{1}{2} \frac{1}{1+t^2}在t \ge 0 时连续$
+
+$(iii)\jf{0}{+\infty}dt\jf{0}{+\infty}ue^{-u^2(1+t^2)}du存在$
+
+$故I^2=\frac{\pi}{4},I=\frac{\sqrt \pi}{2}$
+
+$\jf{0}{+\infty}\frac{e^{-ax}-e^{-bx}}{x}dx,令I(a)=\jf{0}{+\infty}\frac{e^{-ax}-e^{-bx}}{x}dx \triangleq \jf{0}{+\infty}f(x,a)dx$
+
+$f(0,a)=b-a,1.f与f_a \in D,2.\jf{0}{+\infty}\frac{e^{-ax}-e^{-bx}}{x}dx 收敛(Dirichlet)$
+
+$\jf{0}{+\infty}-e^{-ax}dx在(a,+\infty)关于a一致收敛I'(a)=-\frac{1}{a}$
+
+$\to I(a)=-lna+c令a=b \to c=lnb,I(a)=ln\frac{b}{a}$
+
+$其他积分法①B(p,q)=2\jf{0}{\frac{\pi}{2}}cos^{2p-1}\varphi sin^{2q-1}\varphi d\varphi$
+
+$B(\frac{1}{2},\frac{1}{2})=\pi(x=cos^2 \varphi)$
+
+$②B(p,q)=\jf{0}{+\infty}\frac{t^{q-1}}{(1+t)^{p+q}}dt(x=\frac{1}{1+t})$
+
+$③定义\Gamma(s)=\frac{\Gamma(S+1)}{s},-1<s<0,类似地，。。。。-a-1<s<-a,除去整数点$
+
+$④\Gamma(s)=a^s \jf{0}{+\infty}t^{s-1}e^{-at}dt(x=at)$
+
+$⑤\Gamma(s)=2\jf{0}{+\infty}t^{2s-1}e^{-t^2}dt,x=t^2$
+
+$\Gamma(\frac{1}{2})=\sqrt \pi , \Gamma(\frac{1}{2}+n)=\frac{(2n-1)!!}{2^n} \sqrt \pi$
+
+应该避免形式运算
+
+$(2)倍量公式s>0,\Gamma(2s)=\frac{2^{2s-1}}{\sqrt \pi}\Gamma(s)\Gamma(s+\frac{1}{2})$
+
+$(3)余元公式(0<s<1)$
+
+$\Gamma(s)\Gamma(1-s)=\frac{\pi}{sin\pi s}$
+
+$B(s,1-s)=\frac{\pi}{sin\pi s}$
+
+$n! = (\frac{n}{e})^n \sqrt {2\pi}n e^{\sqrt 2^\theta n}$
+
+$=(\frac{n}{e})^n \sqrt {2\pi}n(1+o(1)) (n \to \infty)$
+
+$\nl$
+
+$例：（1）\jf{0}{+\infty}x^me^{-ax^n}(m>-1,n>0,a>0)$
+
+$令y=ax^n,则=\jf{0}{+\infty}(\frac{y}{a})^{\frac{m}{n}}e^{-y}\frac{1}{na}(\frac{y}{a})^{\frac{1}{n}-1}dy$
+
+$=\frac{\Gamma(\frac{m+1}{n})}{na^{\frac{m+1}{n}}}$
+
+$特别的，\jf{0}{+\infty}x^{2m}e^{-x^2}dx=\frac{(2n-1)!!}{2^{n+1}} \sqrt n$
+
+$jf{0}{+\infty}e^{-x^n}dx=\frac{1}{n}\Gamma(\frac{1}{n})$
+
+$\jf{0}{+\infty}e^{-y^4}dy \jf{0}{+\infty}x^2 e^{-x^4}dx=\frac{1}{16}\Gamma(\frac{1}{4})\Gamma(\frac{3}{4})= \frac{1}{16} \frac{\pi}{sin \frac{\pi}{4}}$
+
+$(2)\jf{0}{1}x^{p-1}(1-x^m)^{q-1}dx(p,q,m>0)$
+
+$令t=x^m即有=\frac{1}{m}B(\frac{p}{m},q)$
+
+$\jf{0}{1}\sqrt {x^3(1-\sqrt x)}dx = \jf{0}{1}x^{\frac{3}{2}}(1-x^{\frac{1}{2}})^{\frac{1}{2}}dx=2\frac{\Gamma(5)\Gamma(\frac{3}{2})}{\Gamma(5+\frac{3}{2})}$
+
+$\nl 习题课$
+
+$Dirichelet积分 I=\jf{0}{+\infty}\frac{sinx}{x}dx=\frac{\pi}{2}$
+
+$\jf{-\infty}{+\infty}\frac{sinx}{x}cos \lambda x dx=(偶函数，积化和差)=\begin{cases} 0, & |\lambda|>1 \\ \frac{1}{2}, & |\lambda|=1 \\ 1,& |\lambda|<1 \end{cases}$
+
+$(2)Fresnel积分，I=\jf{0}{+\infty}sin(x^2)dx$
+
+$分析：令x^2=t,则化为\frac{1}{2}\jf{0}{+\infty}\frac{sint}{\sqrt t}dt=\frac{1}{2} \frac{2}{\sqrt \pi}\jf{0}{+\infty}sint dt \jf{0}{+\infty}e^{-tu^2}du$
+
+$=\frac{1}{\sqrt \pi}\jf{0}{+\infty}du \jf{0}{+\infty}e^{-tu^2}sintdt= \frac{1}{\sqrt \pi}\jf{0}{+\infty}\frac{du}{1+u^4}=\frac{\pi}{2\sqrt 2}$
+
+$引进e^{-\alpha t}(\alpha > 0),I(\alpha)=\frac{1}{2}\jf{0}{+\infty}\frac{sint}{\sqrt t}e^{-\alpha t}dt = \frac{1}{\sqrt \pi}\jf{0}{+\infty}du\jf{0}{+\infty}e^{-(\alpha+u^2)t}sintdt$
+
+$\frac{1}{\sqrt \pi}\jf{0}{+\infty}\frac{du}{1+(\alpha+u^2)^u}$
+
+$验证换序条件：1.对u取e^{-\alpha t}为优函数$
+
+$对t取e^{-t_0 u^2}$
+
+$2.绝对值积分：\frac{1}{\sqrt \pi}\jf{0}{+\infty}e^{-\alpha t}|sint|dt \jf{0}{+\infty}e^{-tu^2}du$
+
+$=\jf{0}{+\infty}e^{-\alpha t}\frac{|sint|}{\sqrt t}dt由P-判别法可知右端收敛$
+
+$3.因为\jf{0}{+\infty}\frac{du}{1+(\alpha - u^2)^2}关于\alpha 一致收敛在(0,+\infty)上,I(\alpha) \in [0,+\infty)$
+
+$常用积分变换式$
+
+$1.\frac{e^{-af(x)}-e^{-bf(x)}}{f(x)}=\jf{a}{b}e^{-f(x)y}dy$
+
+$2.\frac{1}{f(x)}=\jf{0}{+\infty}e^{-f(x)y}dy,f(x)>0$
+
+$3.\frac{1}{\sqrt {f(x)}}=\frac{2}{\sqrt \pi}$
+
+$4.\frac{sinbf(x)-sinaf(x)}{f(x)} = \jf{a}{b}cos(f(x)y)dy$
+
+$5 \frac{arctgbf(x)-arctgaf(x)}{f(x)} = \jf{a}{b} \frac{dy}{1+(f(x)y)^2}$
+
+$例：设f(x,y) \in C[a,b]×[\alpha,+\infty)，而\jf{\alpha}{+\infty}f(b,y)dy发散$
+
+$证明\jf{\alpha}{+\infty}f(x,y)dy在[a,b)不一致收敛（端点处发散，区间内必发散）$
+
+$分析：反证法，\forall \epsilon >0:\exists A_0: \forall A',A'' \ge A_)$
+
+$I(x) \triangleq |\jf{A'}{A''}f(x,y)dy| < \epsilon,\forall x \in [a,b)$
+
+$由条件f(x,y) \in C.... 故常义含参积分\jf{A'}{A''}f(x,y)dy 为x的连续函数$
+
+$令x \to b 有 |\jf{A'}{A''}f(b,y)dy| \le \epsilon,从而由Cauchy准则可知...$
+
+$\nl$
+
+$例：设f(t)=\jf{1}{+\infty}\frac{cosxt}{1+x^2}dx$
+
+$证明：①\ttinf f(t)=0,|\jf{1}{A_0}|+|\jf{A_0}{+\infty}| < \epsilon + \epsilon$
+
+$(黎曼引理，f(x)可积，\lbdtx{\infty} \jf{a}{b} f(x)sin \lambda x dx =0, \lbdtx{\infty} \jf{a}{b} f(x)cos \lambda x dx =0)$
+
+$②f(t)在[0,\pi]上至少有一个零点$
+
+$因为f(0)=\frac{\pi}{4},f(\pi) \le 0,可证\jf{0}{\pi}f(t)dt \le 0,或\jf{0}{\pi}sintf(t)dt \le 0$
+
+$积分顺序：可化为\jf{1}{+\infty}dx \jf{0}{\pi} \frac{cosxtsint}{1+x^2}dx$
+
+$=\jf{1}{+\infty}\frac{1+cos\pi x}{1+x^4}dx$
+\end{document}
+

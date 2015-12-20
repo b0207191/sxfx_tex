@@ -1,22 +1,30 @@
 \documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr}
 \usepackage{fontspec}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{bm}
 \usepackage{tikz}
-\setmainfont{Adobe Kaiti Std}
-\thispagestyle{empty}
-\pagestyle{empty}
+\usepackage{pstricks-add}
+\setmainfont{Microsoft YaHei}
+\pagestyle{fancy}
+
+
 \begin{document}
 
 \input{macro.tex}
+$\nl$
+
+\begin{center}第10章 级数  \end{center}
 
 
-第10章 级数
+
 
 $部分和S_n,n=1～k$
 
 $\frac{1}{lnn}-\frac{1}{ln(n+1)}=\frac{1}{\zeta ln^2 \zeta}> \frac{1}{(n+1)ln^2(n+1)}$
+
+$\nl$
 
 $设\{a_n\}单调递减且非负，且级数\nsum{1}{\infty}a_n收敛，证明:\ntinf na_n=0$
 
@@ -24,9 +32,11 @@ $只需证明\{na_n\}的奇偶子列分别收敛于0，由Cauchy准则$
 
 $\forall \epsilon >0,\exists N_1 \in N,当n > N时有a_{n+1},a_{n+2}...a_{2n} < \frac{\epsilon}{2} 由单调性$
 
-$na_{2n} \le a_{n+1},a_{n+2}...a_{2n} < \frac{\epsilon}{2},即2n a_{2n} < \epsilon$
+$na_{2n} \le a_{n+1},a_{n+2}...a_{2n} < \frac{\epsilon}{2},即(2n) a_{2n} < \epsilon$
 
 $(2n+1)a_{2n+1}=2na_{2n+1}+a_{2n+1} \le 2na_{2n}+a_{2n+1}< \epsilon + \epsilon$
+
+$\nl$
 
 $在\nsum{1}{\infty}\frac{1}{n}中去掉分母含零的项,则(\nsum{1}{\infty}\frac{1}{n})^* < {90}$
 
@@ -34,19 +44,29 @@ $因为(\nsum{1}{\infty}\frac{1}{n})^*=(1+\frac{1}{2}+..+\frac{1}{9})+(\frac{1}{
 
 $<9^1×1+9^2×0.1+9^3×0.01$
 
+$\nl$
+
 $e^{\pi}与\pi ^e用(\frac{x}{lnx})'比较$
 
 $n^{\frac{1}{n}}=1,n \to \infty$
 
 $\nsum{1}{\infty}(e-(1+\frac{1}{n})^n)^2 < \nsum{1}{\infty}((1+\frac{1}{n})^{n+1}-(1+\frac{1}{n})^n)^2=\nsum{1}{\infty}(1+\frac{1}{n})^{2n} \frac{1}{n^2}< \frac{e^2}{n^2} $
 
+$\nl$
+
 $\nsuminf \frac{(n!)^2}{(2n)!} \to  \ntinf \frac{a_{n+1}}{a_n}=\frac{1}{4}<1$
+
+$\nl$
 
 $\nsuminf n!(\frac{x}{n}^n(x>0)) \to \ntinf \frac{a_{n+1}}{a_n}=\frac{x}{e}$
 
 $而当x=e，则\frac{a_{n+1}}{a_n}>1,则\xtinf a_{n+1} \ne 0$
 
+$\nl$
+
 $\nsuminf \frac{n^2}{(2+\frac{1}{n})^n},\ntinf \sqrt[n] a_n = \frac{n^{\frac{2}{n}}}{2+\frac{1}{n}}=\frac{1}{2} < 1，故收敛$
+
+$\nl$
 
 $\frac{1}{2}+\frac{1}{3^2}\frac{1}{2^3}+\frac{1}{3^4}+...\frac{1}{2^{2n-1}}+\frac{1}{3^{2n}}+....$
 
@@ -54,13 +74,19 @@ $奇子列\ntinf \sqrt[n] a_n = \frac{1}{2},偶子列\ntinf \sqrt[n] a_n = \frac
 
 $故有\sup \ntinf \sqrt a_n = \frac{1}{2} <1$
 
+$\nl$
+
 $ln(1+x)=x-\frac{1}{2}x^2+o(x^2)(x \to 0)$
 
 $a_n=\frac{1}{\sqrt n}-[\frac{1}{n}-\frac{1}{2n^2}+o(\frac{1}{n^2})]^{\frac{1}{2}}$
 
 $故\ntinf \frac{a_n}{\frac{1}{n^{\frac{3}{2}}}}=\frac{1}{4}$
 
+$\nl$
+
 $P判别法:P>1,0 \le l < +\infty 收敛，P \le1,0<l \le +\infty,发散$
+
+$\nl$
 
 $Roabe判别法：设\nsuminf a_n 为正项级数，若 \exists N \in \bold{N},使得\forall n>N时有$
 
@@ -72,9 +98,13 @@ $\frac{a_n}{a_{n+1}} > (\frac{n+1}{n})^p, a_{n+1}>a_n(\frac{n}{n+1})^p 故a_2<a_
 
 $推论：\ntinf n(\frac{a_n}{a_{n+1}}-1)=r,r>1收敛，r<1发散$
 
+$\nl$
+
 $\xtx{0+}\frac{\frac{1}{e}(1+x)^{p+\frac{1}{x}}}{x} = \xtx{0+}\frac{\frac{1}{e}e^{(p+\frac{1}{x})ln(1+x)}-1}{x} 将ln(1+x)展开为x-\frac{1}{2}x^2+o(x^2)$
 
 $有\xtx{0+}\frac{e^{(p-\frac{1}{2})x+o(x)}-1}{x}=p-\frac{1}{2}$
+
+$\nl$
 
 $仅有\nsuminf sin(\pi \sqrt {n^2+k^2}),k \in N$
 
@@ -82,7 +112,9 @@ $原级数=(-1)^n sin\frac{k^2 \pi}{\sqrt{n^2+k^2}+n^2} 当n充分大时，成�
 
 $且|a_n|>|a_{n+1}|,\xtinf a_n=0$
 
-$阿贝尔 1.若A \le b_m+...+b_n \le B,a_mA \le \sum_k^{\infty}a_kb_k \le a_m B$
+$\nl$
+
+$阿贝尔 1^\circ 若A \le b_m+...+b_n \le B,a_mA \le \sum_k^{\infty}a_kb_k \le a_m B$
 
 $Cauchy凝聚判别法，若\{a_n\}单调递减非负，则\nsuminf a_n 与 \nsuminf 2^n a_{2^n}同敛散$
 
@@ -98,19 +130,27 @@ $\ge \frac{a_1}{2}+a_2+2a_4+4a_8+...+2^{k-1}a_{2^k}$
 
 $若\nsuminf a_n 收敛,S_n有界，则\forall k \in N,必有n \in N,n> 2^k,S_k' \le 2S_n$
 
+$\nl$
+
 $定理（隔项比值法，刘秋生）设\nsuminf a_n 为正项级数,\{a_n\}单调递减，若$
 
 $\frac{a_{2n}}{a_n}=p,则p<\frac{1}{2}时级数收敛，p>\frac{1}{2}级数发散$
 
 $证明：当\xtinf \frac{a_{2n}}{a_n}=p< \frac{1}{2},则有\xtinf \frac{2a_{2n}}{a_n}=p<1,令n=2^k有$
 
-$\ntinf \frac{2a_{2·2^k}}{a_{2^k}}=2p <1 \to \ntinf \frac{2^{k+1}a_{2^{k+1}}}{2^ka_{2^k}}=2p<1 比值法凝聚定理$
+$\ntinf \frac{2a_{2·2^k}}{a_{2^k}}=2p <1 \to \ntinf \frac{2^{k+1}a_{2^{k+1}}}{2^ka_{2^k}}=2p<1 (比值法,凝聚定理)$
 
-$定理，叶志江，设f(x)正值连续[1,+\infty)单调递减 \varphi (x)在[1,+\infty)$
+$\nl$
+
+$定理(叶志江),设f(x)正值连续[1,+\infty)单调递减 \varphi (x)在[1,+\infty)$
 
 $上可导且单调减，且\varphi (x)>x,\forall x \in [1,+\infty)若\ntinf \frac{\varphi (x)f(\varphi (x))}{f(x)}=r$
 
 $则当r<1时，\nsuminf f(n)收敛$
+
+$厄耳玛可夫判别法 \varphi (x)= x+1,\varphi (x)=2x,\varphi (x)=e^x$
+
+$\nl$
 
 $\nsuminf (1-\frac{lnn}{n})^{2n},\exists N \in \bold N:n>N后，a_n<e^{-2lnn}=\frac{1}{n^2}$
 
@@ -118,13 +158,15 @@ $设\{a_n\}\{b_n\}满足e^{a_n}=a_n+e^{b_n},\forall n \in N,若\nsuminf a_n^2收
 
 $e^{b_n}=e^{a_n}-a_n=1+a_n+\frac{1}{2}a_n^2+o(a_n^2)-a_n$
 
-$=1+\frac{1}{2}a_n^2+o(a_n^2),故b_n \to 0$
+$=1+\frac{1}{2}a_n^2+o(a_n^2),故b_n \to 0（n \to \infty）$
 
 $故e^{b_n}=1+b_n+o(b_n)=1+\frac{1}{2}a_n^2+o(a_n^2)$
 
 $从而b_n ～ \frac{1}{2}a_n^2(n \to \infty)由比较法$
 
-$类似的，有若a_n=b_n+ln(1+a_n)且\nsuminf a_n^2 收敛，证明\nsuminf b_n 也收敛$
+$类似的，有$
+
+$若a_n=b_n+ln(1+a_n)且\nsuminf a_n^2 收敛，证明\nsuminf b_n 也收敛$
 
 $\nl$
 
@@ -168,7 +210,11 @@ $=\frac{1}{n}[f(x)\phi(nx)|_0^1-\jf{0}{1}\phi(nx)-f'(x)dx]$
 
 $=-\frac{1}{n}\jf{0}{1}\phi(nx)f'(x)dx$
 
-$\nsuminf \frac{1}{a_n}收敛，iff，\nsuminf \frac{n}{a_1+...a_n}收敛,a_n单调递增>0$
+$|a_n| \le \frac{M N}{n}$
+
+$\nl$
+
+$\nsuminf \frac{1}{a_n}收敛 \iff \nsuminf \frac{n}{a_1+...a_n}收敛,a_n单调递增>0$
 
 $\Leftarrow \frac{1}{a_n} \le \frac{n}{a_1+...a_n}$
 
@@ -222,6 +268,12 @@ $则f'(x)=\mp (\frac{1}{\sqrt 2 \pm 1})x$
 
 $\nl$
 
+$判敛  \   \   \  \nsuminf \frac{(-1)^{[n]}}{n^p} \ \nsuminf \frac{sinnsinn^2}{n}$
+
+$证：\nsum{0}{\infty}\frac{1}{n!}\nsum{0}{\infty}\frac{(-1)^n}{n!}=1(\nsum{0}{\infty}=e)$
+
+$\nl$
+
 $令a_n=1+\frac{(-1)^n}{n},n(a_n-a_{n+1}) \nrightarrow 0,当n \to \infty$
 
 $\sqrt {1+\sqrt{2+\sqrt{3+...\sqrt{n}}}}< \sqrt {2^2+\sqrt{2^4+\sqrt{2^8+...\sqrt{2^{2^n}}}}}
@@ -240,10 +292,10 @@ $设y=f(x)(x\ge 0)为严格递增连续函数，f(0)=0,g为反函数$
 
 $则有\jf{0}{a}f(x)dx+\jf{0}{b}g(y）dy \ge ab(a \ge 0,b \ge 0)$
 
-$几何意义：1.b=f(a);2.b>f(a);3.b<f(a);$
+$几何意义：1^\circ \ b=f(a);2^\circ \ b>f(a);3^\circ \ b<f(a);$
 
 \begin{tikzpicture}[domain=1:5,line width=1pt]
-\node [above] at (1.2,1) {1};
+\node [above] at (1.2,1) {$1^\circ$};
 \draw[->]  (0,0)  --  (0,1.2);
 \draw[->]  (0,0)  --  (1.2,0);
 
@@ -259,7 +311,7 @@ $几何意义：1.b=f(a);2.b>f(a);3.b<f(a);$
 \end{tikzpicture}
 
 \begin{tikzpicture}[domain=1:5,line width=1pt]
-\node [above] at (1.2,1) {2};
+\node [above] at (1.2,1) {$2^\circ$};
 \draw[->]  (0,0)  --  (0,1.2);
 \draw[->]  (0,0)  --  (1.2,0);
 
@@ -275,7 +327,7 @@ $几何意义：1.b=f(a);2.b>f(a);3.b<f(a);$
 \end{tikzpicture}
 
 \begin{tikzpicture}[domain=1:5,line width=1pt]
-\node [above] at (1.2,1) {3};
+\node [above] at (1.2,1) {$3^\circ$};
 \draw[->]  (0,0)  --  (0,1.2);
 \draw[->]  (0,0)  --  (1.2,0);
 
@@ -293,6 +345,8 @@ $\nl$
 
 $arctg(k+1)-arctgk=arctg \frac{1}{k^2+k+1}$
 
+$\nl$
+
 $[a,b]上f(x)可积，则f(x)在[a,b]上必有无穷多个连续点$
 
 $利用区间套证明，任取一个闭区间，存在一个连续点，而有无穷多个闭区间$
@@ -302,6 +356,8 @@ $\nl$
 $f(x) \in D[0,1],|f(x)| \le \jf{0}{1}(|f(t)+f'(t)|)dt,利用分部积分$
 
 $\jf{a}{b}fg \ge \frac{1}{b-a}(\jf{a}{b}\sqrt{fg}dx)^2,swarchy$
+
+$\nl$
 
 $\ntinf \frac{n}{\sqrt[n]{n!}}=e$
 \end{document}

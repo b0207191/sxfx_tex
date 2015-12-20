@@ -1,0 +1,309 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{pstricks-add}
+\setmainfont{Microsoft YaHei}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\input{macro.tex}
+$\nl$
+
+\begin{center} 第9章 广义积分  \end{center}
+
+
+
+$\jf{0}{+\infty}\frac{xe^{-x}}{(1+e^{-x})^2}dx=-\frac{x}{1+e^x}|_0^{+\infty}+\jf{0}{+\infty}\frac{dx}{1+e^x}$
+
+$令1+e^x=t,则dx=\frac{1}{t-1}dt,t\in[2,+\infty)$
+
+$故\jf{1}{+\infty}\frac{1}{1+e^x}dx=ln\frac{t-1}{t}|_2^{+\infty}=ln2$
+
+$\nl$
+
+$定理1(Cauchy准则)无穷积分\jf{a}{+\infty}f(x)dx收敛充要条件是\forall \epsilon >0$
+
+$\exists A_0>a:|\jf{A_1}{A_2}f(x)dx|< \epsilon,\forall A_1,A_2 \ge A_0$
+
+$\nl$
+
+$定理2(Heine归结原理)无穷积分\jf{a}{+\infty}f(x)dx收敛充要条件为$
+
+$对\forall \{A_n\} \subset (a,+\infty)且\ntinf A_n=+\infty 极限\ntinf \jf{a}{A_n}f(x)dx存在且相等$
+
+$\nl$
+
+$无穷积分判敛\jf{0}{+\infty}sin^{\frac{1}{3}}xdx \ 分析：用cauchy准则,对  \forall A>0$
+
+$\exists A_1=2n\pi,A_2=(2n+1)\pi >A, 而|\jf{A_1}{A_2}sin^{\frac{1}{3}}xdx|=\jf{2n\pi}{2(n+1)\pi}sin^{\frac{1}{3}}xdx$
+
+$=(令x=(2n\pi+t))\jf{0}{\pi}sin^{\frac{1}{3}}tdt \triangleq C>0,从而发散$
+
+$\nl$
+
+$例：讨论\jf{0}{+\infty}\frac{sin^2x}{x}dx敛散性$
+
+$原式=\sum\limits_{n=1}^{\infty}\jf{n\pi}{(n+1)\pi}\frac{sin^2x}{x}dx,令x=n\pi+t$
+
+$=\sum\limits_{n=0}^{\infty}\jf{0}{\pi}\frac{sin^2t}{t+n\pi}dt \ge \sum\limits_{n=0}^{\infty}\jf{0}{\pi}\frac{sin^2t}{\pi+n\pi}dt = (\frac{1}{\pi}\jf{0}{\pi}sin^2tdt)\sum\limits_{n=0}^{\infty}\frac{1}{n+1}=\frac{1}{2}\sum\limits_{n=1}^{\infty}\frac{1}{n}=+\infty,故发散$
+
+$因为\frac{|sinx|}{x} \ge \frac{sin^2x}{x} 故\frac{|sinx|}{x}发散$
+
+$\nl$
+
+$例：\jf{1}{+\infty}e^{sinx}\frac{sin2x}{x^\lambda}dx(\lambda > 0)$
+
+$可计算|\jf{1}{A}e^{sinxsin2xdx}| \le 2(\forall A>1)$
+
+$而f(x)=\frac{1}{x^\lambda}单调递减(\lambda > 0) 且\to 0$
+
+$当\lambda > 1时,有|e^{sinx}\frac{sin2x}{x^\lambda}| \le \frac{e}{x^\lambda},\forall x>0$
+
+$而\jf{1}{+\infty}\frac{e}{x^\lambda}dx收敛（P-判别法）由此比较可知原式绝对收敛$
+
+$当0 < \lambda \le 1时，又有e^{sinx}\frac{|sin2x|}{x^\lambda} \ge \frac{e^{-1|sin2x|}}{x^\lambda} \ge  \frac{e^{-1}sin^22x}{e^\lambda}$
+
+$=e^{-1}(\frac{1}{2x^\lambda}-\frac{cos4x}{2x^2}) \triangleq I_1(x)-I_2(x)$
+
+$\nl$
+
+$若f(x) \ge 0,g(x)>0,且\xtx{a+}\frac{f(x)}{g(x)}=l$
+
+$l \ne 0,同收敛$
+
+$ l=0,g收敛 \to f收敛 $
+
+$ l=\infty,g发散 \to f发散$
+
+$\nl$
+
+$P判别法(瑕积分)，若f(x) \ge 0,且\xtx{a+}(x-a)^Pf(x)=l,① 当0 \le l < +\infty 且$
+
+$P<1时，\jf{a}{b}f(x)dx收敛，②0 < l \le +\infty ， P \ge 1, \jf{a}{b}f(x)dx发散$
+
+$\nl$
+
+$例：\jf{0}{1}\frac{lnx}{\sqrt{x}}dx,x=0为瑕点，令P=\frac{3}{4}<1,有\xtx{0+}\frac{lnx}{\sqrt{x}}=0$
+
+$\jf{0}{1}\frac{dx}{\sqrt{x(1-x)}},x=1,x=0为瑕点，故原式=\jf{0}{\frac{1}{2}}\frac{dx}{\sqrt{x(1-x)}}+\jf{\frac{1}{2}}{1}\frac{dx}{\sqrt{x(1-x)}}$
+
+$分别取P=\frac{1}{2},两函数均收敛$
+
+$\jf{0}{1}\frac{x^n}{\sqrt{1-x^4}}dx(n \in Z),当n \ge 0时，x=1为瑕点$
+
+$令P=-n,有\xtx{0+}\frac{1}{\sqrt{1-x^4}}=1,故当-n < 1即n > -1时$
+
+$\jf{0}{\frac{1}{2}}\frac{x^n}{\sqrt{1-x^4}}dx收敛. \forall n \in Z,取P=\frac{1}{2} < 1有$
+
+$\xtx{1}\frac{\sqrt{1-x}x^n}{\sqrt{1-x^4}}=\frac{1}{2},故\forall n \in Z,均有\jf{\frac{1}{2}}{1}\frac{x^n}{\sqrt{1-x^4}}dx收敛$
+
+$\nl$
+
+$例：\jf{0}{+\infty}\frac{x^{\alpha}}{1+x}dx(\alpha \in R),\alpha \ge 0时，令P=1有$
+
+$\xtx{+\infty}x\frac{x^{\alpha}}{1+x}=
+\begin{cases} 1, \alpha = 0 \\ +\infty, \alpha > 0 \end{cases}
+$
+
+$当\alpha <0时，x=0为瑕点，记为\jf{0}{1}\frac{x^{\alpha}}{1+x}dx+\jf{1}{+\infty}\frac{x^{\alpha}}{1+x}dx，I_1+I_2$
+
+$对I_1(P-判别法) \alpha > -1时收敛，\alpha \le -1 时发散$
+
+$I_2(P法) \alpha > -1时慢收敛，\alpha \le -1 时发散, -1 < \alpha < 0时(当且仅当)收敛$
+
+$\nl$
+
+$Eulor积分,I=\jf{0}{\frac{\pi}{2}}lnsinxdx$
+
+$I=xlnsinx|_0^{\frac{\pi}{2}}-\jf{0}{\frac{\pi}{2}}\frac{x}{tgx}dx,故收敛$
+
+$I=2\jf{0}{\frac{\pi}{4}}lnsin2tdt=\frac{\pi}{2}ln2+2\jf{0}{\frac{\pi}{4}}lnsintdt+2\jf{0}{\frac{\pi}{4}}lncostdt$
+
+$令t=\frac{\pi}{2}-u,又有\jf{0}{\frac{\pi}{4}}lncostdt=\jf{\frac{\pi}{4}}{\frac{\pi}{2}}lnsintdt$
+
+$故有I=\frac{\pi}{2}ln2+2I$
+
+$\nl$
+
+$例：\jf{0}{\pi}xlnsinxdx，令x=\pi-t$
+
+$\jf{0}{1}\frac{lnx}{\sqrt{1-x^2}}dx，令x=sinx$
+
+$\jf{0}{1}\frac{arcsinx}{x}dx，令x=\pi-t$
+
+$\nl$
+
+$Frullani积分，I=\jf{0}{+\infty}\frac{f(ax)-f(bx)}{x}dx,(a,b>0)$
+
+$1^\circ \ f(x)\in C(0,+\infty),\xtinf f(x)存在，则I收敛于[f(0)-\xtinf f(x)]ln\frac{b}{a}$
+
+$2^\circ \ 连续\xtinf f(x)不存在，但\jf{A}{+\infty}\frac{f(x)}{x}收敛(\exists A>0)，则I收敛于f(0)ln\frac{b}{a}$
+
+$只证1，令ax=t,bx=t有\jf{a\alpha}{a\beta}\frac{f(t)}{t}dt-\jf{b\alpha}{b\beta}\frac{f(t)}{t}dt$
+
+$=\jf{a\alpha}{b\alpha}\frac{f(t)}{t}dt+\jf{b\alpha}{a\beta}\frac{f(t)}{t}dt-\jf{b\alpha}{b\beta}\frac{f(t)}{t}dt$
+
+$=\jf{a\alpha}{b\alpha}\frac{f(t)}{t}dt+(-\jf{a\beta}{b\beta}\frac{f(t)}{t}dt)$
+
+$=f(\zeta)\jf{a\alpha}{b\alpha}\frac{1}{t}dt-f(\zeta')\jf{a\beta}{b\beta}\frac{f(t)}{t}dt$
+
+$=f(0)ln\frac{b}{a}-ln\frac{b}{a}\xtinf f(x)$
+
+$\nl$
+
+$例：\jf{0}{+\infty}\frac{e^{-ax}-e^{-bx}}{x}dx (情况1)，\jf{0}{+\infty}\frac{arctg{(ax)}-arctg{(bx)}}{x}dx(情况1)$
+
+$\jf{0}{+\infty}\frac{cos{ax}-cos{bx}}{x}dx(情况2)$
+
+$\nl$
+
+$积分估计$
+
+$(1)1-\frac{1}{n+1}< \jf{0}{+\infty}e^{-x^n}dx<1+\frac{1}{ne},n \in N$
+
+$\forall x \in R,有e^x \ge 1+x,故当 x \in (0,1)有1-x \le e^{-x} \le 1推出$
+
+$1-x^n \le e^{-x^n} \le 1对上式积分有 1-\frac{1}{n+1} \le \jf{0}{1}e^{-x^n}dx \le 1,而$
+
+$0 < \jf{1}{+\infty}e^{-x^n}dx < \frac{1}{n}\jf{1}{+\infty}nx^{n-1}e^{-x^n}dx=\frac{1}{n}\jf{1}{+\infty}e^{-x^n}dx^n=\frac{1}{ne}$
+
+$两式相加，即有$
+
+$\nl$
+
+$(2)\jf{x}{+\infty}\frac{cost}{\sqrt t}dt+\frac{sinx}{\sqrt x}=o(\frac{1}{x \sqrt x}),x \to +\infty$
+
+$两次分步积分，得\jf{x}{+\infty}\frac{cost}{\sqrt t}dt=-\frac{sinx}{\sqrt x}+\frac{cosx}{2x\sqrt x}-\frac{3}{4}\jf{x}{+\infty}\frac{cost}{t^2\sqrt t}dt(只需证\frac{cosx}{2x\sqrt x}-\frac{3}{4}\jf{x}{+\infty}\frac{cost}{t^2\sqrt t}dt除以(\frac{1}{x\sqrt x})为有界量)$
+
+$可计算\forall A > x,\exists M >0$
+
+$|\frac{\jf{x}{A}\frac{cost}{t^2\sqrt t}dt}{\frac{1}{x\sqrt x}}| = |\frac{cos\zeta\jf{x}{A}\frac{1}{t^2\sqrt t}dt}{\frac{1}{x\sqrt x}}| = ....$
+
+$\nl$
+
+$(3)\jf{1.9}{2}\frac{e^{-x}}{\sqrt[4]{2+x-x^2}}dx < 0.03$
+
+$用Schwaz不等式(\jf{1.9}{2}\frac{e^{-x}}{\sqrt[4]{2+x-x^2}}dx)^2 \le (\jf{1.9}{2}\frac{e^{-x}}{\sqrt{1+x}}dx)(\jf{1.9}{2}\frac{dx}{\sqrt{2-x}})$
+
+$\le (\frac{1}{\sqrt{2.9}}\jf{1.9}{2}e^{-x}dx)(2-\sqrt{2-x})|_2^{1.9}= 0.000753$
+
+$开根号，即<0.027441 $
+
+$另：原式=\jf{1.9}{2}\frac{e^{-x}}{\sqrt[4]{1+x}}\frac{1}{\sqrt[4]{2-x}}dx < \frac{e^{-1.9}}{\sqrt[4]{2.9}}\jf{1.9}{2}\frac{1}{\sqrt[4]{2-x}}dx < 0.03$
+
+
+$\nl$
+
+$\nl$
+
+$习题课$
+
+$\jf{1}{+\infty}\frac{sinx}{\sqrt x}dx收敛,\jf{1}{+\infty}\frac{sin^2x}{x}dx发散$
+
+$\nl$
+
+$\jf{a}{b}f^2(x)dx(a为瑕点) \Leftarrow \jf{a}{b}|f(x)|dx$
+
+$证明0 \le |f(x)| \le \frac{1}{2}[1+f^2(x)] \forall x \in (a,b),但对无穷积分不成立$
+
+$\jf{a}{b}f^2(x)dx(a为瑕点) \nRightarrow \jf{a}{b}|f(x)|dx,反例：\jf{0}{1}\frac{1}{\sqrt x}dx$
+
+$\nl$
+
+$命题：f(x)满足下列条件之一，则当\jf{a}{+\infty}f(x)dx收敛时，必有\xtinf f(x)=0$
+
+$1:\xtinf f(x)存在，2:单调，3:一致连续。$
+
+$反例：\jf{0}{+\infty}(-1)^{[x^2]}dx,\jf{0}{+\infty}sin(x^2)dx$
+
+$\nl$
+
+$\jf{a}{+\infty}f(x)dx绝对收敛，g(x)有界，\jf{a}{+\infty}f(x)g(x)dx收敛?$
+
+$由0 \le |f(x)g(x)| \le M|f(x)|可知其绝对收敛$
+
+$\nl$
+
+$若f,g \in C(a,+\infty)且\jf{a}{+\infty}f(x)dx收敛，\xtinf g(x)=1，是否\jf{a}{+\infty}f(x)g(x)dx收敛?$
+
+$反例：f=\frac{sinx}{\sqrt x},g=(1+f)$
+
+$\nl$
+
+$若\exists p>1,使得f(x)=o(\frac{1}{x^p})(x \to +\infty),则\jf{a}{+\infty}|f(x)|dx收敛$
+
+$\nl$
+
+$对瑕积分，P<1时收敛，P>1时发散$
+
+$若f(x)～\frac{c}{x^p}(c \ne 0,x \to +\infty)则当p>1时，\jf{a}{+\infty}f(x)dx收敛，当p \le 1时，\jf{a}{+\infty}f(x)dx发散$
+
+$\nl$
+$例:\frac{1}{\sqrt x (1+x^2)} ～ \frac{1}{x^{\frac{5}{2}}},x \to +\infty $
+
+$\frac{1}{\sqrt x (1+x^2)} ～ \frac{1}{x^{\frac{1}{2}}},p=\frac{1}{2}<1$
+
+$故\jf{0}{+\infty}f(x)dx收敛$
+
+$\nl$
+
+$\jf{0}{+\infty}[ln(1+\frac{1}{x})-\frac{1}{1+x}]dx$
+
+$x \to +\infty, ln(1+\frac{1}{x})=\frac{1}{x}-\frac{1}{2x^2}+o(\frac{1}{x^2})$
+
+$\frac{1}{1+x}=\frac{1}{x}\frac{1}{1+\frac{1}{x}}= \frac{1}{x}[1-\frac{1}{x}+o(\frac{1}{x})]$
+
+$ln(1+\frac{1}{x})-\frac{1}{1+x}=\frac{1}{2x^2}+o(\frac{1}{x^2})～\frac{1}{2x^2},P=2,故发散$
+
+$令x=\frac{1}{t},\jf{0}{1}ln(1+\frac{1}{x})dx=\jf{1}{+\infty}\frac{ln(1+t)}{t^2}dt$
+
+$\nl$
+
+$设f(x)在任意有限区间上可积，\xtinf f(x)=C证明：$
+
+$\xtx{0+}\lambda \jf{0}{+\infty}e^{-\lambda x}f(x)dx=C$
+
+$分析：C=\lambda \jf{0}{+\infty}Ce^{-\lambda x}dx,故只须证明|\lambda \jf{0}{+\infty}e^{-\lambda x}(f(x)-C)dx|$
+
+$\forall \epsilon > 0, \exists A>0,|f(x)-C|< \frac{\epsilon}{2},\forall x \ge A,故\jf{0}{A}|f(x)-C|dx \triangleq M$
+
+$|\lambda \jf{0}{+\infty}e^{-\lambda x}f(x)dx-C| \le \lambda |\jf{0}{A}e^{-\lambda}|f(x)-C|dx|+\lambda \jf{A}{+\infty}e^{-\lambda x}|f(x)-C|dx$
+
+$\le \lambda M+\frac{\epsilon}{2} \jf{A}{+\infty}e^{-\lambda x}d(\lambda x) < \lambda M+ \frac{\epsilon ll}{2}$
+
+$取\delta (0 < \delta < \frac{\epsilon}{2M}),则当0<\lambda<\delta 时，有\lambda M+\frac{\epsilon}{2} < \epsilon，即有\xtx{0+}\lambda \jf{0}{+\infty}e^{-\lambda x}f(x)dx=C$
+
+$\nl$
+
+$例:设g(x)在[0,+\infty)上非负，\Atinf \jf{0}{A} g(x)dx=\alpha,f(x) \in c[0,1]$
+
+$证明: \ttx{o^+}\jf{0}{1}t^{-1}g(t^{-1}x)f(x)dx=\alpha f(0)$
+
+$依题有|f(x)| \le M,\forall x \in [0,1],由f(x)在x=0的连续，\forall \epsilon >0, \exists \delta >0:$
+
+$|f(x)-f(0)|<\epsilon, \forall x \in \cup (0,\delta)$
+
+$对上述\epsilon >0,\delta >0, \exists t_0 > 0,当\forall t(0<t<t_0)由Cauchy准则有$
+
+$0=\jf{\frac{\delta}{t}}{\frac{1}{t}}g(u)du < \epsilon$
+
+$注意到\ttx{0^+}\jf{0}{1}t^{-1}g(t^{-1}x)dx=$
+
+$\ttx{0^+}\jf{0}{\frac{1}{t}}g(u)du=\alpha,此时有|\jf{0}{1}t^{-1}g(tx)|f(x)-f(0)|dx| \le$
+
+$\jf{0}{\delta}t^{-1}g(t^{-1}x)|f(x)-f(0)|dx+\jf{\delta}{1}t^{-1}g(t^{-1}x)|f(x)-f(0)|dx$
+
+$< \epsilon \jf{0}{\frac{\epsilon}{t}}g(u)du+2M|\jf{\frac{\epsilon}{t}}{\frac{1}{t}}g(u)du| < \epsilon(\alpha+2M)$
+
+$故原式=f(0)\ttx{0}\jf{0}{1}t^{-1}g(t^{-1}x)dx=f(0)\ttx{0}\jf{0}{\frac{1}{t}}g(u)du=\alpha f(0)$
+
+$证明方向：\epsilon \to \delta \to t_0(0 < t < t_0)$
+
+\end{document}
+

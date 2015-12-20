@@ -1,0 +1,407 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{pstricks-add}
+\setmainfont{Microsoft YaHei}
+\pagestyle{fancy}
+
+
+\begin{document}
+\input{macro.tex}
+
+\begin{center} 习题课  \end{center}
+
+$\nl$
+两个重要极限证法？
+
+$\frac{sinx}{x},(1+x)^{\frac{1}{x}},用Hospital法则？$
+
+$因为(sinx)'=cosx，利用了\xtx{0}\frac{sinx}{x}=1,导致循环论证$
+
+$\nl$
+$f(x)在[a,+\infty)可导，\xtinf f(x)存在，则必有\xtinf f'(x)=0? \zeta 未必连续$
+
+导数有界，则一致连续
+
+$\nl$
+
+$设f(xy)=f(x)+f(y),f'(1)存在,判断f'(x)存在性$
+
+因为$f(1)=2f(1)，故f(1)=0$
+
+$设f'(x)=\frac{f(x+\Delta x)-f(x)}{\Delta x}_{\Delta x \to 0}=\frac{1}{x}\frac{f(1+\frac{\Delta x}{x})-f(1)}{\frac{\Delta x}{x}}_{\Delta x \to 0}=\frac{f'(1)}{x}_{\Delta x \to 0}$
+
+$故f'(x)=\frac{f'(1)}{x}$
+
+$\nl$
+
+$y=sin(A·arcsinx),y'=cos(A·arcsinx)A·\frac{1}{\sqrt{1-x^2}}$
+
+$故(1-x^2)y''-xy'+A^2y=0,故y^{(2k)}(0)=0$
+
+\[ y^{(2k+1)}=(-1)^kA \prod_{i=1}^k (A^2-(2i-1)^2) \]
+
+$\nl$
+
+$f''(x)>0,f(0)<0,求证：\frac{f(x)}{x}在(0,+\infty)递增$
+
+$设x_2 > x_1 > 0，则\frac{f(x_2)}{x_2}-\frac{f(x_1)}{x_1}=[\frac{f(\zeta)}{\zeta}]'(x_2-x_1)$
+
+$=\frac{f'(\zeta)\zeta-f(\zeta)}{\zeta^2}(x_2-x_1)$
+
+$因为x_2-x_1>0,\zeta^2>0$
+
+$又因为f(x)<f(x)-f(0)=f'(\zeta)x<f'(x)x$
+
+$故f'(\zeta)\zeta - f(\zeta) > 0$
+
+$\nl$
+
+证明不等式的方法
+
+利用导数定义，中值定理
+
+Taloy定理，单调性
+
+极值最值，凸函数
+
+$\nl$
+$f(x) \in D[0,1],f(0)=f(1)=0,minf(x)=-1,求证：maxf''(x) \ge 8$
+
+$设f(x_0)=-1,则f'(x_0)=0$
+
+$则f(0)=f(x_0)+\frac{f''(\zeta_1)}{2}x_0^2, \to 2=f''(\zeta_1)x_0^2$
+
+$f(1)=f(x_0)+\frac{f''(\zeta_1)}{2}(1-x_0)^2, \to 2=f''(\zeta_2)(1-x_0)^2$
+
+$显然f''(\zeta_1)与f''(\zeta_2) \ge 0$
+
+$若f''(\zeta_1) \ge f''(\zeta_2),则x_0^2 \le (1-x_0)^2,则x_0 \le \frac{1}{2}$
+
+$故有f''(\zeta_1) \ge 8$ 
+
+$\nl$
+$设f(x+t)=f(x)+f'(x+\theta t)·t (0<\theta<1)$
+
+$f''(x)连续恒不为0，证明\ttx{0} \theta = \frac{1}{2}$
+
+证明：因为$f(x+t)=f(x)+f'(x)t+\frac{1}{2}f''(x+\theta^*t)t^2$
+
+又因为$f(x+t)=f(x)+f'(x+\theta t)·t$
+
+相减消t，$\ttx{0}\frac{f'(\theta t +x)-f'(x)}{\theta t}\theta=\frac{1}{2}f''(x)$
+
+$\nl$
+
+$设t>0,f(x)有n+2阶连续导数，且f^{(n+2)}(x) \ne 0,\forall x$
+
+$设f(x+t)=f(x)+f'(x)t+\frac{f^{(n+1)}(x)}{n!}t^n+\frac{f^{(n+1)}(x+\theta t)}{(n+1)!}t^{n+1},0<\theta<1$
+
+$\nl$
+
+$例：\xtinf f(x)=A,\xtinf f'''(x)=0,证明：\xtinf f'(x)=\xtinf f''(x)=0$
+
+$f(x+1)=f(x)+f'(x)+\frac{1}{2}f''(x)+\frac{1}{6}f'''(\zeta_1),x<\zeta_1<x+1$
+
+$故\xtinf f'(x)+\frac{1}{2}f''(x)=0$
+
+$f(x-1)=f(x)-f'(x)+\frac{1}{2}f''(x)-\frac{1}{6}f'''(\zeta_2),x-1<\zeta_2<x$
+
+$故\xtinf f'(x)-\frac{1}{2}f''(x)=0$
+
+$\nl$
+
+$设f(x)在=0某领域内二阶可导，且\xtx{0}(\frac{sin3x}{x^3}+\frac{f(x)}{x^2})=0$
+
+$求f(0),f'(0),f''(0)$
+
+$\frac{sin3x}{x^3}+\frac{f(x)}{x^2}=o(1) \to sin3x+xf(x)=o(x^3),(x \to 0)$
+
+$3x-\frac{27}{3!}x^3+o(x^4)+xf(x)=o(x^3)$
+
+$f(x)=-3+\frac{27}{3!}x^2+o(x^2),(x \to 0)$
+
+$\xtx{0}[\frac{3}{x^2}+\frac{f(x)}{x^2}]=\xtx{0}[\frac{3}{x^2}+\frac{-3+\frac{9}{2}x^2+o(x^2)}{x^2}] = \frac{9}{2}$
+
+$\nl$
+
+思考题
+
+$a^{b^a}>b^{a^b},(b>a>1)$
+
+$令x=\frac{lna}{lnb},x>1,y=lnb>0$
+
+$则原式等价于lnx>y(xe^y-e^{xy}),令f(y)=xe^y-e^{xy}$
+
+$f'(y)=x(e^y-e^{xy})<0,故f(y)<f(0)=x-1,故f(y) \le 0时，有lnx>yf(y)$
+
+$\nl$
+
+$例：设f(x)在[a,+\infty)上二阶可导，记M_k=sup_{x \in [a,+\infty)}|f^{(k)}(x)| < +\infty,k=0,1,2,...$
+
+$证明:M_1^2 \le 4 M_0 M_2$
+
+$对\forall x \in [a,+\infty),\forall t>0$
+
+$f(x+2t)=f(x)+f'(x)·2t+\frac{f''(\zeta)}{2}·4t^2,x<\zeta<x+2t$
+
+$故|f'(t)| = |\frac{f(x+2t)-f(x)}{2t}-tf''(\zeta)| \le tM_2+\frac{M_0}{t},\forall x \in [a,+\infty),\forall t>0$
+
+$取t=\sqrt{\frac{M_0}{M_2}},|f'(x)| \le 2\sqrt{M_0M_2},\forall x \in (a,+\infty)$
+
+$\nl$
+
+指数型辅助函数构造
+
+$①f(x)在R上可导，f'(x)+f(x)>0$
+
+$证明:f(x)在R上至多只有一个根$
+
+$反证法，若有两个根x,x',令F(x)=f(x)e^x,F'(x)>0,故F严格递增，故不可能有两个根$
+
+$\nl$
+
+$②f(x)在R上可导，则\forall k \in R,在f(x)=0的两根之间必有f'(x)-kf(x)=0的一个根$
+
+$构造F(x)=f(x)e^{-kx}$
+
+$设f(x)两根为x_1,x_2,故F(x_1)=F(x_2)=0$
+
+$\exists F'(x)=f'(x)e^{-kx}+f(x)e^{-kx}(-k)=e^{-kx}(f'(x)-kf(x))=0$
+
+$\nl$
+
+$③设f(x) \in (a,b),在(a,b)内可导，f(a)f(b)>0,f(a)f(\frac{a+b}{2})<0$
+
+$则对\forall k \in R,\exists \zeta \in (a,b)使得\frac{f'(\zeta)}{f(\zeta)}=k,f(x) \ne 0$
+
+$解法同上，注：在a与\frac{(a+b)}{2}与b之间存在两根$
+
+$\nl$
+
+$例：f(x)在[a,+\infty)上可导，且\xtinf[f(x)+f'(x]=0$
+
+$证明:\xtinf f(x)=0$
+
+$分析：\forall \epsilon >0,\exists A>0,当x>A,|f(x)+f'(x)|<\epsilon$
+
+$利用Cauchy中值定理,构造\frac{F(x)}{G(x)} \to \frac{f(x)·e^x}{e^x}$
+
+$\frac{F(x)-F(A)}{G(x)-G(A)}=\frac{F'(\zeta)}{G'(\zeta)} \to \frac{f(x)e^x-f(A)e^A}{e^x-e^A}=f'(\zeta)+f(\zeta)$
+
+$|f(x)| \le e^{A-x}|f(A)|+|f'(\zeta)+f(\zeta)|(1+e^{A-x})$
+
+$\xtinf e^{A-x}=0,\exists A_1 > A,e^{A-x}<\epsilon,e^{A-x}<1,\forall x>A$
+
+$|f(x)| \le (|f(A)|+2)\epsilon$
+
+$\nl$
+
+$设f(x)在x_0处有2m+1阶导数，且$
+
+$f'(x_0)=f''(x_0)=...=f^{(2m)}(x_0)=0,f^{(2m+1)}(x_0)>0$
+
+$证明f(x)在x_0处递增，即\exists \delta>0,f(x)<f(x_0),\forall x\in (x_0-\delta,x_0)$
+
+$f(x)>f(x_0),\forall x\in (x_0,x_0+\delta)$
+
+$因为f(x)=f(x_0)+f'(x_0)(x-x_0)+....$
+
+$f(x)-f(x_0)=\frac{f^{(2m+1)}(x_0)}{(2m+1)!}(x-x_0)^{2m+1}+o(x-x_0)^{2m+1}$
+
+$=(x-x_0)^{2m+1}(\frac{f^{(2m+1)}(x_0)}{(2m+1)!}+o(1))$
+
+$因为\frac{f^{(2m+1)}(x_0)}{(2m+1)!}+o(1)>0，且2m+1为奇数，故x \to x_0时，[f(x)-f(x_0)]与x-x_0同号$
+
+$\nl$
+
+$设f(x)在[a,+\infty)上二阶可导，f(a)>0,f'(a)<0,f''(x) \le 0,\forall x>a$
+
+$证明：f(x)在(a,+\infty)上有且仅有一个实根$
+
+$f''(x) \le 0,\forall x>a \to 当x>a,f'(x)<0 \to 当x>a,f(x)递减$
+
+$f(x)-f(a) = f'(\zeta)(x-a) \le 0$
+
+$f(x)=f(a)+f'(\zeta)(x-a) \le f(a)+f'(a)(x-a)$
+
+$因为f'(\zeta)<f'(a)<0$
+
+$当x \to +\infty, 由f'(a)<0 \to f(x) \to -\infty,故恰有一根$
+
+$\nl$
+
+$设f(x),g(x)在[a,b]上可导$
+
+$f(x)g'(x)-f'(x)g(x) \ne 0.\forall x \in [a,b]$
+
+$证明：f(x)两零点之间至少有g(x)一个零点$
+
+$证：若g(x)无零点,令F(x)=\frac{f(x)}{g(x)},求得F'(x)=\frac{f(x)g'(x)-f'(x)g(x)}{g^2(x)}$
+
+$设f(x_1)=f(x_2)=0,且此时g(x_1) \ne 0,g(x_2) \ne 0$
+
+$则F(x_1)=F(x_2)=0,用Rolle定理可知，必\exists x': F'(x')=0$
+
+$\nl$
+
+对称函数的常数k值
+
+$用途:证明 \exists \zeta \in (a,b),f^{(n)}(\zeta)=k,n=2,3....$
+
+$条件：函数表达式具有对称性$
+
+$方法：①.将端点a(或b)改为x，相应函数值也改为f(x)$
+
+$②.将改变后的函数记为F(x)$
+
+$③.F(x)满足中值定理条件$
+
+$\nl$
+$例：f(x) \in [a,b],(a,b)可导，(0<a<b)证明：\exists \zeta \in (a,b)$
+
+$使得f(b)-f(a)=(ln \frac{b}{a})\zeta f'(\zeta)$
+
+$旧方法：即\frac{f(b)-f(a)}{lnb-lna}=\zeta f'(\zeta)=\frac{f'(\zeta)}{\frac{1}{\zeta}},用Cauchy$
+
+$新方法：记\frac{f(b)-f(a)}{lnb-lna}=k,故f(x)-lnx·k关于a，b具有对称性，f(a)-lna·k=f(b)-lnb·k$
+
+$作F(x)=f(x)-lnx·k-f(a)+lna·k$
+
+$F(a)=0，F(b)=0(由k定义)，用Rolle定理，F'(\zeta)=0，即f'(\zeta)=\frac{k}{\zeta}$
+
+$\nl$
+
+$例:f(x)在[a,b]三阶可导，证明\exists \zeta \in (a,b)，使得$
+
+$f(b)=f(a)+f'(\frac{a+b}{2})(b-a)+\frac{1}{24}f'''(\zeta)(b-a)^3$
+
+$令k=f'''(\zeta)=...该式关于a,b对称$
+
+$令b=x,F(x)=f(x)-f(a)-f'(\frac{b+x}{2})(x-a)-\frac{k}{24}(x-a)^3$
+
+$判断有无F(a)=F(b)=0$
+
+$F'(\zeta)=f'(\zeta)-f'(\frac{a+\zeta}{2})-\frac{f''(\frac{a+\zeta}{2})}{2}(\zeta-a)-\frac{k}{8}(\zeta-a)^2=0$
+
+$将f'(x)在\frac{a+\zeta}{2}处展开$
+
+$f'(x)=f'(\frac{a+\zeta}{2})+f''(\frac{a+\zeta}{2})(x-\frac{a+\zeta}{2})+\frac{1}{2}f'''(\zeta')(\frac{a+\zeta}{2})^2$
+
+$令x=\zeta,再代入上式有k=f'''(\zeta')$
+
+$\nl$
+$思考题：
+$\nl$
+①.设f(x)在(a,b)上可导，a<x<b,证明\exists \zeta \in (a,b)使得$
+
+$\frac{1}{b-a} \begin{vmatrix} b^n & a^n \\ f(a) & f(b) \end{vmatrix}=[nf(\zeta)+\zeta f'(\zeta)]\zeta^{n-1}$
+
+$\nl$
+$②.设f(x)在闭区间三阶可导，证明$
+
+$f(b)=f(a)+\frac{1}{2}(b-a)[f'(a)+f'(b)]-\frac{f'''(\zeta)}{12}(b-a)^3$
+
+$\nl$
+
+$设f(x)在[0,+\infty)上可导，且0  \le f(x) \le \frac{x}{1+x^2},证明\exists \zeta \in (0,+\infty):f'(\zeta)=\frac{1-\zeta^2}{(1+\zeta^2)^2}$
+
+$设f'(\zeta)=\frac{1-\zeta^2}{(1+\zeta^2)^2} \Leftrightarrow f'(\zeta)-(\frac{\zeta}{1+\zeta^2})'=0$
+
+$F(x)=f(x)-\frac{x}{1+x^2},且F(0)=0,F(+\infty)=0$
+
+$由推广的Rolle定理，可知\exists F'(\zeta)=f'(\zeta) - \frac{1-\zeta^2}{(1+\zeta^2)^2} = 0$
+
+$\nl$
+
+$例：f(x)在[0,1]上可导，f(0)=0,f(1)=1$
+
+$则对\forall \lambda_k>0(k=1,2,3...n)必存在x_k \in (0,1) (k=1～n)$
+
+$使得\frac{\lambda_1}{f'(x_1)}+\frac{\lambda_2}{f'(x_2)}+...\frac{\lambda_n}{f'(x_n)}=\lambda_1+\lambda_2+...\lambda_n$
+
+$证明n=2的情形$
+
+$f(0)=0,f(1)=1, \exists x_0,0<f(x_0)=\frac{\lambda_1}{\lambda_1+\lambda_2}<1$
+
+$f(x_0)-f(0)=f'(x_1)x_0$
+
+$f(1)-f(x_0)=f'(x_2)(1-x_0)$
+
+$x_0=\frac{f(x_0)}{f'(x_1)}=\frac{\frac{\lambda_1}{\lambda_1+\lambda_2}}{f'(x_1)},1-x_0=\frac{1-f(x_0)}{f'(x_2)}=\frac{\frac{\lambda_2}{\lambda_1+\lambda_2}}{f'(x_2)}$
+
+$n的情形依此类推$
+
+$\nl$
+
+$f(x)在[-1,1]上无穷次可导，且f(\frac{1}{n})=\frac{n^2}{1+n^2},n\in N$
+
+$求f^{(n)}(0)$
+
+$令g(x)=\frac{1}{1+x^2},F(x)=f(x)-g(x),\forall x \in [-1,1]$
+
+$F(\frac{1}{n})=f(\frac{1}{n})-g(\frac{1}{n})=0,故F'(0)=0,F''(0)=0,....$
+
+$\nl$
+
+$例：f(x)在(0,a]上可导，且\xtx{0^+}\sqrt{x}f'(x)存在$
+
+$证明：f(x)在(0,a]上一致连续$
+
+$\forall M>0,\exists \delta >0,|\sqrt{x}f'(x)| \le M. 0<x<\delta$
+
+$|\frac{f'(x)}{\frac{1}{\sqrt{x}}}| \le M,令 g(x)=2\sqrt{x}, \forall x_1,x_2 \in (0,\delta)$
+
+$用Cauchy，|\frac{f(x_1)-f(x_2)}{g(x_1)-g(x_2)}|=|\frac{f'(\zeta)}{g'(\zeta)}|=|\sqrt{\zeta}f'(\zeta)| \le M$
+
+$取\forall \epsilon>0,取\delta_2=\frac{\epsilon^2}{16M}>0$
+
+$|\sqrt{x_1}-\sqrt{x_2}|<\sqrt{x_1}+\sqrt{x_2}<\frac{\epsilon}{2M}$
+
+$\delta = min(\delta_1,\delta_2)$
+
+$\nl$
+
+$例：Jensen不等式，设f(x)为[a,b]上凸函数，x_i \in [a,b]$
+
+$\lambda_i>0,(i=1～n)且\isum{1}{n} \lambda_i=1,则有$
+
+$f(\lambda_1x_1+\lambda_2x_2+...\lambda_nx_n) \le \lambda_1f(x_1)+...\lambda_nf(x_n)$
+
+$\lambda=2时由定义可知成立$
+
+$设n-1时成立$
+
+$t=\isum{2}{n} \lambda_i,\frac{\isum{2}{n} \lambda_i}{t}=1,\lambda_1 +t=1$
+
+$\isum{2}{n} \frac{\lambda_i}{t} x_i \le max_{i=2～n}(x_i) \Rightarrow \isum{2}{n} \frac{\lambda_i}{t} x_i \in [a,b]$
+
+$f(\isum{1}{n} \lambda_i x_i) =f(\lambda_1x_1+(\isum{2}{n} \frac{\lambda_i}{t} x_i)t)$
+
+$\le \lambda_1f(x_1)+tf(\isum{2}{n} \frac{\lambda_i}{t} x_i)$
+
+$\le \lambda_1f(x_1)+t \isum{2}{n} \frac{\lambda_i}{t} f(x_i)$
+
+$=\isum{1}{n} \lambda_if(x_i)$
+
+$\nl$
+
+$Young不等式,设x,y \ge 0,p,q>0, \frac{1}{p}+\frac{1}{q}=1,则$
+
+$有x^{\frac{1}{p}}y^{\frac{1}{q}} \le \frac{x}{p}+\frac{y}{q}$
+
+$x,y>0时，即\frac{1}{p}lnx+\frac{1}{q}lny \le ln(\frac{x}{p}+\frac{y}{q})$
+
+$设f(x)=ln(x),证明f(x)为上凸函数，再利用Jensen不等式$
+
+$\nl$
+$例：\frac{1}{n}\isum{1}{n} sini \le sin(\frac{1}{n}\isum{1}{n} x_i),0<x_1<x_2<...x_n< \pi$
+
+$\prod\limits_{i=1}^n x_i^{x_i} \ge (\prod\limits_{i=1}^n x_i)^{\frac{1}{n}\isum{1}{n} x_i}$
+
+\end{document}
+

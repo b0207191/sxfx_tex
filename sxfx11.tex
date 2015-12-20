@@ -1,18 +1,22 @@
 \documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr}
 \usepackage{fontspec}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{bm}
 \usepackage{tikz}
-\setmainfont{Adobe Kaiti Std}
-\thispagestyle{empty}
-\pagestyle{empty}
+\usepackage{pstricks-add}
+\setmainfont{Microsoft YaHei}
+\pagestyle{fancy}
+
+
 \begin{document}
 
 \input{macro.tex}
+$\nl$
 
+\begin{center} 第11章 函数项级数  \end{center}
 
-第11章 函数项级数
 
 $讨论f_n(x)=x^n,n \in N,在(0,\frac{1}{2})上一致收敛$
 
@@ -22,11 +26,11 @@ $则有\frac{1}{2}=x_n^n < \epsilon,\forall n>N$
 
 $\nl$
 
-$定义，设f_n(x) \overrightarrow{D} f(x),对\forall \epsilon > 0,\exists N=N(\epsilon) \in \bold N:|f_n(x)-f(x)|< \epsilon$
+$定义，设f_n(x) \overset{\underset{\mathrm{D}}{}}{\to} f(x),对\forall \epsilon > 0,\exists N=N(\epsilon) \in \bold N:|f_n(x)-f(x)|< \epsilon$
 
-$\forall n>N,\forall x \in D,则称f_n(x)在D上一致收敛于f(x)记为 f_n(x)\rightrightarrows f(x)$
+$\forall n>N,\forall x \in D,则称f_n(x)在D上一致收敛于f(x)记为 f_n(x) \overset{\underset{\mathrm{D}}{}}{\rightrightarrows} f(x)$
 
-$f_n(x) \nRightarrow f(x):\exists \epsilon_0 > 0 以及递增无界整数列\{n_k\}和D中点列\{x_k\}$
+$f_n(x) \overset{\underset{\mathrm{D}}{}}{\nRightarrow} f(x):\exists \epsilon_0 > 0 以及递增无界整数列\{n_k\}和D中点列\{x_k\}$
 
 $|f_{nk}(x_k)-f(x_k)| \ge \epsilon_0,\forall k \in N$
 
@@ -113,13 +117,17 @@ $记M=max(|f_1(x)|,....|f_N(x)|,M_2)$
 
 $\nl$
 
-$M判别法（book p72），\sum \frac{1}{nln^2n}积分判敛法$
+$M-判别法（book p72），\sum \frac{1}{nln^2n}积分判敛法$
 
 $ln(1-\frac{a}{nln^2n})\le ln(1+\frac{x}{nln^2n}) \le ln(1+\frac{a}{nln^2n})\le -ln(1-\frac{a}{nln^2n})$
 
-$D判别法（book,page 75）特例(1)\{a_n\}单调趋向0，亦成立(2)\sum \beta_i有界亦成立$
+$\nl$
 
-$A-判别法（book，p74）|sinx|\sum|sin nx| \le |sinx|\frac{1}{|sin\frac{x}{2}|}=2|cos\frac{x}{2}|\le 2$
+$D-判别法（book,page.75）特例①\{a_n\}单调趋向0，亦成立 ②\sum \beta_i有界,亦成立$
+
+$\nl$
+
+$A-判别法（book，page.74）|sinx|\sum|sin nx| \le |sinx|\frac{1}{|sin\frac{x}{2}|}=2|cos\frac{x}{2}|\le 2$
 
 $通项是否趋于0是必要条件，利用求导求出反例的\{x_k\}或者$
 
