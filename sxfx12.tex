@@ -32,6 +32,8 @@ $一般地1，cos\frac{\pi x}{l}，sin\frac{\pi x}{l}，...，cos\frac{k\pi x}{l
 
 $[-l,l]上正交系，而\frac{1}{\sqrt{2l}},\frac{1}{\sqrt{l}}cos\frac{\pi x}{l},\frac{1}{\sqrt{l}}sin\frac{\pi x}{l},...为标准正交基$
 
+$\nl$
+
 $将周期为2\pi 的函数，f(x)= \begin{cases} -\pi, -\pi<x<0 \\ x, 0\le x<\pi \end{cases}展开为付氏级数$
 
 $a_0=\frac{1}{\pi}(\jf{-\pi}{0}-\pi dx+\jf{0}{\pi}xdx)=-\frac{1}{2}\pi$
@@ -41,6 +43,8 @@ $a_n=\frac{1}{\pi}(\jf{-\pi}{0}-\pi cosnx dx+\jf{0}{\pi}xcosnxdx)=\frac{1}{n^2 \
 $b_n=\frac{1}{\pi}(\jf{-\pi}{0}-\pi sinnx dx+\jf{0}{\pi}xsinxdx)=\frac{1}{n^2 \pi}((-1)^n -1)=\frac{1}{n}[1-2(-1)^n],n \in N$
 
 $f(x)=\frac{1}{4}\pi+\nsuminf {\frac{-2}{(2n-1)^n\pi}cos(2n-1)x+\frac{1}{n}[1-2(-1)^n]sinnx}$
+
+$\nl$
 
 $设f(x)为周期为2\pi 的可积函数，其付氏系数为a_0,a_n,b_n，试计算f(x+h)$
 
@@ -54,11 +58,15 @@ $+sinnh\frac{1}{\pi}\jf{h-\pi}{h+\pi}|f(t)|sinntdt=a_ncosnh+b_nsinnh$
 
 $同理\beta_n=-a_nsinnh+b_ncosnh$
 
-$奇偶性延拓1，若周期为2\pi 的函数f为奇函数，则 a_n \equiv 0,n=0,1,2...$
+$\nl$
+
+$奇偶性延拓$
+
+$1^\circ 若周期为2\pi 的函数f为奇函数，则 a_n \equiv 0,n=0,1,2...$
 
 $f(x)～\sum b_nsinnx其中b_n=\frac{2}{\pi}\jf{0}{\pi}f(x)sinnxdx$
 
-$2.偶函数，b_n \equiv 0,f(x)～\frac{a_0}{2}+\nsuminf\frac{2}{\pi}\jf{0}{\pi}f(x)cosnxdx,n \in N$
+$2^\circ 偶函数，b_n \equiv 0,f(x)～\frac{a_0}{2}+\nsuminf\frac{2}{\pi}\jf{0}{\pi}f(x)cosnxdx,n \in N$
 
 $a_0=\frac{2}{\pi}\jf{0}{\pi}f(x)dx$
 
@@ -68,7 +76,31 @@ $f(x)=x^2(0 \le x \le \pi)展开$
 
 $(1)按余弦展开，f(x)～\frac{\pi ^2}{3}+4\nsuminf \frac{(-1)^n}{n^2}cosnx可计算\nsuminf \frac{(-1)^n}{n^2}$
 
+\begin{tikzpicture}[domain=1:5,line width=1pt]
+\draw[->] (-4,0) -- (4,0);
+\draw[->] (0,-1) -- (0,3);
+
+\draw  (-3,2)  parabola  bend  (-2,0)  (-1,2);
+\draw  (-1,2)  parabola  bend  (0,0)  (1,2);
+\draw  (1,2)  parabola  bend  (2,0)  (3,2);
+        
+\end{tikzpicture}
+
 $(2)按正弦展开，f(x)～\nsuminf \frac{(-1)^{n+1}}{n}sinnx-\frac{8}{\pi}\nsuminf \frac{sin(2n-1)x}{(2n-1)^2}$
+
+\begin{tikzpicture}[domain=1:5,line width=1pt]
+\draw[->] (-4,0) -- (4,0);
+\draw[->] (0,-3) -- (0,3);
+
+\draw[domain=-1:1] plot(\x,{tan(\x r)});
+
+\draw[domain=1:3] plot(\x,{tan((\x-2) r)});
+
+\draw[domain=-3:-1] plot(\x,{tan((\x+2) r)});
+        
+\end{tikzpicture}
+
+
 
 $(3)在[0,2\pi]上展开，a_0=\frac{1}{\pi}\jf{0}{2\pi}f(x)dx=\frac{8}{3}\pi^2$
 
@@ -77,6 +109,17 @@ $a_n=\frac{1}{\pi}\jf{0}{2\pi}x^2cosnxdx=\frac{4}{n^2}$
 $b_n=\frac{1}{\pi}\jf{0}{2\pi}x^2sinnxdx=-\frac{4\pi}{n}$
 
 $f(x)～\frac{8}{3}\pi^2+4\nsuminf(\frac{cosnx}{n^2}-\pi \frac{sinnx}{n})$
+
+\begin{tikzpicture}[domain=1:5,line width=1pt]
+\draw[->] (-4,0) -- (4,0);
+\draw[->] (0,-1) -- (0,3);
+
+\draw[dashed] (1,0) -- (1,1.5);
+\node [below] at (1,0) {2$\pi$};
+
+\draw  (0,0)  parabola  (1,2);
+        
+\end{tikzpicture}
 
 $\nl$
 
@@ -113,6 +156,22 @@ $f(x)～\frac{a_0}{2}+\nsuminf (a_n cos\frac{n \pi x}{l}+b_n sin\frac{n \pi x}{l
 $\nl$
 
 $(1)f(x)为x到与它最近整数的距离$
+
+\begin{tikzpicture}[domain=1:5,line width=1pt]
+\draw[->] (-1,0) -- (3,0);
+\draw[->] (0,-1) -- (0,1);
+
+\draw[dashed] (0,0) -- (0.5,0.5);
+\draw[dashed] (-0.5,0.5) -- (0,0);
+
+\draw[dashed] (0,0) -- (0.5,0.5);
+\draw[dashed] (0.5,0.5) -- (1,0);
+
+\draw[dashed] (1,0) -- (1.5,0.5);
+\draw[dashed] (1.5,0.5) -- (2,0);
+
+
+\end{tikzpicture}
 
 $f(x)表示为偶函数，b_n=0,a_0=2\jf{0}{1}f(x)dx=\frac{1}{2}$
 
@@ -177,6 +236,10 @@ $对\forall x \in [a,b]（广义）单侧导数存在，也即有$
 $\ttx{0+}\frac{f(x+t)-f(x+0)}{t}=f'(x+0)$
 
 $\ttx{0+}\frac{f(x-t)-f(x-0)}{t}=f'(x-0)$
+
+$\nl$
+
+级数
 
 $\nl$
 

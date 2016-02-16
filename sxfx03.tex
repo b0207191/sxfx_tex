@@ -17,7 +17,7 @@
 
 \begin{center} 第三章 连续函数  \end{center}
 
-P76
+BP76
 
 $设y=f(x),x \in U(x_0) ~ 若x在x_0处改变量为\Delta x，则y的改变量\Delta y=f(x_0+\Delta x)-f(x_0)满足$
 
@@ -30,6 +30,8 @@ p.s.极限证明问题
 
 证明:$\frac{x_{n+1}-x_n}{x_n-x_{n-1}}<0有单调性(对于奇偶子列)$
 
+$极限为离端点\frac{1}{3}处$
+
 $\nl$
 
 设$\ntinf \frac{a_1+a_2+...+a_n}{n}=a，证明：\ntinf \frac{a_n}{n}=0$
@@ -38,7 +40,7 @@ $\nl$
 
 $|\frac{a_1+a_2+...+a_n}{n}-\frac{a_1+a_2+...+a_n+a_{n+1}}{n+1}|<\varepsilon，\forall n > N$
 
-$|\frac{a_1+a_2+...a_n+n·a_{n+1}}{n(n+1)}|<\varepsilon \Rightarrow |\frac{a_1+a_2+...a_n}{(n+1)n}-\frac{a_{n+1}}{n+1}|<\varepsilon$
+$|\frac{a_1+a_2+...a_n-n·a_{n+1}}{n(n+1)}|<\varepsilon \Rightarrow |\frac{a_1+a_2+...a_n}{(n+1)n}-\frac{a_{n+1}}{n+1}|<\varepsilon$
 
 于是有
 
@@ -79,7 +81,7 @@ $(2-x_n)x_{n+1}=1$
 
 $x_1 \ne 2, x_1 \ne 1$
 
-$x_1<1 \to x_2<1 \to x_2>x_1$ (*)
+$x_1<1 \to x_2<1 \to x_2>x_1,因为\frac{1}{2-x_n}>x_n$ (*)
 
 $x_1>2 \to x_2<1 \to 同上*$ (**)
 
@@ -124,7 +126,7 @@ $令 \frac{x_n}{y_n}=\frac{a_1+a_2+....+a_n}{n}$
 $\nl$
 $②\ntinf \frac {\sqrt{1}+\sqrt{2}+....+\sqrt{n}}{n \sqrt{n}}  $
 
-$= \ntinf \frac{\sqrt{n+1}}{(n+1)\sqrt{n+1}-n\sqrt{n}}$
+$= \ntinf \frac{\sqrt{n+1}}{(n+1)\sqrt{n+1}-n\sqrt{n}}(这步使用到定理)$
 
 $= \ntinf \frac{\sqrt{n+1}[(n+1)\sqrt{n+1}+n\sqrt{n}]}{(n+1)^3-n^3}$
 
@@ -136,7 +138,7 @@ $③\ntinf \frac{ln n}{n}= \ntinf \frac{ln(n+1)-lnn}{n+1-n}=\ntinf ln(1+\frac{1}
 $\nl$
 $④\ntinf \frac {n^2}{a^n} (a>1)= \ntinf \frac{(n+1)^2-n^2}{a^{n+1}-a^n} =$
 
-$\ntinf \frac {2n+1}{a^n(a-1)} = \frac{1}{a-1} \ntinf \frac{2}{a^{n+1}-a^n}=0$
+$\ntinf \frac {2n+1}{a^n(a-1)} = \frac{1}{a-1} \ntinf \frac{2}{a^{n+1}-a^n}=0（使用2次）$
 
 $\nl$
 $⑤0<x_n<1, x_{n+1}=x_n(1-x_n)$
@@ -157,13 +159,14 @@ $=\frac{x_nx_{n-1}}{x_{n-1}-x_n}= \frac{x_nx_{n-1}}{x_{n-1}x_{n-1}} = \frac{x_n}
 $\nl$
 $⑥x_1=sinx,x_{n+1}=sinx_n$
 
-$利用(\xtx{0}\frac{x^2sinx^2}{x^2-sinx^2}=3) \to \ntinf nsin^2x_n=3 \to \ntinf \sqrt{\frac{n}{3}}sinx_n=1$
+$利用(sinx = x+\frac{x^3}{3!}+o(x^3) \to    \xtx{0}\frac{x^2sinx^2}{x^2-sinx^2}=3) \to \ntinf \frac{sin^2x_n · x_n^2}{x_n^2-sin^2x_n}=3 \to \ntinf \frac{1}{\frac{1}{sin^2x_n}-\frac{1}{sin^2x_{n-1}}}=3 \to \ntinf \frac{n}{\frac{1}{sin^2x_n}}=3 \to \ntinf nsin^2x_n=3 \to \ntinf \sqrt{\frac{n}{3}}sinx_n=1$
 
 $\nl$
+
 连续函数:P76
 注意3项
 
-$x \to x_0,f(x)有极限，区别：x=x_0处未必有定义$
+$x \to x_0,f(x)有极限222222222222222222222，区别：x=x_0处未必有定义$
 
 $|f(x)-A|<\varepsilon$
 
@@ -386,6 +389,7 @@ $
 此命题用于判断函数是否一致连续
 
 $\nl$
+
 $例10.P117(*)$
 
 证明：
@@ -521,6 +525,8 @@ $使得x'=nT+y',x''=nT+y'',且|y'-y''|<\delta$
 
 $于是|f(x')-f(x'')|=|f(nT+y')-f(nT+y'')|=|f(y')-f(y'')|<\varepsilon$
 
+$ $
+
 $f(x)在R上不一致连续 \to f(x)不是周期函数$
 
 $\nl$
@@ -595,6 +601,8 @@ $使得|x-(x_k+n)| \le \delta$
 $|f(x)| \le \frac{\varepsilon}{2}+\frac{\varepsilon}{2}= \varepsilon$
 
 $\nl$
+
+\begin{center} 第三章 极限与连续续论  \end{center}
 
 $\S 3.1实数基本定理$
 
@@ -747,13 +755,13 @@ $\varlimsup\limits_{n \to \infty}\frac{x_n}{n}=\beta,\varliminf\limits_{n \to \i
 
 $只需证\beta \le \alpha 即可$
 
-$任意固定m,对\forall n(充分大)有n=q_nm+r_n(0 \le r_n < n),其中q_n,r_n 均为\mathbf{Z}$
+$任意固定m,对\forall n(充分大)有n=q_nm+r_n(0 \le r_n < m),其中q_n,r_n 均为\mathbf{Z}$
 
 $故x_n=x_{q_nm+r_n} \le q_n x_m + x_{r_n}$
 
 $\frac{x_n}{n} \le \frac{q_n x_m}{n} + \frac{x_{r_n}}{n}=\frac{q_n x_m + x_{r_n}}{q_nm+r_n}$
 
-$\le \frac{x_{r_n}}{q_n x_m}+\frac{x_{r_n}}{q_n m} = \frac{x_m}{m}+\frac{x_{r_n}}{q_n m}$
+$\le \frac{q_n x_m}{q_n m}+\frac{x_{r_n}}{q_n m} = \frac{x_m}{m}+\frac{x_{r_n}}{q_n m}$
 
 $故\frac{x_n}{n} \le \frac{x_m}{m}+\frac{x_{r_n}}{q_n m} \le \frac{x_m}{m}+\frac{x_1{r_n}}{q_n m}$
 
@@ -771,7 +779,7 @@ $实数基本定理$
 
 $一.确界原理基本应用$
 
-$例：设f(x)在[a,b]上单调递增，f(a) \ge a,f(b) \le b,证明：f(x)在[a,b]上有不动点（不连续）$
+$例：设f(x)在[a,b]上单调递增，f(a) \ge a,f(b) \le b,证明：f(x)在[a,b]上有不动点(f未必连续)$
 
 $记E=\{x|f(x) \ge x,x \in [a,b]\},故E非空且有上界$
 
