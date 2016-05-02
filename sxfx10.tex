@@ -18,8 +18,6 @@ $\nl$
 \begin{center}第10章 级数  \end{center}
 
 
-
-
 $部分和S_n,n=1～k$
 
 $\frac{1}{lnn}-\frac{1}{ln(n+1)}=\frac{1}{\zeta ln^2 \zeta}> \frac{1}{(n+1)ln^2(n+1)}$
@@ -30,9 +28,9 @@ $设\{a_n\}单调递减且非负，且级数\nsum{1}{\infty}a_n收敛，证明:\
 
 $只需证明\{na_n\}的奇偶子列分别收敛于0，由Cauchy准则$
 
-$\forall \epsilon >0,\exists N_1 \in N,当n > N时有a_{n+1},a_{n+2}...a_{2n} < \frac{\epsilon}{2} 由单调性$
+$\forall \epsilon >0,\exists N_1 \in N,当n > N时有a_{n+1}+a_{n+2}...a_{2n} < \frac{\epsilon}{2} 由单调性$
 
-$na_{2n} \le a_{n+1},a_{n+2}...a_{2n} < \frac{\epsilon}{2},即(2n) a_{2n} < \epsilon$
+$na_{2n} \le a_{n+1}+a_{n+2}...a_{2n} < \frac{\epsilon}{2},即(2n) a_{2n} < \epsilon$
 
 $(2n+1)a_{2n+1}=2na_{2n+1}+a_{2n+1} \le 2na_{2n}+a_{2n+1}< \epsilon + \epsilon$
 
@@ -40,13 +38,15 @@ $\nl$
 
 $在\nsum{1}{\infty}\frac{1}{n}中去掉分母含零的项,则(\nsum{1}{\infty}\frac{1}{n})^* < {90}$
 
-$因为(\nsum{1}{\infty}\frac{1}{n})^*=(1+\frac{1}{2}+..+\frac{1}{9})+(\frac{1}{11}+\frac{1}{19}+...+\frac{1}{99})+(\frac{1}{111}+\frac{1}{119}+...+\frac{1}{999})$
+$因为(\nsum{1}{\infty}\frac{1}{n})^*=(1+\frac{1}{2}+..+\frac{1}{9})+(\frac{1}{11}+\frac{1}{19}+...+\frac{1}{99})+(\frac{1}{111}+\frac{1}{119}+...+\frac{1}{999})+...$
 
-$<9^1×1+9^2×0.1+9^3×0.01$
+$<9^1×1+9^2×0.1+9^3×0.01+...<9 \frac{1}{1-0.9}=90$
 
 $\nl$
 
 $e^{\pi}与\pi ^e用(\frac{x}{lnx})'比较$
+
+$\nl$
 
 $n^{\frac{1}{n}}=1,n \to \infty$
 
@@ -54,7 +54,7 @@ $\nsum{1}{\infty}(e-(1+\frac{1}{n})^n)^2 < \nsum{1}{\infty}((1+\frac{1}{n})^{n+1
 
 $\nl$
 
-$\nsuminf \frac{(n!)^2}{(2n)!} \to  \ntinf \frac{a_{n+1}}{a_n}=\frac{1}{4}<1$
+$\nsuminf \frac{(n!)^2}{(2n)!} \to  \ntinf \frac{a_{n+1}}{a_n}=\ntinf \frac{(n+1)^2}{(2n+1)(2n+2)}=\frac{1}{4}<1$
 
 $\nl$
 
@@ -68,7 +68,7 @@ $\nsuminf \frac{n^2}{(2+\frac{1}{n})^n},\ntinf \sqrt[n] a_n = \frac{n^{\frac{2}{
 
 $\nl$
 
-$\frac{1}{2}+\frac{1}{3^2}\frac{1}{2^3}+\frac{1}{3^4}+...\frac{1}{2^{2n-1}}+\frac{1}{3^{2n}}+....$
+$\frac{1}{2}+\frac{1}{3^2}+\frac{1}{2^3}+\frac{1}{3^4}+...\frac{1}{2^{2n-1}}+\frac{1}{3^{2n}}+....$
 
 $奇子列\ntinf \sqrt[n] a_n = \frac{1}{2},偶子列\ntinf \sqrt[n] a_n = \frac{1}{3}$
 
@@ -88,7 +88,7 @@ $P判别法:P>1,0 \le l < +\infty 收敛，P \le1,0<l \le +\infty,发散$
 
 $\nl$
 
-$Roabe判别法：设\nsuminf a_n 为正项级数，若 \exists N \in \bold{N},使得\forall n>N时有$
+$Raabe判别法：设\nsuminf a_n 为正项级数，若 \exists N \in \bold{N},使得\forall n>N时有$
 
 $n(\frac{a_n}{a_{n+1}}-1) \ge r > 1，则收敛，若n(\frac{a_n}{a_{n+1}}-1) \le 1,则发散$
 
@@ -148,11 +148,15 @@ $上可导且单调减，且\varphi (x)>x,\forall x \in [1,+\infty)若\ntinf \fr
 
 $则当r<1时，\nsuminf f(n)收敛$
 
+$\nl$
+
 $厄耳玛可夫判别法 \varphi (x)= x+1,\varphi (x)=2x,\varphi (x)=e^x$
 
 $\nl$
 
 $\nsuminf (1-\frac{lnn}{n})^{2n},\exists N \in \bold N:n>N后，a_n<e^{-2lnn}=\frac{1}{n^2}$
+
+$\nl$
 
 $设\{a_n\}\{b_n\}满足e^{a_n}=a_n+e^{b_n},\forall n \in N,若\nsuminf a_n^2收敛，则b_n也收敛$
 
@@ -188,7 +192,11 @@ $\nl$
 
 $设f(x)在x=0处二阶可导，\xtx{0}\frac{f(x)}{x}=0,证明\nsuminf \sqrt{n}f(\frac{1}{n})绝对收敛$
 
+$由题可知f'(0)=0,故有$
+
 $\xtx{0+}\frac{f(x)}{x^2}=\xtx{0}\frac{f'(x)}{2x}=\frac{1}{2}\xtx{0}\frac{f'(x)-f'(0)}{x-0}=\frac{1}{2}f''(0)$
+
+$即\xtx{0+}\frac{f(x)}{\sqrt x} \frac{1}{x^{\frac{3}{2}}}存在$
 
 $\nl$
 
@@ -216,9 +224,11 @@ $\nl$
 
 $\nsuminf \frac{1}{a_n}收敛 \iff \nsuminf \frac{n}{a_1+...a_n}收敛,a_n单调递增>0$
 
-$\Leftarrow \frac{1}{a_n} \le \frac{n}{a_1+...a_n}$
+$\Leftarrow 的证明， a_1+...+a_n \le na_n，\frac{1}{a_n} \le \frac{n}{a_1+...a_n}，故右边收敛，左边必收敛$
 
-$\Rightarrow \frac{2n}{a_1+...a_{2n}} \le \frac{2n}{a_{n+1}+...a_{2n}} \le \frac{2n}{na_n} = \frac{2}{a_n}$
+$\Rightarrow 的证明，\frac{2n}{a_1+...a_{2n}} \le \frac{2n}{a_{n+1}+...a_{2n}} \le \frac{2n}{na_n} = \frac{2}{a_n}$
+
+$\nl$
 
 $\jf{0}{+\infty}|f(x)|dx收敛 g(x)=\jf{0}{+\infty}f(t)cosxtdt 一致连续$
 
@@ -355,10 +365,18 @@ $\nl$
 
 $f(x) \in D[0,1],|f(x)| \le \jf{0}{1}(|f(t)+f'(t)|)dt,利用分部积分$
 
+$\nl$
+
 $\jf{a}{b}fg \ge \frac{1}{b-a}(\jf{a}{b}\sqrt{fg}dx)^2,swarchy$
 
 $\nl$
 
 $\ntinf \frac{n}{\sqrt[n]{n!}}=e$
+
+$证明：\ntinf ln \sqrt[n]{\frac{n!}{n^n}}=\ntinf \frac{1}{n} ln \frac{n!}{n^n}$
+
+$=\ntinf \frac{1}{n} ln \isum{1}{\infty} \frac{i}{n}=\jf{0}{1}lnxdx$
+
+$=(xlnx-x)|_0^1=-1-\lim\limits_{\epsilon \to 0^+}(\epsilon ln \epsilon - \epsilon)=-1$
 \end{document}
 

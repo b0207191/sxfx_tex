@@ -12,6 +12,237 @@
 
 \input{macro.tex}
 
+\begin{center} 选优试题  \end{center}
+
+1995
+
+$1.设E为满足下列条件的非负非空数集$
+
+$(i)supE=\mu<1;(ii)\forall x,y \in E,x<y有\frac{x}{y}\in E$
+
+$证明必有\mu \in E$
+
+$\nl$
+
+$2.设0<x_1<x_2<...<x_n<\pi,证明:\prod\limits_{i=1}^N \frac{sinx_i}{x_i} \le (\frac{sinx}{x})^n$
+
+$其中x=\frac{1}{n}\isum{1}{n}x_i$
+
+$\nl$
+
+$3.(1)设f(x)在[a,b]上无界，证明\exists \epsilon \in [a,b],使得\forall \delta >0,f(x)在\cup(\epsilon,\delta)\cap [a,b]上无界$
+
+$(2)试构造[0,1]上的函数f(x),使得它在(0,1)内任一点的任意小领域内都无界$
+
+$\nl$
+
+$4.设f(x)在[0,1]上可导，f'(x) \in R[0,1],又\int_{0}^{1}f(x)dx=0,证明$
+
+$\int_{0}^{1}f^2(x)dx \le \int_{0}^{1}[f'(x)]^2dx$
+
+$\nl$
+
+$5.设f(x)在[-1,1]上无穷次可导，f(\frac{1}{n})=\frac{n^2}{1+n^2},n \in \bold N,求f^{(k)}(0),k \in \bold N$
+
+$\nl$
+
+$6.设f(x)\in R[a,b],f(x)>0,x\in[a,b],证明\jfab f(x)dx>0(区间套)$
+
+$\nl$
+
+$7.设f(x)在[0,+\infty)上一致连续，证明\forall \alpha>0,有\xtinf \frac{f(x)}{x^{1+\alpha}}=0$
+
+$\nl$
+
+1996
+
+$1.设数列\{x_n\}由方程x_n^3+2x_n+\frac{1}{n}=0,n\in \bold N的实根定义，证明数列\{nx_n\}收敛，并求其极限值$
+
+$\nl$
+
+$2.(1)试构造函数f(x),使其在[0,1]上处处不连续，但可取到最大值，最小值及一切中间值$
+
+$(2)试构造函数f(x),使其在[0,1]上一致连续，但不满足Lipshity条件$
+
+$\nl$
+
+$3.设f''(x)\in C[0,1],且f(0)=0,f''(x)>0,\forall x \in [0,1].证明唯一存在点\epsilon \in (0,1)使得$
+
+$(1+\epsilon)f'(\epsilon)-f(\epsilon)=f(1)$
+
+$\nl$
+
+$4.设f(x) \in C[0,1],g(x)在[0,1]上单调递增，若对\forall [a,b] \subset [0,1],都有|\jfab f(x)dx|^2 \le [g(b)-g(a)](b-a)$
+
+$证明：(\jf{0}{1}|f(x)|dx)^2 \le g(1)-g(0)$
+
+$\nl$
+
+$5.设数列a_0,a_1,a_2,...,a_n...满足$
+
+$a_n=\ksum{1}{\infty}tg^2a_{n+k},n=0,1,...$
+
+$若级数\nsum{0}{\infty}a_n 收敛，证明a_n \equiv 0,n=0,1,...$
+
+$\nl$
+
+$6.设函数列\{f_n(x)\}在[a,b]上一致收敛，f_n(x)\in C[a,b],n \in \bold N,记h(x)=sup_n\{f_n(x)\}$
+
+$证明h(x) \in C[a,b]$
+
+$\nl$
+
+$7.设f(x)在[0,1]上全体有理点处连续，证明f(x)至少在[0,1]的某个无理点处连续$
+
+$又若f(x)在[0,1]上全体无理点处连续，能否证明f(x)至少在[0,1]的某个有理点处连续$
+
+$\nl$
+
+$1.设a>0,取x_1>a^{\frac{1}{p}}(p \in N),x_{n+1}=\frac{p-1}{p}x_n+\frac{a}{p}x_n^{1-p},n=1,2,...$
+
+$证明数列\{x_n\}收敛，并求其极限值$
+
+$\nl$
+
+$2.设f(x)\in C[0,1],f(0)=f(1),证明对\forall n \in N,相应有x_n \in [0,1],使得$
+
+$f(x_n)=f(x_n+\frac{1}{n})$
+
+$\nl$
+
+$3.设f''(x) \in C[0,1],f(0)=f(1),又\exists M>0,使|f''(x)|\le M,x \in [0,1]$
+
+$证明|f'(x)|\le \frac{M}{2},x \in [0,1]$
+
+$\nl$
+
+$4.图中抛物线为y=x-x^2,直线y=c及y轴与抛物线所围两块阴影部分面积分别为A_1,A_2,$
+
+$试在下列情况下分别确定C之值$
+
+$(1)使得A_1=A_2;(2)使得A_1+A_2取最小值$
+
+\begin{tikzpicture}[domain=1:5,line width=1pt]
+\draw[->] (-1,0) -- (9,0);
+\draw[->] (0,-1) -- (0,5);
+
+\draw (-1,3) -- (8,3);
+
+\node [right] at (9,0) {x};
+\node [above] at (0,6) {y};
+\node [above] at (4,4) {$y=x-x^2$};
+\node [right] at (6,3.5) {$y=C$};
+
+\path[fill=gray!50]  (0,3)--(6,3)--(6,3) parabola bend (4,4) (0,0);
+
+\draw (0,0) parabola bend (4,4) (8,0);
+        
+\end{tikzpicture}
+
+$6.设f(x)在[a,+\infty)上可导，f'(x)为可积函数，当x \to +\infty 时f(x)单调递减趋于0$
+
+$又\jf{a}{+\infty}f(x)dx 收敛，证明\jf{a}{+\infty}xf'(x)dx 收敛且$
+
+$\jf{a}{+\infty}xf'(x)dx=-\jf{a}{+\infty}f(x)dx-af(a)$
+
+$\nl$
+
+$1997$
+
+$1.试构造数列\{x_n\},使其对\forall a \in [0,1],\exists \{x_{n_k}\} \subset \{x_n\},满足$
+
+$\ktx{\infty}x_{n_k}=a$
+
+$\nl$
+
+$4.设f(x) \in C[a,b],在(a,b)内处处存在右导数f_+'(x),且f(a)=f(b)=0,证明$
+
+$证明：\exists c \in (a,b),使得f_+'(c) \le 0$
+
+$\nl$
+
+$5.设C(\alpha)是(1+x)^{\alpha}在x=0处Taylor公式中x^{1197}的系数，试求$
+
+$I=-\jf{0}{1}C(-1-y)\isum{1}{1997}\frac{1}{y+i}dy$
+
+$\nl$
+
+$6.设f'(x) \in C[a,+\infty),且A>0,使得$
+
+$|f'(x)|\le A|f(x)|,\forall x \in [a,+\infty)$
+
+$又f(a)=0,证明f(x) \equiv 0,x \in [a,+\infty)$
+
+$\nl$
+
+$7.设f'(x) \in C[a,b],且\jfab f(x)dx=0,证明$
+
+$\jfab f^2(x)dx \le \frac{(b-a)^2}{2}\jfab [f'(x)]^2dx$
+
+$\nl$
+
+$8.设数列\{a_n\}单调递增，且a_n>0(n \in N),\lambda > 0,证明级数$
+
+$\nsum{1}{\infty}\frac{a_{n+1}-a_n}{a_{n+1}a_n^{\lambda}}收敛$
+
+$\nl$
+
+$9.(1)求极限\xtinf \nsum{1}{\infty}\frac{x^2}{n(2n+1)x^2+n+x}$
+
+$(2)求和\isum{1}{\infty}\jsum{1}{\infty}\frac{(-1)^{i+j}}{i+j}$
+
+1998
+
+$\nl$
+
+$1.设\{x_n\}为非负递增数列，且对\forall m,n \in N,有x_{mn}\ge mx_n,若$
+
+$sup_n \{\frac{x_n}{n}\}=c常数$
+
+$证明\ntinf \frac{x_n}{n}=c$
+
+$\nl$
+
+$2.设f(x)在(a,b)内可导，\xtx{a^+}f(x)=+\infty,试问是否必有\xtx{a^+}|f'(x)|=+\infty$
+
+$是否必有\overline{ \xtx{a^+} }|f'(x)|=+\infty$
+
+$\nl$
+
+$3.设正项级数\nsum{1}{\infty}a_n,其部分和为S_n-\ksum{1}{n}a_k ,证明$
+
+$(1)\nsum{1}{\infty}\frac{a_n}{S_n}也发散$
+
+$(2)\nsum{1}{\infty}\frac{a_n}{S_n^ \lambda }收敛(\lambda >0)$
+
+$\nl$
+
+$4.设f(x)=(\alpha - \frac{1}{\alpha}-x)(4-3x^2),证明f(x)恰好有一个极大值与一个极小值$
+
+$若把这两个值之差记为\Delta (\alpha),试求\Delta (\alpha) 关于\alpha 的最小值$
+
+$\nl$
+
+$5.设f(x)在[a,b]上可导，f'(x) \in R[a,b],记$
+
+$x_k=a+k\frac{b-a}{n}(k=0,1,...n),A(n)=\frac{b-a}{n}\ksum{1}{n}f(x_k)-\jfab f(x)dx$
+
+$试求\ntinf nA(n)之值$
+
+$\nl$
+
+$6.引进‘稠密’概念如下：设E为R上数集，若对\forall x \in [a,b],存在E中点列\{x_n\},$
+
+$使得\ntinf x_n=x,称E在[a,b]中稠密$
+
+$现设f(x)为[a,b]上非负可积函数，且\jfab f(x)dx=0,记$
+
+$E={x|f(x)=0,x\in [a,b]}$
+
+$证明E在[a,b]中稠密$
+
+\newpage
+
 
 \begin{center} 第一讲 极限与连续  \end{center}
 

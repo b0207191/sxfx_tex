@@ -35,14 +35,19 @@ $
 
 导函数无首类间断点（导数介值定理）
 
+$\nl$
 
 $定理1.f(x) \in C(x)则必有原函数F(x) (充分条件)$
 
 $例：\int_{}^{} (2x+1)^{100}\, dx = \frac{1}{2} \frac{(2x+1)^{101}}{101}+c$
 
+$\nl$
+
 $法则1、\sum 法$
 
-$法则2、凑法。例：$
+$\nl$
+
+$法则2、'凑'法。例：$
 
 $\int \frac{1}{a^2+x^2}\,dx=\frac{1}{a} arctg\frac{x}{a}+c$
 
@@ -60,6 +65,8 @@ $=F(x)+C=\begin{cases} \frac{1}{3}x^3+C_1,x<-1 \\ x+C,|x|\le 1 \\ \frac{1}{3}x^3
 
 $故C_1=-\frac{2}{3}，C_2=\frac{2}{3}$
 
+$\nl$
+
 $法则3、‘换元’法$
 
 $例：\int \frac{e^x(1+e^x)}{\sqrt{1-e^{2x}}}令e^x=sint$
@@ -70,14 +77,19 @@ $倒变换x=\frac{1}{t}$
 
 $遇形如1+x^2的情况可以令x=tgt等，若在分母中可令其=t^2$
 
+$\nl$
+
 $法则4、‘分部’法，反对幂指三，越在后越先积$
 
 $反例：\int \frac{xe^x}{(1+x)^2}\,dx = \int xe^x d(\frac{-1}{1+x})=\frac{-x}{1+x}e^x+\int \frac{1}{1+x}d(xe^x)$
 
 $\nl$
+
 $递推公式$
 
 $Z_n=\int sec^nxdx=\int sec^{n-2}d(tgx)$
+
+$=sec^{n-2}tgx-\int tgx d(sec^{n-2}x)$
 
 $=sec^{n-2}tgx-(n-2)\int sec^{n-2}xtg^2xdx$
 
@@ -108,6 +120,8 @@ $I_n=\int \frac{dx}{(x^2+a^2)^m}=\frac{x}{(x^2+a^2)^m}+2mH_m-2ma^2H_{m+1}$
 $I_n=\int \frac{dx}{(x^2+px+q)^m}=\int \frac{d(x+\frac{p}{2})}{((x+\frac{p}{2})^2+..)^m}$
 
 $I_m=\int \frac {Ax+B}{(x^2+px+q)^m}dx=\frac{A}{2}\int \frac{2x+pdx}{...}+\int \frac{B-\frac{Ap}{2}}{...}$
+
+$\nl$
 
 $\int \frac{a_1sinx+b_1cosx}{asinx+bcosx}dx=Ax-Bln|asinx+bcosx|+C$
 

@@ -63,6 +63,8 @@ $Cauchy定理：平面点列\{x_n\}收敛的充要条件是\{x_n\}为基本列�
 
 $\exists N \in N:对\forall n>N,\forall p \in N 有r(x_{n+p},x_n)<\epsilon$
 
+$\nl$
+
 $13.2.多元函数的极限$
 
 $二元函数D \subset R^2,\exists f:D \to R,(x,y) |\to z:f(x,y)$
@@ -75,7 +77,7 @@ $对\forall \epsilon > 0,令\delta = \epsilon,当|x|< \delta,|y|< \delta,且x^2+
 
 $(2) \lim\limits_{x\to \infty \atop y\to \infty} \frac{x+y}{x^2+y^2-xy}=0,0 \le |\frac{x+y}{x^2+y^2-xy}| \le |\frac{x+y}{xy}| \le \frac{1}{|x|}+\frac{1}{|y|}$
 
-$\frac{x^2y^2}{x^2+y^2} \le  \frac{(x^2+y^2)^2}{x^2+y^2},\frac{x^2y^2}{x^2+y^2} \le \frac{x^2y^2}{2xy}  x \ne 0,y \ne 0,违反要求$
+$\frac{x^2y^2}{x^2+y^2} \le  \frac{(x^2+y^2)^2}{x^2+y^2},\frac{x^2y^2}{x^2+y^2} \le \frac{x^2y^2}{2xy}  x \ne 0,y \ne 0,违反要求,只能一个不等0$
 
 $(3)\lim\limits_{x\to 0 \atop y\to 0}\sqrt{x^2+y^2} ln(x^2+y^2)=0$
 
@@ -83,9 +85,13 @@ $令x=rcos \theta,yrsin \theta,则rlnr^2=2rlnr$
 
 $当\rtx{0+} lnr·r=0,故有....$
 
-$方法(1)\epsilon \delta(2)极坐标(3)一元函数结论$
+$\nl$
+
+$方法(1)\epsilon - \delta(2)极坐标(3)一元函数结论$
 
 $(4)e^t < t^2, \frac{x^2+y^2}{e^{x+y}} \le \frac{e^x+e^y}{e^{x+y}}$
+
+$\nl$
 
 $\ntinf f(P_n)=A,P_n为D的零点，条件可减弱为 \ntinf f(P_n)存在$
 
@@ -143,13 +149,15 @@ $(2)\forall \epsilon>0,\exists \delta>0,当0<r<\delta 时有$
 
 $|f(x_0+rcos \theta ,y+rsin\theta)-A|< \epsilon,\forall \theta \in [0,2\pi]$
 
+$\nl$
+
 $由下列条件能否推出一致连续$
 
-$(1)D有界，f(x,y) \in C(D),且对\forall (x,y)\in \overline D,\lim\limits_{x \to x_0 \atop y \to y_0}f(x,y)存在 $
+$(1)D有界，f(x,y) \in C(D),且对\forall (x,y)\in \overline D,\lim\limits_{x \to x_0 \atop y \to y_0}f(x,y)存在 ×$
 
-$(2)D=R^2,f(x,y) \in C(R^2),且\lim\limits_{x \to x_0 \atop y \to y_0}f(x,y)存在$
+$(2)D=R^2,f(x,y) \in C(R^2),且\lim\limits_{x \to x_0 \atop y \to y_0}f(x,y)存在  √$
 
-$(3)对(x',y')(x'',y'')\in D 有|f(x',y')-f(x'',y'')|\le L_1 |x'-x''|+L_2|y'-y''|$
+$(3)对(x',y')(x'',y'')\in D 有|f(x',y')-f(x'',y'')|\le L_1 |x'-x''|+L_2|y'-y''| √$
 
 $\nl$
 
@@ -211,9 +219,49 @@ $偏导数\lim\limits_{\Delta x \to 0 \atop \Delta y \to 0}f(x,y) \frac{\Delta z
 
 $考虑f=\begin{cases}\frac{xy}{\sqrt{x^2+y^2}}, x^2+y^2 \ne 0 \\ 0,x^2+y^2=0 \end{cases}$
 
+$\nl$
+
 $复合函数偏导法则$
 
-$求导用树形，例w=F(x,y,z),z=f(x,y),y=\varphi(x)$
+$求导用树形$
+
+\begin{tikzpicture}[domain=1:5,line width=1pt]
+
+\draw[-]  (0,0)--(1,0);
+
+\draw[-]  (1,0)--(1.5,0);
+\draw[-]  (1,0)--(1.5,1);
+\draw[-]  (1,0)--(1.5,-1);
+
+\draw[-]  (2,0)--(2.5,0);
+\draw[-]  (2,-1)--(2.5,-1);
+
+\draw[-]  (2.5,-1)--(3,-0.5);
+\draw[-]  (2.5,-1)--(3,-1.5);
+
+\draw[-]  (3.5,-1.5)--(4,-1.5);
+
+\node [left] at (0,0) {$\omega$};
+
+\node [above] at (0.5,0) {$F$};
+\node [right] at (1.5,0) {$y$};
+
+\node [right] at (1.5,1) {$x$};
+\node [right] at (1.5,-1) {$z$};
+
+\node [right] at (2.5,0) {$x$};
+\node [above] at (2.25,0) {$\varphi$};
+
+\node [above] at (2.25,-1) {$f$};
+
+\node [right] at (3,-0.5) {$x$};
+\node [right] at (3,-1.5) {$y$};
+
+\node [above] at (3.75,-1.5) {$\varphi$};
+\node [right] at (4,-1.5) {$x$};
+\end{tikzpicture}
+
+$例w=F(x,y,z),z=f(x,y),y=\varphi(x)$
 
 $\frac{dw}{dx}=\frac{\partial F}{\partial x}+\frac{\partial F}{\partial y}\frac{dy}{dx}+\frac{\partial F}{\partial z}\frac{\partial z}{\partial x}$
 
@@ -223,7 +271,7 @@ $=\frac{\partial F}{\partial x}+\frac{\partial F}{\partial y}\varphi `(x)+\frac{
 
 $\nl$
 
-$例：利用变量替换，\zeta = x-at,y=x+at$
+$例：利用变量替换，\zeta = x-at,\eta=x+at$
 
 $变换方程\frac{\partial 2u}{\partial t^2}=a^2 \frac{\partial ^2u}{\partial x^2}(a \ne 0)$
 
@@ -326,13 +374,15 @@ $=w+x\frac{\partial u}{\partial u}- \frac{y}{x}\frac{\partial u}{\partial v}$
 
 $\frac{\partial z}{\partial y}=x \frac{\partial u}{\partial u}+\frac{\partial w}{\partial v}，从而有\frac{(x-y)^2}{x^2} \frac{\partial ^2w}{\partial v^2}=0$
 
+$\nl$
+
 $二、极值问题$
 
 $记A=f_{x^2}(x_0,y_0),B=f_{xy}(x_0,y_0),C=f_{y^2}(x_0,y_0)$
 
 $H=AC-B^2,P188$
 
-$f(x,y)=(y-x^2)(y-2x^2)画图可知(0,0)非极值点（领域内总有正，有负）$
+$f(x,y)=(y-x^2)(y-2x^2)画图可知(0,0)非极值点（邻域内总有正，有负）$
 
 $例：yx^y(1-x) < e^{-1},\forall y>0,0<x<1$
 

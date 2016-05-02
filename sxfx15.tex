@@ -13,7 +13,8 @@
 \input{macro.tex}
 
 
-第15章 隐函数
+\begin{center} 第15章 隐函数  \end{center}
+
 
 $15.1(P206)$
 
@@ -21,13 +22,15 @@ $F(xy,y+z,xz)=0,(F_2+xF_3 \ne 0)求\frac{\partial z}{\partial x},\frac{\partial 
 
 $\frac{\partial z}{\partial x}:yF_1+F_2 \frac{\partial z}{\partial x} + (z+\frac{\partial z}{\partial x} x)F_3=0 \to .....$
 
-$\frac{\partial ^2z}{\partial x \partial y}=F_1+x\{yF_1+f_2 \frac{\partial z}{\partial x} +(z+\frac{\partial z}{\partial x} x)F_{31}\}$
+$\frac{\partial ^2z}{\partial x \partial y}:F_1+x\{yF_1+f_2 \frac{\partial z}{\partial x} +(z+\frac{\partial z}{\partial x} x)F_{31}\}$
 
 $+\frac{\partial ^2z}{\partial x \partial y} F_2+(1+\frac{\partial z}{\partial y})\{yF_{12}+\frac{\partial z}{\partial x}F_{22}+(z+\frac{\partial z}{\partial x})F_{32}\}$
 
 $+(\frac{\partial z}{\partial y}+x \frac{\partial ^2z}{\partial x \partial y})F_3+x\frac{\partial z}{\partial y}\{yF_{13}+\frac{\partial z}{\partial x}F_{23}+(z+\frac{\partial z}{\partial x})F_{33}\}=0$
 
 $将\frac{\partial z}{\partial x}，\frac{\partial z}{\partial y}代入，\frac{\partial ^2z}{\partial x \partial y}=...$
+
+$\nl$
 
 $例：x^2+y+sinxy=0(1)证明：在(0,0)领域内可唯一确定连续函数y=y(x),y(0)=0$
 
@@ -36,6 +39,8 @@ $(2)讨论y=y(x)在x=0附近可导性$
 $(3)讨论y=y(x)在x=0附近单调性$
 
 $(4)在(0,0)领域是否唯一确定x=x(y)$
+
+$\nl$
 
 $设F(x,y,u,v)=0,G(x,y,u,v)=0为定义在V \subset R^4的两个函数$
 
@@ -97,7 +102,7 @@ $2x+2u \frac{\partial u}{\partial x}+ \frac{\partial v}{\partial x} 2v =0$
 
 $解得\frac{\partial v}{\partial x}=\frac{u-x}{v-u};\frac{\partial u}{\partial x}=\frac{x-v}{v-u}$
 
-$再对x偏导，\frac{\partial ^2u}{\partial x^2}+\frac{\partial ^2v}{\partial x^2}=0$
+$(2)再对x偏导，\frac{\partial ^2u}{\partial x^2}+\frac{\partial ^2v}{\partial x^2}=0$
 
 $1+(\frac{\partial u}{\partial x})^2+u \frac{\partial ^2u}{\partial ^2x}+(\frac{\partial v}{\partial x})^2+u \frac{\partial ^2v}{\partial ^2x}=0$
 
@@ -166,6 +171,8 @@ $H=\bigl( \begin{smallmatrix} L_{x^2}&L_{xy}&L_{xz}\\ L_{yx}&L_{y^2}&L_{yz} \\ L
 
 $正定极小，负定极大，不定$
 
+$\nl$
+
 $二阶微分判别法（极值性）$
 
 $求f=x+y+z+t在xyzt=c^4下极值（见P201）$
@@ -224,7 +231,7 @@ $\nl$
 
 含参数积分
 
-$(P242)I=\jf{0}{+\infty} \frac{sinx}{x}dx,引进e^{-\alpha x}I(\alpha)=\jf{0}{+\infty}e^{-\alpha x}\frac{sinx}{x}dx(\alpha \ge 0)$
+$(P242)I=\jf{0}{+\infty} \frac{sinx}{x}dx,引进e^{-\alpha x},I(\alpha)=\jf{0}{+\infty}e^{-\alpha x}\frac{sinx}{x}dx(\alpha \ge 0)$
 
 $计算\aatx{o^+}I(\alpha),I'(\alpha)=-\jf{0}{+\infty}e^{-\alpha x}sinxdx$
 
@@ -234,7 +241,11 @@ $|I(\alpha)| \le \jf{0}{+\infty}e^{-\alpha x}dx=\frac{1}{\alpha}，故\aatx{\inf
 
 $故C=\frac{\pi}{2},故I=I(0)=\frac{\pi}{2}$
 
+$\nl$
+
 $\jf{0}{\frac{\pi}{2}}lnsintdt=-\frac{\pi}{2}ln2$
+
+$\nl$
 
 $积分式：\frac{arctgx}{x}=\jf{0}{1}\frac{dy}{1+x^2y^2};\frac{e^{-ax}-e^{-bx}}{x}=\jf{a}{b}e^{-xy}dy$
 
@@ -246,7 +257,7 @@ $称\jf{\alpha}{+\infty}f(x,y)dy关于x在I上不一致收敛，是指\exists \e
 
 $增无界数列\{A_n\}(A_n \ge \alpha)及\{x_n\}\subset I:|\jf{A_n}{+\infty}f(x_n,y)dy| \ge \epsilon_0$
 
-$证明：\jf{0}{+\infty}ye^{-xy}dx在(y_0,+\infty)一致收敛在(0,+\infty)不一致收敛$
+$证明：\jf{0}{+\infty}ye^{-xy}dx在(y_0,+\infty)一致收敛,在(0,+\infty)不一致收敛$
 
 $1,|\jf{A_0}{+\infty}ye^{-xy}dx|=|(-e^{xy})|_{x=A_0}^{x=+\infty}|=e^{-yA_0} \le e^{-y_0A_0}$
 
@@ -258,9 +269,13 @@ $2,A_k=k,y_k=\frac{1}{k}\in (0,+\infty)则有\jf{k}{+\infty}\frac{e^{-\frac{x}{k
 
 $取\epsilon_0 > \frac{1}{e},则有....或者说，当y充分小时，I>\epsilon_0=...$
 
+$\nl$
+
 $Cauchy准则,\jf{\alpha}{+\infty}f(x,y)dx一致收敛 \Leftrightarrow \forall \epsilon>0,\exists A \ge \alpha, \forall A',A'' \ge A 有$
 
 $|\jf{A'}{A''}fdy|<\epsilon ,\forall x \in I$
+
+$\nl$
 
 $Abel推论,设\jf{\alpha}{+\infty}fdy关于x一致收敛,h(y)在(\alpha,+\infty)上单调有界，则\jf{\alpha}{+\infty}fhdy一致收敛$
 
@@ -270,7 +285,12 @@ $\nl$
 
 $例：\jf{0}{+\infty}\frac{sinx^2}{1+x^n}dx,解：0<\frac{1}{1+x^n} \le 1单调递减，且\jf{0}{+\infty}sin(x^2)dx一致收敛$
 
-$例：已知\jf{-\infty}{+\infty}e^{-x^2}dx=\sqrt{\pi},判别\jf{-\infty}{+\infty}e^{-(x-y)^2}dx在a<y<b和y\in R$
+$\nl$
+
+$例：已知\jf{-\infty}{+\infty}e^{-x^2}dx=\sqrt{\pi},判别\jf{-\infty}{+\infty}e^{-(x-y)^2}dx在\begin{cases} 
+a<y<b \\
+y\in R
+\end{cases}$
 
 $\jf{A}{+\infty}e^{-(x-y)^2}dx=\jf{A-y}{+\infty}e^{-x^2}dx < \jf{A-b}{+\infty}e^{-x^2}dx$
 
@@ -282,7 +302,7 @@ $\nl$
 
 $例：\jf{0}{+\infty} \frac{cos(xy^2)}{x^ \alpha}dx,y \ge y_0 > 0,(0< \alpha <1)的一致收敛性$
 
-$\forall A>1 有|\jf{1}{A}cos(xy^2)dx|=\frac{1}{y^2}|sinAy^2-siny^2| \le \frac{2}{y^2} \le \frac{2}{y_0^2}$
+$\forall A>1 有|\jf{1}{A}cos(xy^2)dx|=\frac{1}{y^2},|sinAy^2-siny^2| \le \frac{2}{y^2} \le \frac{2}{y_0^2}$
 
 $又因为\frac{1}{x^ \alpha}对x单调，一致趋0，由狄尼克莱I_2=\jf{1}{+\infty}...一致收敛$
 
@@ -294,13 +314,15 @@ $则\jf{c}{\infty}f(x,y)dy在(a,b)不一致收敛$
 
 $\nl$
 
-$f(x,y)在D非负连续，若\jf{\alpha}{+\infty}fdy,\jf{\alpha}{+\infty}fdx 分别为xy连续函数，且$
+$f(x,y)在D非负连续，若\jf{\alpha}{+\infty}fdy,\jf{a}{+\infty}fdx 分别为xy连续函数，且$
 
 $\jf{a}{+\infty}dx\jf{\alpha}{+\infty}fdy或\jf{\alpha}{+\infty}dy\jf{a}{+\infty}fdx至少有一项存在，则积分可换序$
 
 $\jf{0}{+\infty}\frac{e^{-xa}-e^{-xb}}{x}dx(a,b>0),1.f(x,y)=e^{-xy} \in c,2. \jf{0}{+\infty}e^{-yx}一致收敛$
 
 $故有原式=\jf{a}{b}dy(\jf{0}{+\infty}e^{-xy}dx)=\jf{a}{b}\frac{1}{y}dy$
+
+$\nl$
 
 $计算I=\jf{0}{+\infty}e^{-x^2}dx$
 
@@ -325,6 +347,8 @@ $f(0,a)=b-a,1.f与f_a \in D,2.\jf{0}{+\infty}\frac{e^{-ax}-e^{-bx}}{x}dx 收敛(
 $\jf{0}{+\infty}-e^{-ax}dx在(a,+\infty)关于a一致收敛I'(a)=-\frac{1}{a}$
 
 $\to I(a)=-lna+c令a=b \to c=lnb,I(a)=ln\frac{b}{a}$
+
+$\nl$
 
 $其他积分法①B(p,q)=2\jf{0}{\frac{\pi}{2}}cos^{2p-1}\varphi sin^{2q-1}\varphi d\varphi$
 
@@ -374,7 +398,9 @@ $令t=x^m即有=\frac{1}{m}B(\frac{p}{m},q)$
 
 $\jf{0}{1}\sqrt {x^3(1-\sqrt x)}dx = \jf{0}{1}x^{\frac{3}{2}}(1-x^{\frac{1}{2}})^{\frac{1}{2}}dx=2\frac{\Gamma(5)\Gamma(\frac{3}{2})}{\Gamma(5+\frac{3}{2})}$
 
-$\nl 习题课$
+$\nl$
+
+$习题课$
 
 $Dirichelet积分 I=\jf{0}{+\infty}\frac{sinx}{x}dx=\frac{\pi}{2}$
 
@@ -428,7 +454,7 @@ $\nl$
 
 $例：设f(t)=\jf{1}{+\infty}\frac{cosxt}{1+x^2}dx$
 
-$证明：①\ttinf f(t)=0,|\jf{1}{A_0}|+|\jf{A_0}{+\infty}| < \epsilon + \epsilon$
+$证明：①\ttinf f(t)=0,|\jf{1}{A_0}\frac{cosxt}{1+x^2}dx|+|\jf{A_0}{+\infty}\frac{cosxt}{1+x^2}dx| < \epsilon + \epsilon$
 
 $(黎曼引理，f(x)可积，\lbdtx{\infty} \jf{a}{b} f(x)sin \lambda x dx =0, \lbdtx{\infty} \jf{a}{b} f(x)cos \lambda x dx =0)$
 
@@ -438,6 +464,6 @@ $因为f(0)=\frac{\pi}{4},f(\pi) \le 0,可证\jf{0}{\pi}f(t)dt \le 0,或\jf{0}{\
 
 $积分顺序：可化为\jf{1}{+\infty}dx \jf{0}{\pi} \frac{cosxtsint}{1+x^2}dx$
 
-$=\jf{1}{+\infty}\frac{1+cos\pi x}{1+x^4}dx$
+$=\jf{1}{+\infty}\frac{1+cos\pi x}{1+x^4}dx \le 0$
 \end{document}
 

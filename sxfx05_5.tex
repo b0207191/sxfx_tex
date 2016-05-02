@@ -283,28 +283,30 @@ $例:f(x)在[a,b]三阶可导，证明\exists \zeta \in (a,b)，使得$
 
 $f(b)=f(a)+f'(\frac{a+b}{2})(b-a)+\frac{1}{24}f'''(\zeta)(b-a)^3$
 
-$令k=f'''(\zeta)=...该式关于a,b对称$
+$令k=f'''(\zeta)=24\frac{f(b)-f(a)-f'(\frac{a+b}{2})(b-a)}{(b-a)^3},该式关于a,b对称$
 
-$令b=x,F(x)=f(x)-f(a)-f'(\frac{b+x}{2})(x-a)-\frac{k}{24}(x-a)^3$
+$令b=x,F(x)=f(x)-f(a)-f'(\frac{a+x}{2})(x-a)-\frac{k}{24}(x-a)^3$
 
-$判断有无F(a)=F(b)=0$
+$有F(a)=F(b)=0$
 
-$F'(\zeta)=f'(\zeta)-f'(\frac{a+\zeta}{2})-\frac{f''(\frac{a+\zeta}{2})}{2}(\zeta-a)-\frac{k}{8}(\zeta-a)^2=0$
+$故存在F'(\zeta)=f'(\zeta)-f'(\frac{a+\zeta}{2})-\frac{f''(\frac{a+\zeta}{2})}{2}(\zeta-a)-\frac{k}{8}(\zeta-a)^2=0$
 
 $将f'(x)在\frac{a+\zeta}{2}处展开$
 
-$f'(x)=f'(\frac{a+\zeta}{2})+f''(\frac{a+\zeta}{2})(x-\frac{a+\zeta}{2})+\frac{1}{2}f'''(\zeta')(\frac{a+\zeta}{2})^2$
+$f'(x)=f'(\frac{a+\zeta}{2})+f''(\frac{a+\zeta}{2})(x-\frac{a+\zeta}{2})+\frac{1}{2}f'''(\zeta')(x-\frac{a+\zeta}{2})^2$
 
-$令x=\zeta,再代入上式有k=f'''(\zeta')$
+$令x=\zeta,再代入上式有k=f'''(\zeta'),\zeta'即为所求$
 
 $\nl$
-$思考题：
-$\nl$
-①.设f(x)在(a,b)上可导，a<x<b,证明\exists \zeta \in (a,b)使得$
+
+思考题：
+
+$①.设f(x)在(a,b)上可导，a<x<b,证明\exists \zeta \in (a,b)使得$
 
 $\frac{1}{b-a} \begin{vmatrix} b^n & a^n \\ f(a) & f(b) \end{vmatrix}=[nf(\zeta)+\zeta f'(\zeta)]\zeta^{n-1}$
 
 $\nl$
+
 $②.设f(x)在闭区间三阶可导，证明$
 
 $f(b)=f(a)+\frac{1}{2}(b-a)[f'(a)+f'(b)]-\frac{f'''(\zeta)}{12}(b-a)^3$
@@ -317,7 +319,7 @@ $设f'(\zeta)=\frac{1-\zeta^2}{(1+\zeta^2)^2} \Leftrightarrow f'(\zeta)-(\frac{\
 
 $F(x)=f(x)-\frac{x}{1+x^2},且F(0)=0,F(+\infty)=0$
 
-$由推广的Rolle定理，可知\exists F'(\zeta)=f'(\zeta) - \frac{1-\zeta^2}{(1+\zeta^2)^2} = 0$
+$由推广的Rolle定理，可知\exists \zeta : F'(\zeta)=f'(\zeta) - \frac{1-\zeta^2}{(1+\zeta^2)^2} = 0$
 
 $\nl$
 

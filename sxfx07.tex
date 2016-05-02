@@ -53,6 +53,8 @@ $T=T_1 \cup T_2,旧分法T_1和T_2的所有分点合成加旧分法T$
 
 $\nl$
 
+$M(T)=S(T),m(T)=s(T)$
+
 $性质1，对\forall T \subset [a,b],\forall \{\zeta_k\}有$
 
 $m(T) \le \delta(f,T,\zeta) \le M(T)$
@@ -66,7 +68,8 @@ $称sup_T\{s(T)\}为f(x)在[a,b]上的下积分，记为\underline{\int_{a}^{b}}
 $称inf_T\{s(T)\}为f(x)在[a,b]上的上积分，记为\overline{\int_{a}^{b}}f(x)dx$
 
 $\nl$
-$Darboux定理：\lbdtx{0}S(T)=\underline{\int_{a}^{b}}f(x)dx,\lbdtx{0}s(T)=\overline{\int_{a}^{b}}f(x)dx$
+
+$Darboux定理：\lbdtx{0}S(T)=\overline{\int_{a}^{b}}f(x)dx,\lbdtx{0}s(T)=\underline{\int_{a}^{b}}f(x)dx$
 
 $证明：\forall \epsilon >0,由inf\{S(T)\}=\overline{\int_{a}^{b}}f(x)dx定义可知$
 
@@ -84,7 +87,7 @@ $又因S(T) \ge \underline{\int_{a}^{b}}f(x)dx > \underline{\int_{a}^{b}}f(x)dx-
 
 $故|S(T)-\underline{\int_{a}^{b}}f(x)dx| < \epsilon$
 
-$\forall \epsilon>0,\exists \delta>0,|\delta(f,T,\zeta)| < \epsilon,\forall T,\lambda < \delta$
+$\forall \epsilon>0,\exists \delta>0,|\delta(f,T,\zeta)-I| < \epsilon,\forall T,\lambda < \delta$
 
 $故|s(T)-I| \le \epsilon, |S(T)-I| \le \epsilon$
 
@@ -111,34 +114,44 @@ $设\omega_{k'}=sup\{|\frac{1}{f(x')}-\frac{1}{f(x'')}|\}$
 $因为|\frac{1}{f(x')}-\frac{1}{f(x'')}| \le \frac{1}{m^2} |f(x')-f(x'')|,....$
 
 $\nl$
+
 $\int_{a}^{b}|f(x)|dx必须分段讨论$
+
+$\nl$
 
 $原函数F'(x)=f(x) \forall x \in I$
 
 $可积函数 \exists I \in R,\forall \epsilon >0,\exists \delta >0,|s(f,T,\zeta)|< \epsilon,\forall T,\zeta, \lambda < \delta$
 
 $\nl$
+
 $例：F(x)=\begin{cases} x^2sin\frac{1}{x},1 \ge x >0,\\ 0,x=0 \end{cases},但F'(x)不可积$
 
 $无穷间断点，非单调，必不可积？ \frac{1}{x}-[\frac{1}{x}]可积$
 
 $\nl$
+
 $预备命题1.Schwarg不等式，对\forall a_k,b_k (k=1\sim n)有$
 
 $(\sum\limits_{k=1}^{n}a_kb_k)^2 \le (|\sum\limits_{k=1}^{n}a_kb_k|)^2 \le (\sum\limits_{k=1}^{n}a_k^2)(\sum\limits_{k=1}^{n}b_k^2)$
 
 $\nl$
+
 $预备命题2：设f(x)在区间上有界，若sup_I\{f^2(x)\}=\beta^2$
 $则有sup\{|f(x)|\}=\beta (\beta \ge 0)$
 
-$
-习题：均可积
-\begin{cases}
+$习题：$
+
+$均可积$
+
+$\begin{cases}
 f(x)=\begin{cases}0,x \ne 0 \\ 1,x=0 \end{cases} \\
 g(x)=Riemamm函数
 \end{cases}
 f(g(x))不可积
 $
+
+$\nl$
 
 $不可积函数对于特定T，\zeta 可存在极限（黎曼和）。例:$
 
@@ -147,6 +160,7 @@ $f(x)=\begin{cases}\frac{1}{\sqrt x},0<x \le 1 \\ 0,x=0 \end{cases}$
 $用2\sqrt{k+1}-2\sqrt k < \frac{1}{\sqrt k} < 2\sqrt{k}-2\sqrt {k-1},可求得lim \sum f(\frac{k}{n})\frac{1}{n}=2$
 
 $\nl$
+
 $f(x) \in R[a,b]改变有限点处成为g(x),求证：\int_{a}^{b}f(x)dx=\int_{a}^{b}g(x)dx$
 
 $分析：设在x_p处改变，因为\forall \epsilon >0, \exists \delta_1>0,\sum \omega_k \Delta x_k < \frac{\epsilon}{2},\lambda < \delta$
@@ -158,6 +172,7 @@ $取\delta'=min(\delta,\frac{\epsilon}{4(\omega^*+1)}),故有g(x) \in R[a,b]$
 $由取点任意性可知，\int_{a}^{b}f(x)dx=\int_{a}^{b}g(x)dx$
 
 $\nl$
+
 $例：设f(x) \in R[a,b],且f(x)>0,证明：\int_{a}^{b}f(x)dx>0$
 
 $分析：若\int_{a}^{b}f(x)dx=0,即\lbdtx{0}S(T)=0 \to \lbdtx{0}\sum\limits_{k=1}^n M_k \Delta x_k=0$
@@ -194,11 +209,15 @@ $max(f,g)=\frac{1}{2}(f+g+|f-g|)$
 
 $\nl$
 
-$\ntx{\infty}\jf{n}{n+p}\frac{sinx}{x}dx,原式=\ntx{\infty}\frac{sin{\zeta_n}}{\zeta_n}p=0,\zeta_n \in[n,n+p]$
+$\ntx{\infty}\jf{n}{n+p}\frac{sinx}{x}dx$
+
+$原式=\ntx{\infty}\frac{sin{\zeta_n}}{\zeta_n}p=0,\zeta_n \in[n,n+p]$
 
 $或=\ntx{\infty}sin\zeta_n \jf{n}{n+\pi}\frac{1}{x}dx=\ntx{\infty}sin\zeta_n ln(1+\frac{p}{n})$
 
 $也可用第二中值定理或施瓦茨不等式$
+
+$\nl$
 
 $\ntx{\infty}\jf{0}{\frac{\pi}{2}}sin^nxdx=\ntx{\infty}(\jf{0}{\frac{\pi}{2}-\epsilon}sin^nxdx+\jf{\frac{\pi}{2}-\epsilon}{\frac{\pi}{2}}sin^nxdx)$
 
@@ -224,6 +243,20 @@ $例：设f(x)在[a,b]上二阶可导，f'(a)=f'(b)=0,证明：\exists \zeta \in
 
 $使得\jf{a}{b}f(x)dx=(b-a)\frac{f(a)+f(b)}{2}+\frac{1}{6}(b-a)^3 f''(\zeta)$
 
+$错误证法：$
+
+$f(x)=f(a)+f'(a)(x-a)+\frac{1}{2}f''(\zeta_1)(x-a)^2 （注：未必可积，不可分离出下式）$
+
+$f(x)=f(b)+f'(a)(x-b)+\frac{1}{2}f''(\zeta_2)(x-b)^2$
+
+$故有f(x)=\frac{1}{2}[f(a)+f(b)]+\frac{1}{4}[f''(\zeta_1)(x-a)^2+f''(\zeta_2)(x-b)^2]$
+
+$\jfab f(x)dx=(b-a)[\frac{f(b)+f(a)}{2}]+\frac{1}{12}(b-a)^3[f''(\zeta_1)+f''(\zeta_2)]$
+
+$由达布定理（导数介值定理）可证$
+
+
+
 $\nl$
 
 $若f(x) \in [a,b],对\forall x \in [a,b],称F(x)=\jf{a}{x}f(t)dt为变上限积分$
@@ -246,13 +279,17 @@ $若f(x) \in R[a,b],\jf{a}{b}f(x)dx=\lim_{\beta \to b^-}\jf{a}{\beta}f(x)dx$
 
 $连续函数必有原函数$
 
+$\nl$
+
 $设f(x) \in C[a,b],\phi 在I上可导，且\varphi(I) \subset (a,b)则有$
 
 $\phi (x) \triangleq F(\varphi(x)) = \jf{a}{\varphi(x)}f(t)dt,x \in I$
 
 $在I上仍可导，且有\phi'(x)=f(\varphi(x))\varphi'(x),x \in I$
 
-$推论，设f(x) \in C[a,b],\varphi(x),\psi(x)在I上可导，且值域属于[a,b]，则有L(x)=\jf{\psi(x)}{\varphi (x)} f(t)dt,x\in I$
+$推论，设f(x) \in C[a,b],\varphi(x),\psi(x)在I上可导，且值域属于[a,b]，则有$
+
+$L(x)=\jf{\psi(x)}{\varphi (x)} f(t)dt,x\in I$
 
 $在I上可导，且L'(x)=f(\varphi(x))\varphi'(x)-f(\psi(x))\psi'(x),x\in I$
 
@@ -275,6 +312,7 @@ $=\jf{a}{x}(f(t)-f(x))dt<0$
 $因为t \in (a,x)，故f(t)<f(x),由几何意义显然$
 
 $\nl$
+
 $设f(x) \in R[0,1]证明：\ntinf \sum\limits_{k=1}^{n} ln[1+f(\frac{k}{n})\frac{1}{n}]=\jf{0}{1}f(x)dx$
 
 $即证：\ntinf \sum\limits_{k=1}^{n}\{ln[1+f(\frac{k}{n})\frac{1}{n}]-f(\frac{k}{n})\frac{1}{n}\}=0$
@@ -292,6 +330,7 @@ $\le M'' m' \frac{1}{n^2} \triangleq M\frac{1}{n^2}$
 $\ntinf \sum\limits_{k=1}^{n}\{ln[1+f(\frac{k}{n})\frac{1}{n}]-f(\frac{k}{n})\frac{1}{n}\} \le \sum\limits_{k=1}^{n}M\frac{1}{n^2}=\frac{M}{n} \to 0(n \to \infty)$
 
 $\nl$
+
 $设f(x)\in C[a,b],\forall g(x) \in C[a,b],g(a)=g(b)=0,有\jf{a}{b}f(x)g(x)dx=0$
 
 $求证：f(x)=0$
@@ -334,7 +373,7 @@ $=f(\zeta)\jf{x_0-\delta}{x_0+\delta}g(x)dx \ge \frac{f(x_0)}{2}$
 
 $\nl$
 
-$I=\jf{0}{1}\frac{ln(1+x)}{1+x^2}dx,令x=tgt,t\in [0,\frac{\pi}{4}]$
+$I=\jf{0}{1}\frac{ln(1+x)}{1+x^2}dx,令x=tgt,t\in [0,\frac{\pi}{4}],由(tgt)'=(sect)^2$
 
 $=\jf{0}{\frac{\pi}{4}}ln(1+tgt)dt=\jf{0}{\frac{\pi}{4}}ln(1+\frac{sint}{cost})dt=\jf{0}{\frac{\pi}{4}}ln(\frac{sint+cost}{cost})dt$
 
@@ -429,6 +468,9 @@ $因为\jf{\frac{k-1}{n}\pi}{\frac{k}{n}\pi}|sinnx|dx，令nx=t,则有\jf{\frac{
 $ln(1+x)在[0,+\infty)上递增，故有$
 
 $\jf{\frac{k-1}{n}\pi}{\frac{k}{n}\pi}|sinnx|ln(1+x)dx \ge ln(1+\frac{k-1}{n}\pi)\jf{\frac{k-1}{n}\pi}{\frac{k}{n}\pi}|sinnx|dx=\frac{2}{n}ln(1+\frac{k-1}{n}\pi)$
+
+$\jf{\frac{k-1}{n}\pi}{\frac{k}{n}\pi}|sinnx|ln(1+x)dx \le \frac{2}{n}ln(1+\frac{k-1}{n}\pi)$
+
 
 $上式两边求和取极限$
 
@@ -580,7 +622,7 @@ $所以\jf{0}{1}f^2(x)dx \le \jf{0}{1}\{\jf{0}{1}f'(x)^2dx\}dx = \jf{0}{1}[f'(x)
 
 $\nl$
 
-$设f(x) \in c(a,b),\forall g(x) \in c[a,b],\jf{a}{b}f(x)g(x)dx=0(\jf{a}{b}g(x)dx=0)$
+$设f(x) \in c(a,b),\forall g(x) \in c[a,b],\jf{a}{b}f(x)g(x)dx=0$
 
 $证明f(x)必为常数$
 

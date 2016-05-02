@@ -12,10 +12,10 @@
 
 \input{macro.tex}
 
+\begin{center} 第16章 重积分  \end{center}
 
-第16章 重积分
 
-$记m_i=inf\{f(x,y)\},(x,y)\in \delta_i,M_i=sup\{f(x,y)\},(x,y) \in \delta_i,\\mega_i=M_i-m_i$
+$记m_i=inf\{f(x,y)\},(x,y)\in \delta_i,M_i=sup\{f(x,y)\},(x,y) \in \delta_i,\omega_i=M_i-m_i$
 
 $s(T)=\Sigma m \Delta \delta_i, S(T)=\Sigma M \Delta \delta_i$
 
@@ -23,23 +23,37 @@ $f在有界闭域D上可积 \Leftrightarrow \dtx{0}(S(T)-s(T))=0$
 
 $有界闭域上连续f必可积$
 
+$\nl$
+
 $定理：若f在有界闭域D上有界，其不连续点只分布在有限条光滑曲线上，则f在D上必可积$
 
-$1.\jf{}{} \jf{}{} d\delta =S ,2.f(x) \in R[a,b]g(y) \in R[c,d],则f(x)g(y)在D上可积\jf{}{}\jf{}{}fgdxdy=\jf{a}{b}fdx \jf{c}{d}ydy$
+$1^\circ \jf{}{} \jf{}{} d\delta =S$
 
-$求解\jf{}{}\jf{}{}[x+y]dyxy=6, [0,2]×[0,]$
+$2^\circ f(x) \in R[a,b]g(y) \in R[c,d]$
+
+$则f(x)g(y)在D上可积\jf{}{}\jf{}{}fgdxdy=\jf{a}{b}fdx \jf{c}{d}ydy$
+
+$\nl$
+
+$求解\jf{}{}\jf{}{}[x+y]dyxy=6, [0,2]×[0,2]$
 
 $\jf{}{}\jf{}{} \sqrt[3]{1-x^2-y^2} dxdy <0 (x^2+y^2 \le 4)$
+
+$\nl$
 
 $定限原则，将D向x轴投影，得出a \le x \le b,任取x \in [a,b]在D内$
 
 $y积分域，由y_1(x)到y_2(x)，再对x由a到b积分（先y后x）$
+
+$\nl$
 
 $改变积分顺序（线到域，域到线）$
 
 $\jf{0}{2a}dx\jf{\sqrt {2ax-x^2}}{\sqrt 2ax}f(x,y)dy(a>0)$
 
 $=\jf{0}{a}dy \jf{\frac{y^2}{2a}}{a-\sqrt{a^2-y^2}}f(x,y)dx+\jf{0}{a}dy\jf{a+\sqrt{a^2-y^2}}{2a}f(x,y)dx+\jf{a}{2a}dy \jf{\frac{y^2}{x}}{2a}f(x,y)dx$
+
+$\nl$
 
 $例：作适当变换，化二重积分\iint_{|x|+|y| \le 1} f(x+y) dxdy 为定积分$
 
@@ -78,15 +92,23 @@ $例：求封闭曲线(\frac{x^2}{a^2}+\frac{y^2}{b^2})=x^2-y^2(a,b>0)面积$
 
 $= ab \jf{0}{2\pi}\sqrt{a^2cos^2 \theta -b^2sin^2 \theta}d\theta$
 
+$\nl$
+
 $例：D:x=0,y=0,x+y=0,令u=y-x,v=y+x,则D'=v-u=0,v+u=0,v=2$
+
+$\nl$
 
 $用二重积分证明\jf{a}{b}fdx\jf{a}{b}\frac{1}{f}dx \ge (b-a)^2$
 
-$分析：2原式=\iint_D \frac{f(x)}{f(y)}dxdy+\iint_D \frac{f(y)}{f(x)}dxdy \ge 2 \iint_D dxdy = 2(b-a)^2$
+$分析：2 \cdot 原式=\iint_D \frac{f(x)}{f(y)}dxdy+\iint_D \frac{f(y)}{f(x)}dxdy \ge 2 \iint_D dxdy = 2(b-a)^2$
+
+$\nl$
 
 $证明：\frac{\jf{0}{1}xf^2(x)dx}{\jf{0}{1}xf(x)dx} \le \frac{\jf{0}{1}f^2(x)dx}{\jf{0}{1}f(x)dx},f(x)在[0,1]上单调递减，恒正$
 
 $类似上例有I=\frac{1}{2}\iint_D f(x)f(y)(y-x)(f(x)-f(y))dxdy \ge 0$
+
+$\nl$
 
 $证明\iint_D \frac{a\varphi(x)+b\varphi(y)}{\varphi(x)+\varphi(y)}dxdy为常数，\varphi >0(D:x^2+y^2 \le R^2)$
 
@@ -94,11 +116,37 @@ $原式化为V=a\pi R^2+(b-a)\iint_D \frac{\varphi(y)}{\varphi(x)+\varphi(y)}dxd
 
 $也等于=b\pi R^2+(a-b)\iint_D \frac{\varphi(x)}{\varphi(x)+\varphi(y)}dxdy,故有.....$
 
+$\nl$
+
 $设I^2=\jf{0}{a}e^{-x^2}dx \jf{0}{a}e^{-y^2}dy=\iint_D e^{-(x^2+y^2)}dxdy,见图$
+
+\begin{tikzpicture}[domain=1:5,line width=1pt,fill opacity=0.5]
+
+\draw[->]  (0,0)--(5,0);
+\draw[->]  (0,0)--(0,5);
+
+\draw[-]  (2,0)--(2,2);
+\draw[-]  (0,2)--(2,2);
+
+\path [fill=gray] (0,0)-- (2,0)  arc  (0:90:2);
+\path [fill=gray] (0,0)-- (2.828,0)  arc  (0:90:2.828);
+
+\node [left] at (0,0) {0};
+\node [above] at (5,0) {x};
+\node [right] at (0,5) {y};
+
+\node [below] at (2,0) {$a$};
+\node [below] at (2.828,0) {$\sqrt{2} a$};
+\node at (1,1) {$D_1$};
+\node at (2,1) {$D_2$};
+
+\end{tikzpicture}
 
 $化为极坐标，\iint_{D_1} \le \iint_D \le \iint_{D_2}$
 
 $\atinf \iint_{D_1}= \frac{\pi}{4} = \atinf \iint_{D_2},故I= \frac{\sqrt \pi}{2}(利用二重积分求\jf{0}{+\infty}e^{-x^2}dx)$
+
+$\nl$
 
 $截面法 \jf{e}{f}dz \iint_{S(z)}f(x,y,z)dxdy(截面规则)$
 
@@ -106,7 +154,7 @@ $计算Dirichlet积分 \iiint_V x^py^qz^v(1-x-y-z)^sdV(p,q,v,s \in N)$
 
 $其中V:x+y+z=1, x=z=y=0$
 
-$预备命题：变换x+y=\zeta,y=\zeta \eta,下三角形区域D:0 \le x \le 1, 0 \le y < 1-x,变为正方形D：0 \le \zeta \le 1, 0 \le \eta \le 1$
+$预备命题：在变换x+y=\zeta,y=\zeta \eta,下，三角形区域D:0 \le x \le 1, 0 \le y < 1-x,变为正方形D'：0 \le \zeta \le 1, 0 \le \eta \le 1$
 
 $\forall (x_1,y_1) \in D,则0 \le \zeta_1 = x_1+y_1 \le 1$
 
@@ -129,6 +177,8 @@ $=\jf{0}{1}\zeta^{p+q}(1-\zeta)^sd\zeta \jf{0}{1} \eta^{p+q-1}(1-\eta)^pd\eta \j
 $=\frac{p!q!r!s!}{(p+q+r+s+3)!}$
 
 $\jf{0}{1}dx\jf{0}{x}dy\jf{0}{xy}...dz=先xy，后xz，再yz$
+
+$\nl$
 
 $定理1，见P301,定理2，P302 \& P303,真正定理推广见P305 P306$
 
@@ -155,6 +205,8 @@ $\nl$
 $V_n=x_1^2+..x_n^2 \le R^2 体积为$
 
 $V=\begin{cases} \frac{R^{2m}}{m!}\pi ^ m,n=2m \\ \frac{2R^{2m+1}(2\pi)^m}{(2m+1)!!},n=2m+1\end{cases}$
+
+$\nl$
 
 $计算\jf{0}{}x^2d\zeta 其中\zeta 为x^2+y^2+z^2=a^2,x+y+z=0交线$
 
@@ -382,9 +434,9 @@ $例：已知\overrightarrow A,求u(x,y,z)使得\overrightarrow A 成为u梯度�
 
 $\nl$
 
-$有势场，设\overrightarrow A(M),M \in V 为向量场，称\overrightarrow A 为有势场，存在u,\forall (x,y,z)in V 有$
+$有势场，设\overrightarrow A(M),M \in V 为向量场，称\overrightarrow A 为有势场，存在u,\forall (x,y,z) \in V 有$
 
-$gradu=\overrightarrow A(P369)$
+$grad \bold u=\overrightarrow A(P369)$
 
 $设\overrightarrow A(m)为向量场：m \in V,\forall M \in V,div \overrightarrow A =0(无源场)$
 

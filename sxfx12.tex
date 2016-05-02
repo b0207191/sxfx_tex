@@ -12,8 +12,7 @@
 
 \input{macro.tex}
 
-
-第12章 Fourier级数
+\begin{center} 第12章 Fourier级数  \end{center}
 
 $\frac{a_0}{2}+\nsuminf (a_ncosnx+b_nsinnx)～f(x)$
 
@@ -181,6 +180,8 @@ $a_{2n}=0,a_{2n-1}=-\frac{2}{\pi ^2} \frac{1}{(2n-1)^2}$
 
 $f(x)～\frac{1}{4}-\frac{2}{\pi ^2}\nsuminf \frac{cos(2n-1)\pi x}{(2n-1)^2}$
 
+$\nl$
+
 $(2)f(x)=\begin{cases} e^x, 0 \le x < \frac{\pi}{2} \\ 0, -\frac{\pi}{2} \le x < 0 \end{cases} 在[-\frac{\pi}{2},\frac{\pi}{2}]上$
 
 $a_0=\frac{2}{\pi}(e^{\frac{\pi}{2}}-1),a_n=\frac{1}{\pi} \frac{2}{1+4n^2}[(-1)^ne^{\frac{\pi}{2}}-1]$
@@ -245,7 +246,7 @@ $\nl$
 
 $例：设\{a_n\}单调递增且恒正，证明级数\nsuminf \frac{a_n-a_{n-1}}{a_na_{n-1}^ \lambda}(\lambda > 0)收敛$
 
-$(1)\ntinf a_n=a,0 \le  \frac{a_n-a_{n-1}}{a_na_{n-1}^ \lambda} \le  \frac{a_n-a_{n-1}}{a_na_{n-1}^ {\lambda+1}}, \forall n \in N$
+$(1)\ntinf a_n=a,0 \le  \frac{a_n-a_{n-1}}{a_na_{n-1}^ \lambda} \le  \frac{a_n-a_{n-1}}{a_{0}^ {\lambda+1}}=k(a_n-a_{n-1}), \forall n \in N$
 
 $(2)\ntinf a_n=\infty,0 \le  \frac{a_n-a_{n-1}}{a_na_{n-1}^ \lambda}=\frac{1}{a_{n-1}^\lambda}-\frac{1}{a_na_{n-1}^{\lambda-1}} \le \frac{1}{a_{n-1}^\lambda}-\frac{1}{a_{n}^\lambda}$
 
@@ -309,11 +310,11 @@ $(N+1)^{\frac{1}{p}}a_{n_0}$
 
 $\nl$
 
-$证明：任何有理数必为调和计数中有限项之和$
+$证明：任何有理数必为调和级数中有限项之和$
 
 $设\frac{A}{B}为正有理数，A,B \in N,因为\sum \frac{1}{n}发散，故\exists n_0 \in N:$
 
-$\ksum{1}{n} \le \frac{A}{B} < \ksum{1}{n+1}$
+$\ksum{1}{n} \frac{1}{k} \le \frac{A}{B}  < \ksum{1}{n+1} \frac{1}{k}$
 
 $若等式不成立，作新有理数\frac{C}{D}=\frac{A}{B}-\ksum{1}{n},则\frac{C}{D}< \frac{1}{n_0+1}$
 
@@ -323,7 +324,7 @@ $\exists n_2 \in N, \frac{1}{n_2+1} \le \frac{E}{F} < \frac{1}{n_2}....$
 
 $由上有\frac{A}{B} > \frac{C}{D} > \frac{E}{F}...且C>E>.... $
 
-$\frac{C}{D} - \frac{1}{n+1} = \frac{(n+1)C-D}{D(n+1)} = \frac{C-\frac{D}{n+1}}{D} \triangleq \frac{E}{F},C-E=D-nc>0$
+$\frac{C}{D} - \frac{1}{n+1} = \frac{(n+1)C-D}{D(n+1)} = \frac{C-\frac{D}{n+1}}{D} \triangleq \frac{E}{F},C-E=C-[(n+1)C-D]=D-nC>0$
 
 $上述分子经过有限步运算后减为1，....$
 
@@ -351,7 +352,9 @@ $\nl$
 
 $设f_n(x)(n \in N)为[a,b]上的单调函数，\ntinf f_n(x)=f(x)，且f(x) \in C[a,b]$
 
-$证明：\{f_n(x)\}在[a,b]上一致收敛(5 \epsilon 法)等分区间$
+$证明：\{f_n(x)\}在[a,b]上一致收敛$
+
+$(5 \epsilon 法)等分区间$
 
 $\nl$
 
@@ -359,7 +362,7 @@ $设可微函数列\{f_n(x)\}在[a,b]上收敛，\{f_n'(x)\}在[a,b]上一致有
 
 $证明\{f_n(x)\}在[a,b]上一致收敛$
 
-$设|f'_n(x)| \le M,\forall n \forall x,对\forall \epsilon >0,对[a,b]作分法T,$
+$证法1：设|f'_n(x)| \le M,\forall n \forall x,对\forall \epsilon >0,对[a,b]作分法T,$
 
 $a=x_0 < x_1 <..x_p=b,max|x_k-x_{k-1}|< \frac{\epsilon}{3M}对\forall x \in(a,b)总有$
 
@@ -375,7 +378,9 @@ $|f_m(x_k)-f_n(x_k)|<\frac{\epsilon}{3},\forall m,n>N_k$
 
 $取N=max(N_k,...N_p),|f_n(x)-f_m(x)|< \frac{\epsilon}{3}+\frac{\epsilon}{3}+\frac{\epsilon}{3}=\epsilon. \forall m,n>N,\forall x$
 
-$证法二，有限覆盖定理，\forall \epsilon > 0,\forall x \in [a,b],\exists N',-N'(\epsilon,x')$
+$\nl$
+
+$证法二：有限覆盖定理，\forall \epsilon > 0,\forall x \in [a,b],\exists N',-N'(\epsilon,x')$
 
 $|f_m(x')-f_n(x')|<\frac{\epsilon}{2},\forall m,n>N',记|f_n'(x)|\le M,\forall n \in N$
 
@@ -445,6 +450,8 @@ $令x=\pi,得\sum \frac{(-1)^{n+1}}{n^2}=\frac{\pi^2}{12}$
 
 $以上两式相加2\nsuminf \frac{1}{(2n-1)^2}=\frac{\pi^2}{4}$
 
+$\nl$
+
 $广义的牛顿莱布尼兹公式，设f(x)\in C[a,b]且分段光滑，则有$
 
 $\jf{a}{b}f'(x)dx = f(b)-f(a)$
@@ -455,7 +462,9 @@ $\jf{a}{b}f'(x)cos \lambda x dx=f(x)cos \lambda x|_a^b \pm \lambda \jf{a}{b}f(x)
 
 $\nl$
 
-$设f(x) \in CR,以2\pi 为周期，且在[-\pi,\pi]上分段光滑，则f(x)付氏系数在R上一致收敛$
+$设f(x) \in C \bold R,以2\pi 为周期，且在[-\pi,\pi]上分段光滑，则f(x)付氏系数在R上一致收敛$
+
+$\nl$
 
 $周期为2\pi,f(x)=\frac{1}{4}x(2\pi-x),x \in [0,2\pi]$
 
@@ -470,6 +479,8 @@ $再积分\frac{1}{4}(\frac{\pi x^3}{3}-\frac{x^4}{12})=\frac{1}{12}\pi^2x^2+\ns
 $再积分\frac{1}{4}(\frac{\pi x^4}{12}-\frac{x^5}{60})=\frac{1}{36}\pi^2x^3+\nsuminf(\frac{sinnx}{n}-x)$
 
 $令x=2\pi,\nsuminf \frac{1}{n^4}=\frac{\pi^4}{90}$
+
+$\nl$
 
 $Parseral等式，设可积函数f(x)的付氏系数在[-\pi,\pi]上的一致收敛，则有$
 
@@ -515,11 +526,15 @@ $定理1，设f(x) \in C[a,b],则\forall \epsilon > 0,存在分段光滑函数L(
 
 $|f(x)-L(x)| < \epsilon, \forall x \in [a,b]$
 
+$\nl$
+
 $第一逼近定理，设f(x) \in CR,以2\pi 为周期，则\forall \epsilon >0,存在三角多项式$
 
 $T_n(x)=\frac{a_0}{2}+\ksuminf (a_k coskx+b_k sinkx)$
 
 $使得当n充分大时候有 |f(x)-T_n(x)|< \epsilon, \forall x \in R$
+
+$\nl$
 
 $第二逼近定理f(x) \in C[a,b] \forall \epsilon >0,存在多项式P_n(x),|f-P_n|< \epsilon,\forall x$
 
@@ -531,13 +546,17 @@ $\forall \epsilon >0,\exists P_n(x):|f-P_n|< \epsilon$
 
 $\jf{a}{b}fP_ndx=\jf{a}{b}f(x)(a_0+a_1x+...a_nx^n)dx=0$
 
-$于是\jf{a}{b}f^2(x)dx = \jf{a}{b}[f(x)-P_n(x)]dx+\jf{a}{b}f(x)P_n(x)dx$
+$于是\jf{a}{b}f^2(x)dx = \jf{a}{b}f(x)[f(x)-P_n(x)]dx+\jf{a}{b}f(x)P_n(x)dx(=0)$
 
 $=\jf{a}{b}f(x)|f(x)-P_n(x)|dx \le |f(x)-P_n(x)|\jf{a}{b}f(x)dx$
 
 $\epsilon \jf{a}{b}f(x)dx \triangleq M\epsilon$
 
+$\nl$
+
 $n!=\sqrt{2\pi n}n^n e^{-n+\frac{\theta_n}{12n}}(0<\theta_n<1)$
+
+$\nl$
 
 $设f(x) \in C[0,1]令P_n(x)=\frac{1}{I_n}\jf{0}{1}f(v)[1-(v-x)^2]^ndv为2n次多项式$
 
